@@ -1,5 +1,3 @@
-@ -1,5 +1,5 @@
-
 # ST0010
 
 _Ayushaadi Medical App_
