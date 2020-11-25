@@ -1,14 +1,52 @@
 import React from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
-import Constants from "expo-constants";
+import { StyleSheet } from "react-native";
+import AppTextInput from "../components/AppTextInput";
+import { Formik } from "formik";
 
+import Screen from "../components/Screen";
+import AppButton from "../components/AppButton";
 function DoctorLogin(props) {
-  return <SafeAreaView style={styles.screen}></SafeAreaView>;
+  return (
+    <Screen style={styles.container}>
+      <Formik
+        initialValues={{ email: "", password: "" }}
+        onSubmit={(values) => console.log(values)}
+      >
+        {({ handleChange, handleSubmit }) => (
+          <>
+            <AppTextInput
+              autoCapitalize="none"
+              autoCorrect={false}
+              icon="email"
+              onChangeText={handleChange("email")}
+              keyboardType="email-address"
+              placeholder="Email"
+              textContentType="emailAddress"
+            />
+            <AppTextInput
+              autoCapitalize="none"
+              autoCorrect={false}
+              icon="lock"
+              onChangeText={handleChange("password")}
+              placeholder="Password"
+              secureTextEntry
+              textContentType="password"
+            />
+            <AppButton
+              title="Login"
+              color="doctorPrimary"
+              onPress={handleSubmit}
+            />
+          </>
+        )}
+      </Formik>
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    paddingTop: Constants.statusBarHeight,
+  container: {
+    padding: 10,
   },
 });
 
