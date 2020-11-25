@@ -1,6 +1,7 @@
 import React from "react";
-import { Image, StyleSheet, View, Text } from "react-native";
+import { Image, StyleSheet, View, Text, SafeAreaView } from "react-native";
 
+import AppButton from "../components/AppButton";
 import colors from "../configs/colors";
 
 function WelcomeScreen(props) {
@@ -11,14 +12,10 @@ function WelcomeScreen(props) {
         <Text style={styles.logoText}>Ayushaadi Medical App</Text>
         <Text>by Software Troopers</Text>
       </View>
-      <View style={styles.patientButton}>
-        <Text style={styles.buttonText}>Patient</Text>
-      </View>
-      <View style={styles.doctorButton}>
-        <Text style={styles.buttonText}>Doctor</Text>
-      </View>
-      <View style={styles.cooperationButton}>
-        <Text style={styles.buttonText}>Cooperation</Text>
+      <View style={styles.buttonContainer}>
+        <AppButton title="Patient" color="patientPrimary" />
+        <AppButton title="Doctor" color="doctorPrimary" />
+        <AppButton title="Cooperation" color="cooperationPrimary" />
       </View>
     </View>
   );
@@ -30,30 +27,9 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
-  patientButton: {
-    width: "90%",
-    height: 70,
-    backgroundColor: colors.patientPrimary,
-    borderRadius: 100,
-    margin: 10,
-    elevation: 10,
-  },
-  doctorButton: {
-    width: "90%",
-    height: 70,
-    backgroundColor: colors.doctorPrimary,
-    borderRadius: 100,
-    margin: 10,
-    elevation: 10,
-  },
-  cooperationButton: {
-    width: "90%",
-    height: 70,
-    backgroundColor: colors.cooperationPrimary,
-    borderRadius: 100,
-    margin: 10,
-    marginBottom: 20,
-    elevation: 10,
+  buttonContainer: {
+    width: "100%",
+    padding: 20,
   },
   logo: {
     width: 100,
@@ -68,13 +44,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     color: "red",
-  },
-  buttonText: {
-    fontSize: 20,
-    color: "white",
-    fontWeight: "bold",
-    alignSelf: "center",
-    marginVertical: 20,
   },
 });
 

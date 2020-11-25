@@ -2,5 +2,8 @@ export default {
   patientPrimary: "#3d4db7",
   doctorPrimary: "#009687",
   cooperationPrimary: "#eb1460",
-  background: "white",
+  white: "#fff",
+  black: "#000",
+  darkGrey: "#0c0c0c",
+  lightGrey: "#e8e8e8",
 };
