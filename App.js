@@ -8,5 +8,5 @@ import CooperationRegister from "./app/screens/CooperationRegister";
 import DoctorRegister from "./app/screens/DoctorRegister";
 
 export default function App() {
-  return <DoctorRegister />;
+  return <PatientLogin />;
 }
