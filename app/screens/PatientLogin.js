@@ -1,12 +1,18 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import AppTextInput from "../components/AppTextInput";
 import { Formik } from "formik";
 import { MaterialIcons } from "@expo/vector-icons";
+import * as Yup from "yup";
 
 import Screen from "../components/Screen";
 import AppButton from "../components/AppButton";
 import colors from "../configs/colors";
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string().required().email().label("Email"),
+  password: Yup.string().required().min(8).label("Password"),
+});
 
 function PatientLogin(props) {
   return (
@@ -20,8 +26,9 @@ function PatientLogin(props) {
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => console.log(values)}
+        validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit }) => (
+        {({ handleChange, handleSubmit, errors }) => (
           <>
             <View style={styles.buttonContainer}>
               <AppTextInput
@@ -33,6 +40,9 @@ function PatientLogin(props) {
                 placeholder="Email"
                 textContentType="emailAddress"
               />
+
+              <Text style={{ color: "red" }}>{errors.email}</Text>
+
               <AppTextInput
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -42,6 +52,8 @@ function PatientLogin(props) {
                 secureTextEntry
                 textContentType="password"
               />
+
+              <Text style={{ color: "red" }}>{errors.password}</Text>
 
               <AppButton
                 title="Login"
