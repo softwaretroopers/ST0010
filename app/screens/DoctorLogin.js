@@ -1,42 +1,54 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import AppTextInput from "../components/AppTextInput";
 import { Formik } from "formik";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import Screen from "../components/Screen";
 import AppButton from "../components/AppButton";
+import colors from "../configs/colors";
+
 function DoctorLogin(props) {
   return (
     <Screen style={styles.container}>
+      <MaterialIcons
+        name="person"
+        size={50}
+        color={colors.doctorPrimary}
+        style={styles.iconContainer}
+      />
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => console.log(values)}
       >
         {({ handleChange, handleSubmit }) => (
           <>
-            <AppTextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              icon="email"
-              onChangeText={handleChange("email")}
-              keyboardType="email-address"
-              placeholder="Email"
-              textContentType="emailAddress"
-            />
-            <AppTextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              icon="lock"
-              onChangeText={handleChange("password")}
-              placeholder="Password"
-              secureTextEntry
-              textContentType="password"
-            />
-            <AppButton
-              title="Login"
-              color="doctorPrimary"
-              onPress={handleSubmit}
-            />
+            <View style={styles.buttonContainer}>
+              <AppTextInput
+                autoCapitalize="none"
+                autoCorrect={false}
+                icon="email"
+                onChangeText={handleChange("email")}
+                keyboardType="email-address"
+                placeholder="Email"
+                textContentType="emailAddress"
+              />
+              <AppTextInput
+                autoCapitalize="none"
+                autoCorrect={false}
+                icon="lock"
+                onChangeText={handleChange("password")}
+                placeholder="Password"
+                secureTextEntry
+                textContentType="password"
+              />
+
+              <AppButton
+                title="Login"
+                color="doctorPrimary"
+                onPress={handleSubmit}
+              />
+            </View>
           </>
         )}
       </Formik>
@@ -47,6 +59,15 @@ function DoctorLogin(props) {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+  },
+  buttonContainer: {
+    width: "100%",
+    padding: 20,
+    marginTop: "60%",
+  },
+  iconContainer: {
+    position: "absolute",
+    marginTop: "30%",
   },
 });
 
