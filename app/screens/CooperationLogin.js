@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     position: "absolute",
-    marginTop: "30%",
+    marginTop: "35%",
   },
 });
 
