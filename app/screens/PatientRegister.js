@@ -1,100 +1,103 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { Formik } from "formik";
+import * as Yup from "yup";
 
-import AppTextInputVariant from "../components/AppTextInputVariant";
+import {
+  AppForm,
+  AppFormFieldVariant,
+  AppFormPicker,
+  SubmitButton,
+} from "../components/forms";
 import Screen from "../components/Screen";
-import AppButton from "../components/AppButton";
 
-function PatientRegister(props) {
+const validationSchema = Yup.object().shape({
+  fName: Yup.string().required().min(1).label("First Name"),
+  lName: Yup.string().required().min(1).label("Last Name"),
+  gender: Yup.object().required().label("Gender"),
+  age: Yup.number().required().min(1).label("Age"),
+  email: Yup.string().required().email().min(1).label("Email"),
+  password: Yup.string().required().min(1).label("Password"),
+  confirmPassword: Yup.string()
+    .required()
+    .min(1)
+    .label("Confirm Password")
+    .oneOf([Yup.ref("password")], "Passwords are different."),
+});
+
+const genders = [
+  { label: "Male", value: 1 },
+  { label: "Female", value: 2 },
+  { label: "Other", value: 3 },
+];
+
+function PatientRegister() {
   return (
     <Screen style={styles.container}>
-      <Formik
+      <AppForm
         initialValues={{
           fName: "",
           lName: "",
-          gender: "",
+          gender: [null],
           age: "",
           email: "",
           password: "",
         }}
         onSubmit={(values) => console.log(values)}
+        validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit }) => (
-          <>
-            <View style={styles.inputContainer}>
-              <AppTextInputVariant
-                autoCapitalize="words"
-                autoCorrect={true}
-                icon="account-edit"
-                onChangeText={handleChange("fName")}
-                keyboardType="default"
-                placeholder="First Name"
-                textContentType="name"
-              />
-              <AppTextInputVariant
-                autoCapitalize="words"
-                autoCorrect={true}
-                icon="account-check"
-                onChangeText={handleChange("Lname")}
-                keyboardType="default"
-                placeholder="Last Name"
-                textContentType="name"
-              />
-              <AppTextInputVariant
-                autoCapitalize="none"
-                autoCorrect={false}
-                icon="gender-male-female"
-                onChangeText={handleChange("gender")}
-                keyboardType="default"
-                placeholder="Gender"
-              />
-              <AppTextInputVariant
-                autoCapitalize="none"
-                autoCorrect={false}
-                icon="calendar"
-                onChangeText={handleChange("age")}
-                keyboardType="number-pad"
-                placeholder="Age"
-              />
-              <AppTextInputVariant
-                autoCapitalize="none"
-                autoCorrect={false}
-                icon="email"
-                onChangeText={handleChange("email")}
-                keyboardType="email-address"
-                placeholder="Email"
-                textContentType="emailAddress"
-              />
-              <AppTextInputVariant
-                autoCapitalize="none"
-                autoCorrect={false}
-                icon="lock-open"
-                onChangeText={handleChange("password")}
-                placeholder="Password"
-                secureTextEntry
-                textContentType="password"
-              />
-              <AppTextInputVariant
-                autoCapitalize="none"
-                autoCorrect={false}
-                icon="lock"
-                onChangeText={handleChange("password")}
-                placeholder="Confirm Password"
-                secureTextEntry
-                textContentType="password"
-              />
-            </View>
-            <View style={styles.buttonContainer}>
-              <AppButton
-                title="Sign Up"
-                color="patientPrimary"
-                onPress={handleSubmit}
-              />
-            </View>
-          </>
-        )}
-      </Formik>
+        <View style={styles.inputContainer}>
+          <AppFormFieldVariant
+            maxLength={30}
+            name="fName"
+            placeholder="First Name"
+            icon="account-edit"
+          />
+          <AppFormFieldVariant
+            keyboardType="default"
+            maxLength={30}
+            name="lName"
+            placeholder="Last Name"
+            icon="account-check"
+          />
+          <AppFormPicker
+            items={genders}
+            name="gender"
+            placeholder="Gender"
+            icon="gender-male-female"
+          />
+          <AppFormFieldVariant
+            maxLength={3}
+            name="age"
+            placeholder="Age"
+            keyboardType="number-pad"
+            icon="calendar"
+          />
+          <AppFormFieldVariant
+            maxLength={30}
+            name="email"
+            placeholder="Email"
+            icon="email"
+            textContentType="emailAddress"
+          />
+          <AppFormFieldVariant
+            maxLength={30}
+            name="password"
+            placeholder="Password"
+            secureTextEntry
+            icon="lock-open"
+          />
+          <AppFormFieldVariant
+            maxLength={30}
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            secureTextEntry
+            icon="lock"
+          />
+        </View>
+        <View style={styles.buttonContainer}>
+          <SubmitButton title="Post" color="patientPrimary" />
+        </View>
+      </AppForm>
     </Screen>
   );
 }
