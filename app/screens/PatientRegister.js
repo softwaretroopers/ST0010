@@ -1,60 +1,63 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, View } from "react-native";
-import AppTextInput from "../components/AppTextInput";
 import { Formik } from "formik";
-import { MaterialIcons } from "@expo/vector-icons";
 
+import AppTextInputVariant from "../components/AppTextInputVariant";
 import Screen from "../components/Screen";
 import AppButton from "../components/AppButton";
-import colors from "../configs/colors";
 
 function PatientRegister(props) {
   return (
     <Screen style={styles.container}>
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={{
+          fName: "",
+          lName: "",
+          gender: "",
+          age: "",
+          email: "",
+          password: "",
+        }}
         onSubmit={(values) => console.log(values)}
       >
         {({ handleChange, handleSubmit }) => (
           <>
-            <View style={styles.buttonContainer}>
-              <AppTextInput
-                autoCapitalize="none"
-                autoCorrect={false}
-                icon="email"
-                onChangeText={handleChange("email")}
+            <View style={styles.inputContainer}>
+              <AppTextInputVariant
+                autoCapitalize="words"
+                autoCorrect={true}
+                icon="account-edit"
+                onChangeText={handleChange("fName")}
                 keyboardType="default"
                 placeholder="First Name"
-                textContentType="emailAddress"
+                textContentType="name"
               />
-              <AppTextInput
-                autoCapitalize="none"
-                autoCorrect={false}
-                icon="email"
-                onChangeText={handleChange("email")}
+              <AppTextInputVariant
+                autoCapitalize="words"
+                autoCorrect={true}
+                icon="account-check"
+                onChangeText={handleChange("Lname")}
                 keyboardType="default"
                 placeholder="Last Name"
-                textContentType="emailAddress"
+                textContentType="name"
               />
-              <AppTextInput
+              <AppTextInputVariant
                 autoCapitalize="none"
                 autoCorrect={false}
-                icon="email"
-                onChangeText={handleChange("email")}
-                keyboardType="email-address"
+                icon="gender-male-female"
+                onChangeText={handleChange("gender")}
+                keyboardType="default"
                 placeholder="Gender"
-                textContentType="emailAddress"
               />
-              <AppTextInput
+              <AppTextInputVariant
                 autoCapitalize="none"
                 autoCorrect={false}
-                icon="email"
-                onChangeText={handleChange("email")}
+                icon="calendar"
+                onChangeText={handleChange("age")}
                 keyboardType="number-pad"
                 placeholder="Age"
-                textContentType="emailAddress"
               />
-              <AppTextInput
+              <AppTextInputVariant
                 autoCapitalize="none"
                 autoCorrect={false}
                 icon="email"
@@ -63,16 +66,16 @@ function PatientRegister(props) {
                 placeholder="Email"
                 textContentType="emailAddress"
               />
-              <AppTextInput
+              <AppTextInputVariant
                 autoCapitalize="none"
                 autoCorrect={false}
-                icon="lock"
+                icon="lock-open"
                 onChangeText={handleChange("password")}
                 placeholder="Password"
                 secureTextEntry
                 textContentType="password"
               />
-              <AppTextInput
+              <AppTextInputVariant
                 autoCapitalize="none"
                 autoCorrect={false}
                 icon="lock"
@@ -81,9 +84,10 @@ function PatientRegister(props) {
                 secureTextEntry
                 textContentType="password"
               />
-
+            </View>
+            <View style={styles.buttonContainer}>
               <AppButton
-                title="Login"
+                title="Sign Up"
                 color="patientPrimary"
                 onPress={handleSubmit}
               />
@@ -98,6 +102,10 @@ function PatientRegister(props) {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+  },
+  inputContainer: {
+    width: "100%",
+    padding: 20,
   },
   buttonContainer: {
     width: "100%",
