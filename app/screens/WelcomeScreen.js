@@ -32,12 +32,12 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
   },
   logoContainer: {
     position: "absolute",
-    top: 80,
+    top: "10%",
     alignItems: "center",
   },
   logoText: {
