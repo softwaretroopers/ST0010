@@ -9,5 +9,5 @@ import DoctorRegister from "./app/screens/DoctorRegister";
 import DatePicker from "./app/screens/DatePicker";
 
 export default function App() {
-  return <DatePicker />;
+  return <PatientRegister />;
 }

@@ -37,7 +37,7 @@ function PatientRegister() {
         initialValues={{
           fName: "",
           lName: "",
-          gender: [null],
+          gender: [0],
           age: "",
           email: "",
           password: "",
