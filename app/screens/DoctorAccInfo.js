@@ -5,7 +5,7 @@ import AppText from '../components/AppText';
 import Card from '../components/Card';
 import Icon from '../components/Icon';
 import ListItem from '../components/ListItem';
-import Screen from '../components/ScreenVarient';
+import ScreenVarient from '../components/ScreenVarient';
 import colors from '../configs/colors';
 
 const listing=[
@@ -44,7 +44,7 @@ const listing=[
 ]
 function DoctorAccInfo(props) {
     return (
-       <Screen style={styles.screen}>
+       <ScreenVarient style={styles.screen}>
            <View style={styles.containerHeading}>
                <AppText style={styles.HeadingFont}>My Information</AppText>
             </View>
@@ -81,7 +81,7 @@ function DoctorAccInfo(props) {
   
       </View>
       </View>
-       </Screen>
+       </ScreenVarient>
     );
 }
 

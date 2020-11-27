@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList , StyleSheet, View } from 'react-native';
 
 import Card from '../components/Card';
-import Screen from '../components/ScreenVarient';
+import ScreenVarient from '../components/ScreenVarient';
 import colors from '../configs/colors';
 
 const listings = [
@@ -27,7 +27,7 @@ const listings = [
 ];
 function PatientHome(props) {
     return (
-        <Screen>
+        <ScreenVarient>
             <View style={styles.screen}>
             <FlatList
             data={listings}
@@ -40,7 +40,7 @@ function PatientHome(props) {
         }
         />
         </View>
-        </Screen>
+        </ScreenVarient>
     );
 }
 
