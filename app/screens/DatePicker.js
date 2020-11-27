@@ -21,10 +21,18 @@ function DatePicker(props) {
   const showDatepicker = () => {
     showMode("date");
   };
+
+  const showTimepicker = () => {
+    showMode("time");
+  };
+
   return (
     <View style={{ marginTop: "20%" }}>
       <View>
-        <Button onPress={showDatepicker} title="Show date picker!" />
+        <Button onPress={showDatepicker} title="Date picker" />
+      </View>
+      <View>
+        <Button onPress={showTimepicker} title="Time picker" />
       </View>
       {show && (
         <DateTimePicker
@@ -33,7 +41,7 @@ function DatePicker(props) {
           mode={mode}
           is24Hour={true}
           display="default"
-          onChange={onChange && console.log(date)}
+          onChange={onChange}
         />
       )}
     </View>
