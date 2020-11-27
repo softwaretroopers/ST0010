@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Alert } from "react-native";
 import * as Yup from "yup";
 
 import {
@@ -14,7 +14,7 @@ const validationSchema = Yup.object().shape({
   fName: Yup.string().required().min(1).label("First Name"),
   lName: Yup.string().required().min(1).label("Last Name"),
   gender: Yup.object().required().label("Gender"),
-  age: Yup.number().required().min(1).label("Age"),
+  age: Yup.number().required().min(2).label("Age"),
   email: Yup.string().required().email().min(1).label("Email"),
   password: Yup.string().required().min(1).label("Password"),
   confirmPassword: Yup.string()
@@ -42,7 +42,25 @@ function PatientRegister() {
           email: "",
           password: "",
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => {
+          Alert.alert(
+            "Co-Operation User Confirmation",
+            "Are you registering under a Co-Operation?",
+            [
+              {
+                text: "No",
+                onPress: () => console.log("No pressed"),
+              },
+              {
+                text: "Cancel",
+                onPress: () => console.log("Cancel Pressed"),
+                style: "cancel",
+              },
+              { text: "Yes", onPress: () => console.log("Yes Pressed") },
+            ],
+            { cancelable: false }
+          );
+        }}
         validationSchema={validationSchema}
       >
         <View style={styles.inputContainer}>
@@ -95,7 +113,7 @@ function PatientRegister() {
           />
         </View>
         <View style={styles.buttonContainer}>
-          <SubmitButton title="Post" color="patientPrimary" />
+          <SubmitButton title="Sign up" color="patientPrimary" />
         </View>
       </AppForm>
     </Screen>
