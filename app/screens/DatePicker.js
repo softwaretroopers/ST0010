@@ -1,51 +1,36 @@
 import React, { useState } from "react";
-import { View, Button, Platform } from "react-native";
-import DateTimePicker from "@react-native-community/datetimepicker";
+import { View } from "react-native";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
+import AppButtonVariant from "../components/AppButtonVariant";
+import Screen from "../components/Screen";
 
-function DatePicker() {
-  const [date, setDate] = useState(new Date(1598051730000));
-  const [mode, setMode] = useState("date");
-  const [show, setShow] = useState(false);
+const DatePicker = () => {
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
 
-  const onChange = (selectedDate) => {
-    const currentDate = selectedDate || date;
-    setShow(Platform.OS === "ios");
-    setDate(currentDate);
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
   };
 
-  const showMode = (currentMode) => {
-    setShow(true);
-    setMode(currentMode);
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
   };
 
-  const showDatepicker = () => {
-    showMode("date");
-  };
-
-  const showTimepicker = () => {
-    showMode("time");
+  const handleConfirm = (date) => {
+    console.log(date);
+    hideDatePicker();
   };
 
   return (
-    <View style={{ marginTop: "20%" }}>
-      <View>
-        <Button onPress={showDatepicker} title="Date picker" />
-      </View>
-      <View>
-        <Button onPress={showTimepicker} title="Time picker" />
-      </View>
-      {show && (
-        <DateTimePicker
-          testID="dateTimePicker"
-          value={date}
-          mode={mode}
-          is24Hour={true}
-          display="default"
-          onChange={onChange}
-        />
-      )}
+    <View>
+      <AppButtonVariant color="black" title="Date" onPress={showDatePicker} />
+      <DateTimePickerModal
+        isVisible={isDatePickerVisible}
+        mode="date"
+        onConfirm={handleConfirm}
+        onCancel={hideDatePicker}
+      />
     </View>
   );
-}
+};
 
 export default DatePicker;
