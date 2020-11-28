@@ -1,5 +1,5 @@
 import React from 'react';
-import { View ,StyleSheet , Image } from 'react-native';
+import { View ,StyleSheet , Image ,TouchableOpacity } from 'react-native';
 
 import AppText from './AppText';
 
@@ -7,7 +7,8 @@ function ListItem({
     title,
     subtitle,
     image,
-    IconComponent
+    IconComponent,
+    onPress
     }) {
     return (
        <View style={styles.container}>
@@ -16,6 +17,7 @@ function ListItem({
            <View style={styles.containerDetails}>
             <AppText style={styles.title}>{title}</AppText>
             {subtitle && <AppText>{subtitle}</AppText>}
+            <TouchableOpacity>{onPress}</TouchableOpacity>
            </View>
        </View>
     );

@@ -2,10 +2,10 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import PatientHome from "../screens/PatientHome";
 import PatientAccInfo from "../screens/PatientAccInfo";
 import PatientAppointment from "../screens/PatientAppointment";
 import PatientNewsFeed from "../screens/PatientNewsFeed";
+import FeedNavigator from "./FeedNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +14,7 @@ const AppNavigator = () => (
 
         <Tab.Screen
         name="Home"
-        component={PatientHome}
+        component={FeedNavigator}
         options={{
             tabBarIcon: ({ color,size }) =>
             <MaterialCommunityIcons name="home" color={color} size={size}/>

@@ -1,7 +1,10 @@
 import React from 'react';
-import { FlatList , StyleSheet, View } from 'react-native';
+import { FlatList , StyleSheet, View ,TouchableOpacity } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 import Card from '../components/Card';
+import Icon from '../components/Icon';
+import ListItem from '../components/ListItem';
 import ScreenVarient from '../components/ScreenVarient';
 import colors from '../configs/colors';
 
@@ -25,9 +28,17 @@ const listings = [
         image: require('../assets/Councillor.png')
     },
 ];
-function PatientHome(props) {
+function PatientHome({navigation}) {
     return (
         <ScreenVarient>
+            <View style={styles.navigationPanel}>
+                <TouchableOpacity onPress={() => navigation.navigate("PatientNavigation")}>
+                 
+                <ListItem  
+          IconComponent={<Icon name="menu" size={60} backgroundColor={"#e8e8e8"} iconColor={"#3d4db7"} />}
+                />
+                </TouchableOpacity>
+           </View>
             <View style={styles.screen}>
             <FlatList
             data={listings}
@@ -47,9 +58,14 @@ function PatientHome(props) {
 const styles = StyleSheet.create({
     screen:{
         flex:1,
-        padding:10,
-        paddingTop:50,
+        padding:20,
+        paddingTop:10,
         backgroundColor:colors.lightGrey,
+    },
+    navigationPanel:{
+        backgroundColor:colors.lightGrey,
+        marginLeft:-20,
+        marginTop:-20
     }
-})
+});
 export default PatientHome;
