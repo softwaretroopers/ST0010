@@ -43,7 +43,11 @@ function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
         </View>
       </TouchableWithoutFeedback>
 
-      <Modal visible={modalVisible} animationType="slide">
+      <Modal
+        style={styles.listContainer}
+        visible={modalVisible}
+        animationType="slide"
+      >
         <Screen>
           <AppButtonVariant
             title="Close"
@@ -51,10 +55,12 @@ function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
             onPress={() => setModalVisible(false)}
           />
           <FlatList
+            style={styles.list}
             data={items}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
               <PickerItem
+                style={styles.item}
                 label={item.label}
                 onPress={() => {
                   setModalVisible(false);
@@ -89,6 +95,9 @@ const styles = StyleSheet.create({
   },
   text: {
     flex: 1,
+  },
+  list: {
+    width: "100%",
   },
 });
 
