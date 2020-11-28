@@ -21,7 +21,6 @@ const DatePicker = () => {
   };
 
   return (
-
     <View>
       <AppButtonVariant color="black" title="Date" onPress={showDatePicker} />
       <DateTimePickerModal
