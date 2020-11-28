@@ -14,16 +14,16 @@ function PatientAccInfo(props) {
       <View style={styles.accounttop}>
         <ListItem
           title="Mr.Anonymous"
-          ImageComponent={<Icon name="user" size={75} />}
+          IconComponent={<Icon name="user" size={75} />}
         />
         <View style={styles.title}>
           <ListItem
             title="+94 77 252 5258"
-            ImageComponent={<Icon name="mobile" size={25} />}
+            IconComponent={<Icon name="mobile" size={25} />}
           />
           <ListItem
             title="softwaretroopers.com"
-            ImageComponent={<Icon name="email" size={25} />}
+            IconComponent={<Icon name="email" size={25} />}
           />
         </View>
       </View>

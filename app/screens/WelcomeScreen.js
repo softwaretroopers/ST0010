@@ -1,10 +1,11 @@
 import React from "react";
+import { createStackNavigator } from '@react-navigation/stack';
 import { Image, StyleSheet, View, Text, SafeAreaView } from "react-native";
 
 import AppButton from "../components/AppButton";
 import colors from "../configs/colors";
 
-function WelcomeScreen(navigation) {
+function WelcomeScreen({navigation}) {
   return (
     <View style={styles.background}>
       <View style={styles.logoContainer}>

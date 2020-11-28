@@ -10,10 +10,10 @@ const Stack= createStackNavigator();
 
 const AuthNavigator = () => (
     <Stack.Navigator>
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="Patient" component={PatientLogin} />
-        <Stack.Screen name="Doctor" component={DoctorLogin} />
-        <Stack.Screen name="Co-Operation" component={CooperationLogin} />
+        <Stack.Screen name="Welcome" component={WelcomeScreen} options={{headerShown:false}} />
+        <Stack.Screen name="PatientLogin" component={PatientLogin} />
+        <Stack.Screen name="DoctorLogin" component={DoctorLogin} />
+        <Stack.Screen name="CooperationLogin" component={CooperationLogin} />
     </Stack.Navigator>
 )
 export default AuthNavigator;
