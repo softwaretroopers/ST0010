@@ -4,7 +4,7 @@ import { Image, StyleSheet, View, Text, SafeAreaView } from "react-native";
 import AppButton from "../components/AppButton";
 import colors from "../configs/colors";
 
-function WelcomeScreen(props) {
+function WelcomeScreen(navigation) {
   return (
     <View style={styles.background}>
       <View style={styles.logoContainer}>
@@ -13,9 +13,9 @@ function WelcomeScreen(props) {
         <Text>by Software Troopers</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <AppButton title="Patient" color="patientPrimary" />
-        <AppButton title="Doctor" color="doctorPrimary" />
-        <AppButton title="Cooperation" color="cooperationPrimary" />
+        <AppButton title="Patient" color="patientPrimary" onPress={() =>navigation.navigate("PatientLogin")} />
+        <AppButton title="Doctor" color="doctorPrimary" onPress={() =>navigation.navigate("DoctorLogin")} />
+        <AppButton title="Cooperation" color="cooperationPrimary" onPress={() =>navigation.navigate("CooperationLogin")} />
       </View>
     </View>
   );
