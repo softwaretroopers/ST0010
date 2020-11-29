@@ -1,5 +1,4 @@
 import React from "react";
-import { createStackNavigator } from '@react-navigation/stack';
 import { Image, StyleSheet, View, Text, SafeAreaView } from "react-native";
 
 import AppButton from "../components/AppButton";
@@ -14,7 +13,7 @@ function WelcomeScreen({navigation}) {
         <Text>by Software Troopers</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <AppButton title="Patient" color="patientPrimary" onPress={() =>navigation.navigate("PatientLogin")} />
+        <AppButton title="Patient" color="patientPrimary" onPress={() =>navigation.navigate("PatientLoginScreen")} />
         <AppButton title="Doctor" color="doctorPrimary" onPress={() =>navigation.navigate("DoctorLogin")} />
         <AppButton title="Cooperation" color="cooperationPrimary" onPress={() =>navigation.navigate("CooperationLogin")} />
       </View>

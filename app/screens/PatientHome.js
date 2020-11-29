@@ -1,10 +1,8 @@
 import React from 'react';
 import { FlatList , StyleSheet, View ,TouchableOpacity } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { AntDesign } from '@expo/vector-icons'; 
 
 import Card from '../components/Card';
-import Icon from '../components/Icon';
-import ListItem from '../components/ListItem';
 import ScreenVarient from '../components/ScreenVarient';
 import colors from '../configs/colors';
 
@@ -30,19 +28,14 @@ const listings = [
 ];
 function PatientHome({navigation}) {
     return (
-        <ScreenVarient>
-            <View style={styles.navigationPanel}>
-                <TouchableOpacity onPress={() => navigation.navigate("PatientNavigation")}>
-                 
-                <ListItem  
-          IconComponent={<Icon name="menu" size={60} backgroundColor={"#e8e8e8"} iconColor={"#3d4db7"} />}
-                />
+        <ScreenVarient >
+                <TouchableOpacity onPress={() => navigation.navigate("PatientNavigation")}  >
+                <AntDesign name="menufold" size={24} color="black" style={styles.navigationPanel}/>
                 </TouchableOpacity>
-           </View>
-            <View style={styles.screen}>
-            <FlatList
-            data={listings}
-            keyExtractor={listing => listing.id.toString()}
+            <View style={styles.screen} >
+                 <FlatList
+                  data={listings}
+                 keyExtractor={listing => listing.id.toString()}
             renderItem={({item}) =>
             <Card
             title={item.title}
@@ -54,18 +47,17 @@ function PatientHome({navigation}) {
         </ScreenVarient>
     );
 }
-
 const styles = StyleSheet.create({
     screen:{
         flex:1,
-        padding:20,
-        paddingTop:10,
+        paddingTop:30,
         backgroundColor:colors.lightGrey,
     },
     navigationPanel:{
         backgroundColor:colors.lightGrey,
-        marginLeft:-20,
-        marginTop:-20
+        paddingTop:15,
+        paddingLeft:"3.5%",
+        // width:30,
     }
 });
 export default PatientHome;

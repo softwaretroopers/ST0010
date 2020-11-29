@@ -2,9 +2,9 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import PatientAccInfo from "../screens/PatientAccInfo";
-import PatientAppointment from "../screens/PatientAppointment";
-import PatientNewsFeed from "../screens/PatientNewsFeed";
+import PatientAccInfo from "../../screens/PatientAccInfo";
+import PatientAppointment from "../../screens/PatientAppointment";
+import PatientNewsFeed from "../../screens/PatientNewsFeed";
 import FeedNavigator from "./FeedNavigator";
 
 const Tab = createBottomTabNavigator();

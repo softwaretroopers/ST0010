@@ -1,4 +1,5 @@
 import React from "react";
+
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import * as Yup from "yup";
@@ -13,7 +14,7 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(8).label("Password"),
 });
 
-function PatientLogin(props) {
+function PatientLogin({navigation}) {
   return (
     <Screen style={styles.container}>
       <AppForm
@@ -48,7 +49,7 @@ function PatientLogin(props) {
             textContentType="password"
           />
           <SubmitButton title="login" color="patientPrimary" />
-          <TouchableOpacity onPress={console.log("Pressed")}>
+            <TouchableOpacity onPress={navigation.navigate("PatientRegister")} >
             <Text style={styles.registerButton}>Create an account</Text>
           </TouchableOpacity>
         </View>

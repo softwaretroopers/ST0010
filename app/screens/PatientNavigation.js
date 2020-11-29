@@ -6,6 +6,8 @@ import Icon from "../components/Icon";
 import ListItem from "../components/ListItem";
 import colors from "../configs/colors";
 import ScreenVarient from "../components/ScreenVarient";
+import Patient from "../screens/PatientLogin";
+
 
 const menuItems = [
   {
@@ -28,14 +30,15 @@ const menuItems = [
       name: "help",
       backgroundColor: colors.black,
     },
+    targetScreen: "PatientLogin",
   },
 ];
 
-function PatientNavigation(props) {
+function PatientNavigation({navigation}) {
   return (
     <ScreenVarient>
       <View style={styles.screen}>
-        <View style={styles.container}>
+        <View style={styles.containerTop}>
           <ListItem
             title="Mr.Anonymous"
             image={require("../assets/logo.png")}
@@ -64,6 +67,7 @@ function PatientNavigation(props) {
             IconComponent={
               <MaterialCommunityIcons name="logout" size={40} color="black" />
             }
+            onPress = { () => navigation.navigate("PatientLogin")}
           />
         </View>
       </View>
@@ -73,11 +77,15 @@ function PatientNavigation(props) {
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 15,
-    backgroundColor: colors.white,
-  },
-  screen: {
+     marginBottom:"8%",
     backgroundColor: colors.lightGrey,
+  },
+  containerTop: {
+    marginBottom:"8%",
+   backgroundColor: colors.lightGrey,
+ },
+  screen: {
+    backgroundColor: colors.white,
     flex: 1,
   },
 });

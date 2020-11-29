@@ -48,7 +48,7 @@ const genders = [
   },
 ];
 
-function PatientRegister() {
+function PatientRegister({navigation}) {
   return (
     <Screen style={styles.container}>
       <AppForm

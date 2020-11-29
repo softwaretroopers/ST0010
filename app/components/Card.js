@@ -6,29 +6,33 @@ import AppText from './AppText';
 
 function Card({title , des , image}) {
     return (
-        <View style={styles.card}>
+        
+            <View style={styles.card}>
             <View style={styles.container}>
             <Image style={styles.image} source={image} />
             <AppText style={styles.des}>{des}</AppText>
             </View>
             <AppText style={styles.title}>{title}</AppText>
-        </View>
+            </View>
+
     );
 }
 
 const styles = StyleSheet.create({
     card:{
-        borderRadius:25,
+        borderRadius:35,
         backgroundColor:colors.white,
-        marginBottom:"15%",
+        height:170,
+        marginBottom:"8%",
+        marginLeft:20,
+        marginRight:20,
         padding:'5%',
-        shadowColor:colors.patientPrimary,
+        shadowColor:colors.danger,
         shadowOffset:{width:0,height:10},
         shadowOpacity:1,
         shadowRadius:10,
         elevation:10,
-        marginLeft:10,
-        marginRight:10
+       
     },  
     container:{
         flexDirection:"row", 
@@ -41,7 +45,7 @@ const styles = StyleSheet.create({
         width:"30%"
     },
     title:{
-        marginLeft:30,
+        marginLeft:10,
         fontWeight:'bold'
     }
 

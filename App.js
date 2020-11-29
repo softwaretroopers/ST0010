@@ -1,13 +1,13 @@
-import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import AuthNavigator from "./app/navigation/AuthNavigation";
+import { NavigationContainer } from "@react-navigation/native";
 import {createStackNavigator} from '@react-navigation/stack';
 
+import AuthNavigator from "./app/navigation/Patient/AuthNavigation";
 import DatePicker from "./app/screens/DatePicker";
-import AppNavigator from "./app/navigation/AppNavigator";
+import AppNavigator from "./app/navigation/Patient/AppNavigator";
 
 export default function App() {
   return <NavigationContainer>
-    <AppNavigator/>
+    <AuthNavigator/>
   </NavigationContainer>;
 }
