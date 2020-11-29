@@ -4,20 +4,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../configs/colors";
 
-function AppText({ children, style, icon }) {
-  return (
-    <>
-      {icon && (
-        <MaterialCommunityIcons
-          name={icon}
-          size={20}
-          color={colors.black}
-          style={styles.icon}
-        />
-      )}
-      <Text style={[styles.text, style]}>{children}</Text>
-    </>
-  );
+function AppText({ children, style }) {
+  return <Text style={[styles.text, style]}>{children}</Text>;
 }
 const styles = StyleSheet.create({
   text: {
@@ -31,11 +19,6 @@ const styles = StyleSheet.create({
         fontFamily: "Roboto",
       },
     }),
-  },
-  icon: {
-    position: "absolute",
-    marginLeft: "5%",
-    marginTop: "8%",
   },
 });
 

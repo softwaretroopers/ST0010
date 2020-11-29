@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Alert } from "react-native";
 import * as Yup from "yup";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import {
   AppForm,
@@ -9,6 +10,8 @@ import {
   SubmitButton,
 } from "../components/forms";
 import Screen from "../components/Screen";
+import PickerItemVariant from "../components/PickerItemVariant";
+import colors from "../configs/colors";
 
 const validationSchema = Yup.object().shape({
   fName: Yup.string().required().min(1).label("First Name"),
@@ -25,9 +28,24 @@ const validationSchema = Yup.object().shape({
 });
 
 const genders = [
-  { label: "Male", value: 1 },
-  { label: "Female", value: 2 },
-  { label: "Other", value: 3 },
+  {
+    label: "Male",
+    value: 1,
+    backgroundColor: colors.patientPrimary,
+    name: "gender-male",
+  },
+  {
+    label: "Female",
+    value: 2,
+    backgroundColor: colors.patientPrimary,
+    name: "gender-female",
+  },
+  {
+    label: "Other",
+    value: 3,
+    backgroundColor: colors.patientPrimary,
+    name: "gender-transgender",
+  },
 ];
 
 function PatientRegister() {
@@ -82,6 +100,9 @@ function PatientRegister() {
             name="gender"
             placeholder="Gender"
             icon="gender-male-female"
+            numberOfColumns={3}
+            PickerItemComponent={PickerItemVariant}
+            IconFamily={MaterialCommunityIcons}
           />
           <AppFormFieldVariant
             maxLength={3}

@@ -6,6 +6,7 @@ import {
   Modal,
   FlatList,
 } from "react-native";
+import { Entypo } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./AppText";
@@ -14,7 +15,16 @@ import Screen from "./Screen";
 import PickerItem from "./PickerItem";
 import colors from "../configs/colors";
 
-function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
+function AppPicker({
+  PickerItemComponent = PickerItem,
+  icon,
+  items,
+  numberOfColumns = 1,
+  onSelectItem,
+  placeholder,
+  selectedItem,
+  IconFamily,
+}) {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -57,11 +67,12 @@ function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
           <FlatList
             style={styles.list}
             data={items}
+            numColumns={numberOfColumns}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
-              <PickerItem
-                style={styles.item}
-                label={item.label}
+              <PickerItemComponent
+                IconFamily={IconFamily}
+                item={item}
                 onPress={() => {
                   setModalVisible(false);
                   onSelectItem(item);

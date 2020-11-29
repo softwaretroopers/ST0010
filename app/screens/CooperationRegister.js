@@ -1,7 +1,9 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import * as Yup from "yup";
+import { FontAwesome5 } from "@expo/vector-icons";
 
+import colors from "../configs/colors";
 import Screen from "../components/Screen";
 import {
   AppForm,
@@ -9,6 +11,7 @@ import {
   AppFormPickerVariant,
   SubmitButton,
 } from "../components/forms";
+import PickerItemVariant from "../components/PickerItemVariant";
 
 const validationSchema = Yup.object().shape({
   companyName: Yup.object().required().label("Company Name"),
@@ -16,9 +19,24 @@ const validationSchema = Yup.object().shape({
 });
 
 const companies = [
-  { label: "ABC (PVT) LTD", value: 1 },
-  { label: "GFP (PVT) LTD", value: 2 },
-  { label: "ST (PVT) LTD", value: 3 },
+  {
+    label: "ABC (PVT) LTD",
+    value: 1,
+    backgroundColor: colors.patientPrimary,
+    name: "building",
+  },
+  {
+    label: "GFP (PVT) LTD",
+    value: 2,
+    backgroundColor: colors.patientPrimary,
+    name: "building",
+  },
+  {
+    label: "ST (PVT) LTD",
+    value: 3,
+    backgroundColor: colors.patientPrimary,
+    name: "building",
+  },
 ];
 
 function CooperationRegister(props) {
@@ -34,7 +52,10 @@ function CooperationRegister(props) {
             desc="Select your Cooperation"
             items={companies}
             name="companyName"
-            icon="office-building"
+            placeholderIcon="office-building"
+            numberOfColumns={3}
+            PickerItemComponent={PickerItemVariant}
+            IconFamily={FontAwesome5}
           />
           <AppFormField
             autoCapitalize="none"
