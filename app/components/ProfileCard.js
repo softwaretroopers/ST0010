@@ -2,6 +2,7 @@ import React from 'react';
 import { View , StyleSheet, ImageBackground } from 'react-native';
 import { Fontisto } from '@expo/vector-icons'; 
 import { FontAwesome } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons'; 
 
 import colors from '../configs/colors';
 import AppText from './AppText';
@@ -45,11 +46,11 @@ function profileCard({
                                 <View style={styles.Calltype}>
                                   <ProfileCardListItem
                                      title={Callprice}
-                                     IconComponent={<Icon IconFamily={Fontisto} name={"doctor"} size={25} color="white" />}
+                                     IconComponent={<Icon IconFamily={MaterialIcons} name={"keyboard-voice"} size={25} color="white" />}
                                   />
                                   <ProfileCardListItem
                                     title={Videoprice}
-                                    IconComponent={<Icon IconFamily={Fontisto} name={"doctor"} size={25} color="white" />}
+                                    IconComponent={<Icon name={"video-camera"} size={25} color="white" />}
                                   />
                                 </View>
                     </View>

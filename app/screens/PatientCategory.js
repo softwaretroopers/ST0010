@@ -1,10 +1,13 @@
 import React from 'react';
-import { View ,StyleSheet } from 'react-native';
+import { View ,StyleSheet, Text } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import AppButton from '../components/AppButton';
+import AppText from '../components/AppText';
 
 import ProfileCard from '../components/ProfileCard';
 import ScreenVarient from '../components/ScreenVarient';
+import colors from '../configs/colors';
+
 const list = [
     {
         id:"1",
@@ -19,10 +22,10 @@ const list = [
     }
 ]
 function PatientCategory(props) {
-   
     return (
        <ScreenVarient>
-           <View style={styles.screen}>
+        
+           <View style={styles.screen} >
                <FlatList
                 data={list}
                 keyExtractor={list => list.id.toString()}
