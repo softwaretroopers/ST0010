@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { View } from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-import AppButtonVariant from "../components/AppButtonVariant";
-import Screen from "../components/Screen";
+import AppButtonVariant from "./AppButtonVariant";
 
 const DatePicker = () => {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);

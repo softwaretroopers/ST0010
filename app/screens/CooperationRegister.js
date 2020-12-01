@@ -15,7 +15,7 @@ import PickerItemVariant from "../components/PickerItemVariant";
 
 const validationSchema = Yup.object().shape({
   companyName: Yup.object().required().label("Company Name"),
-  empID: Yup.string().required().min(8).label("Password"),
+  empID: Yup.string().required().min(8).label("Employee ID"),
 });
 
 const companies = [

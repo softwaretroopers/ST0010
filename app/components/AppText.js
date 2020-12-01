@@ -1,8 +1,5 @@
 import React from "react";
 import { Text, StyleSheet, Platform } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-
-import colors from "../configs/colors";
 
 function AppText({ children, style }) {
   return <Text style={[styles.text, style]}>{children}</Text>;
