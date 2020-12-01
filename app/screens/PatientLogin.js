@@ -49,7 +49,7 @@ function PatientLogin({navigation}) {
             textContentType="password"
           />
           <SubmitButton title="login" color="patientPrimary" />
-            <TouchableOpacity onPress={navigation.navigate("PatientRegister")} >
+            <TouchableOpacity >
             <Text style={styles.registerButton}>Create an account</Text>
           </TouchableOpacity>
         </View>

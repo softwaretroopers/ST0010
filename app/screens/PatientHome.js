@@ -29,9 +29,9 @@ const listings = [
 function PatientHome({navigation}) {
     return (
         <ScreenVarient >
-                <TouchableOpacity onPress={() => navigation.navigate("PatientNavigation")}  >
-                <AntDesign name="menufold" size={24} color="black" style={styles.navigationPanel}/>
-                </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("PatientNavigation")}  >
+        <AntDesign name="menufold" size={24} color="black" style={styles.navigationPanel}/>
+        </TouchableOpacity>
             <View style={styles.screen} >
                  <FlatList
                   data={listings}

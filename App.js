@@ -4,11 +4,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import AuthNavigator from "./app/navigation/Patient/AuthNavigation";
 import AppNavigator from "./app/navigation/Patient/AppNavigator";
+import PatientCategory from "./app/screens/PatientCategory";
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <AuthNavigator />
-    </NavigationContainer>
-  );
+  return <PatientCategory/>;
 }

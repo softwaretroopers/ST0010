@@ -1,19 +1,17 @@
 import React from 'react';
-import { View ,StyleSheet , Image ,TouchableOpacity } from 'react-native';
+import { View ,StyleSheet , Image } from 'react-native';
 
 import colors from '../configs/colors';
 import AppText from './AppText';
 
-function ListItem({
+function ProfileCardListItem({
     title,
     subtitle,
     image,
     IconComponent,
-    onPress , 
     style
     }) {
     return (
-        <TouchableOpacity onPress={onPress}>
        <View style={[styles.container,style]}>
            {IconComponent}
            {image && <Image style={styles.image} source={image}/>}
@@ -22,14 +20,13 @@ function ListItem({
              {subtitle && <AppText>{subtitle}</AppText>}
            </View>
        </View>
-       </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
     container:{
         flexDirection:"row",
-        padding:15,
+        padding:5,
     },
     containerDetails:{
         marginLeft:10,
@@ -41,8 +38,9 @@ const styles = StyleSheet.create({
         borderRadius:35,
     },
     title:{
-        fontSize:16,
+        color:colors.white,
+        fontSize:14,
         fontWeight:'bold'
     }
 })
-export default ListItem;
+export default ProfileCardListItem;

@@ -27,10 +27,10 @@ const styles = StyleSheet.create({
         marginLeft:20,
         marginRight:20,
         padding:'5%',
-        shadowColor:colors.danger,
+        shadowColor:colors.patientPrimary,
         shadowOffset:{width:0,height:10},
         shadowOpacity:1,
-        shadowRadius:10,
+        shadowRadius:10,  
         elevation:10,
        
     },  
