@@ -6,7 +6,6 @@ import {
   Modal,
   FlatList,
 } from "react-native";
-import { Entypo } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./AppText";
