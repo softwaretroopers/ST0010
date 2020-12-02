@@ -1,7 +1,19 @@
 import React, { useState } from "react";
-import { StyleSheet, View, TouchableOpacity, Text, Modal } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Text,
+  Modal,
+  Switch,
+} from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../configs/colors";
+import AppText from "./AppText";
+import Icon from "./Icon";
+import AppButton from "./AppButton";
+import AppButtonVariant from "./AppButtonVariant";
 
 function TimeSlot({
   color,
@@ -12,6 +24,9 @@ function TimeSlot({
   secondaryTimeSlotFourth,
 }) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [secondModalVisible, setSecondModalVisible] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   return (
     <View style={styles.centeredView}>
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
@@ -24,6 +39,9 @@ function TimeSlot({
                 padding: 10,
                 margin: 10,
               }}
+              onPress={() => {
+                setSecondModalVisible(true);
+              }}
             >
               <Text style={styles.modalText}>{secondaryTimeSlotFirst}</Text>
             </TouchableOpacity>
@@ -33,6 +51,9 @@ function TimeSlot({
                 borderRadius: 10,
                 padding: 10,
                 margin: 10,
+              }}
+              onPress={() => {
+                setSecondModalVisible(true);
               }}
             >
               <Text style={styles.modalText}>{secondaryTimeSlotSecond}</Text>
@@ -44,6 +65,9 @@ function TimeSlot({
                 padding: 10,
                 margin: 10,
               }}
+              onPress={() => {
+                setSecondModalVisible(true);
+              }}
             >
               <Text style={styles.modalText}>{secondaryTimeSlotThird}</Text>
             </TouchableOpacity>
@@ -54,21 +78,97 @@ function TimeSlot({
                 padding: 10,
                 margin: 10,
               }}
+              onPress={() => {
+                setSecondModalVisible(true);
+              }}
             >
               <Text style={styles.modalText}>{secondaryTimeSlotFourth}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={{ ...styles.openButton, backgroundColor: colors.black }}
+              style={{
+                marginTop: 10,
+              }}
               onPress={() => {
                 setModalVisible(!modalVisible);
               }}
             >
-              <Text style={styles.textStyle}>Close</Text>
+              <Icon name="cross" backgroundColor={colors.black}></Icon>
             </TouchableOpacity>
           </View>
         </View>
       </Modal>
-
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={secondModalVisible}
+      >
+        <View style={styles.bottomView}>
+          <View style={styles.secondModalView}>
+            <View
+              style={{
+                flexDirection: "row",
+                padding: 20,
+              }}
+            >
+              <MaterialCommunityIcons
+                name="microphone"
+                size={26}
+                style={{
+                  color: colors.white,
+                  marginRight: 5,
+                }}
+              />
+              <AppText
+                style={{
+                  fontWeight: "bold",
+                  color: colors.white,
+                }}
+              >
+                Audio Call
+              </AppText>
+              <Switch
+                style={{
+                  marginHorizontal: 10,
+                }}
+                trackColor={{ false: colors.medium, true: colors.lightGrey }}
+                thumbColor={isEnabled ? colors.yes : colors.no}
+                ios_backgroundColor="#3e3e3e"
+                onValueChange={toggleSwitch}
+                value={isEnabled}
+              />
+              <MaterialCommunityIcons
+                name="video"
+                size={26}
+                style={{
+                  color: colors.white,
+                  marginRight: 5,
+                }}
+              />
+              <AppText
+                style={{
+                  color: colors.white,
+                  fontWeight: "bold",
+                }}
+              >
+                Video Call
+              </AppText>
+            </View>
+            <AppButtonVariant title="submit" color="black"></AppButtonVariant>
+            <TouchableOpacity
+              style={{
+                padding: 10,
+                alignSelf: "flex-end",
+                position: "absolute",
+              }}
+              onPress={() => {
+                setSecondModalVisible(!secondModalVisible);
+              }}
+            >
+              <Icon name="cross"></Icon>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
       <TouchableOpacity
         style={{
           backgroundColor: colors[color],
@@ -113,6 +213,8 @@ const styles = StyleSheet.create({
   modalView: {
     margin: 20,
     backgroundColor: "white",
+    borderColor: colors.medium,
+    borderWidth: 1,
     borderRadius: 15,
     padding: 35,
     alignItems: "center",
@@ -133,7 +235,7 @@ const styles = StyleSheet.create({
   },
   modalText: {
     textAlign: "center",
-    color: "white",
+    color: colors.white,
     fontWeight: "bold",
     textAlign: "center",
     fontSize: 20,
@@ -147,6 +249,29 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     marginTop: 10,
+  },
+  bottomView: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "stretch",
+  },
+  secondModalView: {
+    marginTop: 10,
+    backgroundColor: colors.patientPrimary,
+    borderColor: colors.medium,
+    borderWidth: 1,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
 });
 
