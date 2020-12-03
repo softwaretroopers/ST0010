@@ -1,7 +1,6 @@
 import React from 'react';
-import { View , StyleSheet } from 'react-native';
+import { View , StyleSheet , FlatList } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons'; 
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 
 import Icon from "../components/Icon";
 import DoctorListItem from '../components/DoctorListItem';
@@ -34,12 +33,8 @@ const completeList=[
 
 function DoctorUpcoming(props) {
     return (
-        <ScreenVarient>
+    
             <View style={styles.screen}>
-                <View style={styles.Header} >
-                    <AppText style={styles.HeaderText}>Upcoming</AppText>
-                </View>
-
             <View style={styles.container}>
              <FlatList
                 data={completeList}
@@ -61,7 +56,6 @@ function DoctorUpcoming(props) {
              />
             </View>
             </View>
-        </ScreenVarient>
     );
 }
 
@@ -69,11 +63,6 @@ const styles = StyleSheet.create({
     screen:{
         backgroundColor:colors.lightGrey,
         flex:1,
-        paddingTop:10
-    },
-    Header:{
-        padding:10,
-        marginBottom:20
     },
     HeaderText:{
         fontWeight:'bold',

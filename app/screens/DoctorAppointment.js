@@ -1,8 +1,6 @@
 import React from 'react';
-import { View , StyleSheet } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { View , StyleSheet , FlatList} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons'; 
-import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 import Icon from "../components/Icon";
 import DoctorListItem from '../components/DoctorListItem';

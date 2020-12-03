@@ -1,6 +1,5 @@
 import React from 'react';
-import { View , StyleSheet, Image } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { View , StyleSheet, FlatList } from 'react-native';
 import AppButton from '../components/AppButton';
 
 import AppText from '../components/AppText';

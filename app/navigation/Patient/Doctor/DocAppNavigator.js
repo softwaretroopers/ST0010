@@ -3,10 +3,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons'; 
 
-import DoctorAccInfo from "../../../screens/DoctorAccInfo";
-import FeedNavigator from "../FeedNavigator";
-import PatientNewsFeed from "../../../screens/PatientNewsFeed";
+
 import PatientAppointment from "../../../screens/PatientAppointment";
+import DocTopNavigator from "./DocTopNavigator";
+import DoctorAppointment from "../../../screens/DoctorAppointment";
+import DoctorCompleted from "../../../screens/DoctorCompleted";
+import DoctorAccInfo from "../../../screens/DoctorAccInfo";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +17,7 @@ const DocAppNavigator = () => (
 
         <Tab.Screen
         name="Home"
-        component={FeedNavigator}
+        component={DocTopNavigator}
         options={{
             tabBarIcon: ({ color,size }) =>
             <MaterialCommunityIcons name="home" color={color} size={size}/>
@@ -24,7 +26,7 @@ const DocAppNavigator = () => (
 
          <Tab.Screen
         name="Appointment"
-        component={PatientNewsFeed}
+        component={DoctorAppointment}
         options={{
             tabBarIcon: ({ color,size }) =>
             <MaterialCommunityIcons name="calendar" color={color} size={size}/>
@@ -42,7 +44,7 @@ const DocAppNavigator = () => (
 
          <Tab.Screen
         name="Completed"
-        component={DoctorAccInfo}
+        component={DoctorCompleted}
         options={{
             tabBarIcon: ({ color,size }) =>
             <MaterialCommunityIcons name="view-grid-plus" color={color} size={size}/>
@@ -62,3 +64,4 @@ const DocAppNavigator = () => (
 );
 
 export default DocAppNavigator;
+

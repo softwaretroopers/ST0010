@@ -14,7 +14,7 @@ function DateCard({ day, date }) {
         </AppText>
         <AppText style={{ fontSize: 14 }}>({date})</AppText>
       </View>
-      <View>
+      <View>                        
         <View style={styles.timeSlotContainer}>
           <TouchableWithoutFeedback style={styles.timeSlot}>
             <AppText style={styles.timeSlotText}>01:00 PM - 02:00 PM</AppText>
