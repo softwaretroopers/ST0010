@@ -25,7 +25,7 @@ function TimeSlotVariant({ primaryTimeSlot }) {
           disabled={false}
           value={toggleCheckBox}
           onValueChange={(newValue) => setToggleCheckBox(newValue)}
-          tintColors={("green", "red")}
+          tintColors={{ true: colors.white, false: colors.black }}
         />
       </TouchableOpacity>
     </View>
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     fontSize: 20,
+    padding: 5,
   },
 });
 
