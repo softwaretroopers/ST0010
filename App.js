@@ -3,7 +3,7 @@ import React from "react";
 import DocAppNavigator from "./app/navigation/Patient/Doctor/DocAppNavigator";
 import DocTopNavigator from "./app/navigation/Patient/Doctor/DocTopNavigator";
 
-import PatientHome from "./app/screens/PatientHome";
+import PatientHome from "./app/screens/Patient/PatientHome";
 
 export default function App() {
 

@@ -2,11 +2,11 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 
 import WelcomeScreen from '../../screens/WelcomeScreen';
-import DoctorLogin from '../../screens/DoctorLogin';
-import CooperationLogin from '../../screens/CooperationLogin';
+import DoctorLogin from '../../screens/Doctor/DoctorLogin';
+import CooperationLogin from '../../screens/Cooperation/CooperationLogin';
 import PatientAuthNavigtion from './PatientAuthNavigtion';
-import PatientLogin from '../../screens/PatientLogin';
-import PatientRegister from '../../screens/PatientRegister';
+import PatientLogin from '../../screens/Patient/PatientLogin';
+import PatientRegister from '../../screens/Patient/PatientRegister';
 
 const Stack= createStackNavigator();
 

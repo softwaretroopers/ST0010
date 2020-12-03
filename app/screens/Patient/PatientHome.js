@@ -2,9 +2,9 @@ import React from 'react';
 import { FlatList , StyleSheet, View ,TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
 
-import Card from '../components/Card';
-import ScreenVarient from '../components/ScreenVarient';
-import colors from '../configs/colors';
+import Card from '../../components/Card';
+import ScreenVarient from '../../components/ScreenVarient';
+import colors from '../../configs/colors';
 
 const listings = [
     {

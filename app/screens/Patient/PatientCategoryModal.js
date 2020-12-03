@@ -1,9 +1,9 @@
 import React from 'react';
 import { View ,StyleSheet , FlatList} from 'react-native';
 
-import AppButton from '../components/AppButton';
-import ProfileCard from '../components/ProfileCard';
-import ScreenVarient from '../components/ScreenVarient';
+import AppButton from '../../components/AppButton';
+import ProfileCard from '../../components/ProfileCard';
+import ScreenVarient from '../../components/ScreenVarient';
 
 const list = [
     {

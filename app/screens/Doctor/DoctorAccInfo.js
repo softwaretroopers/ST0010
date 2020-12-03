@@ -1,12 +1,12 @@
 import React from 'react';
 import { View ,StyleSheet, Button, FlatList } from 'react-native';
 
-import AppText from '../components/AppText';
-import Card from '../components/Card';
-import Icon from '../components/Icon';
-import ListItem from '../components/ListItem';
-import ScreenVarient from '../components/ScreenVarient';
-import colors from '../configs/colors';
+import AppText from '../../components/AppText';
+import Card from '../../components/Card';
+import Icon from '../../components/Icon';
+import ListItem from '../../components/ListItem';
+import ScreenVarient from '../../components/ScreenVarient';
+import colors from '../../configs/colors';
 
 const listing=[
     {

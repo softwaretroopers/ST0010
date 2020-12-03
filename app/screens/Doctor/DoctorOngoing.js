@@ -1,12 +1,12 @@
 import React from 'react';
-import { View , StyleSheet , FlatList } from 'react-native';
+import { View , StyleSheet , TouchableOpacity , FlatList} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons'; 
 
-import Icon from "../components/Icon";
-import DoctorListItem from '../components/DoctorListItem';
-import ScreenVarient from '../components/ScreenVarient';
-import colors from '../configs/colors';
-import AppText from '../components/AppText';
+import Icon from "../../components/Icon";
+import DoctorListItem from '../../components/DoctorListItem';
+import ScreenVarient from '../../components/ScreenVarient';
+import colors from '../../configs/colors';
+import AppText from '../../components/AppText';
 
 const completeList=[
     {
@@ -31,7 +31,7 @@ const completeList=[
     }
 ]
 
-function DoctorUpcoming(props) {
+function DoctorOngoing(props) {
     return (
     
             <View style={styles.screen}>
@@ -43,19 +43,19 @@ function DoctorUpcoming(props) {
                 <DoctorListItem
                     title={item.title}
                     calltype={item.calltype}
-                    time={item.time}
                     iconType={
                         <Icon IconFamily={MaterialIcons} name={item.icon.name} size={25} backgroundColor={colors.doctorPrimary} /> }
                         date={item.date}
-                        // button={
-                        //          <Icon IconFamily={MaterialIcons} name="chat" size={25} backgroundColor={colors.doctorPrimary} />
-                        // }
-                        // btnName="chat"
+                        button={
+                                 <Icon IconFamily={MaterialIcons} name="chat" size={25} backgroundColor={colors.doctorPrimary} />
+                        }
+                        btnName="chat"
                 />
                 }
              />
             </View>
             </View>
+  
     );
 }
 
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
         color:colors.doctorPrimary
     }
 })
-export default DoctorUpcoming;
+export default DoctorOngoing;

@@ -2,11 +2,11 @@ import React from 'react';
 import { View , StyleSheet , FlatList} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons'; 
 
-import Icon from "../components/Icon";
-import DoctorListItem from '../components/DoctorListItem';
-import ScreenVarient from '../components/ScreenVarient';
-import colors from '../configs/colors';
-import AppText from '../components/AppText';
+import Icon from "../../components/Icon";
+import DoctorListItem from '../../components/DoctorListItem';
+import ScreenVarient from '../../components/ScreenVarient';
+import colors from '../../configs/colors';
+import AppText from '../../components/AppText';
 
 const completeList=[
     {
@@ -14,25 +14,23 @@ const completeList=[
         title:'Miss.Nithya',
         date:'21/09/2020',
         time:'3.15 PM - 3.30 PM',
-        calltype:'Voice Call',
-        icon:'video-call'
+        calltype:'Voice Call'
     },
     {
         id:2,
         title:'Miss.Nithya',
         date:'21/09/2020',
         time:'3.15 PM - 3.30 PM',
-        calltype:'Voice Call',
-        icon:'keyboard-voice'
+        calltype:'Voice Call'
     }
 ]
 
-function DoctorAppointment(props) {
+function DoctorCompleted(props) {
     return (
         <ScreenVarient>
             <View style={styles.screen}>
                 <View style={styles.Header} >
-                    <AppText style={styles.HeaderText}>Appointments</AppText>
+                    <AppText style={styles.HeaderText}>Completed</AppText>
                 </View>
 
             <View style={styles.container}>
@@ -46,8 +44,8 @@ function DoctorAppointment(props) {
                     time={item.time}
                     calltype={item.calltype}
                     iconType={
-                    <Icon IconFamily={MaterialIcons} name={item.icon} size={25} backgroundColor={colors.doctorPrimary} /> }
-                />
+                    <Icon IconFamily={MaterialIcons} name="keyboard-voice" size={25} backgroundColor={colors.doctorPrimary} /> }
+                    />
                 }
              />
             </View>
@@ -73,4 +71,4 @@ const styles = StyleSheet.create({
         color:colors.doctorPrimary
     }
 })
-export default DoctorAppointment;
+export default DoctorCompleted;

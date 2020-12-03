@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import * as Yup from "yup";
 
-import Screen from "../components/Screen";
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
-import AppText from "../components/AppText";
-import AppButtonVariant from "../components/AppButtonVariant";
+import Screen from "../../components/Screen";
+import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
+import AppText from "../../components/AppText";
+import AppButtonVariant from "../../components/AppButtonVariant";
 
 const validationSchema = Yup.object().shape({
   empName: Yup.string().required().min(2).label("Name"),

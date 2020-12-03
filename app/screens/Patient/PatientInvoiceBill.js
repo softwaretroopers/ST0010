@@ -1,13 +1,13 @@
 import React from 'react';
 import { View , StyleSheet, FlatList } from 'react-native';
-import AppButton from '../components/AppButton';
+import AppButton from '../../components/AppButton';
 
-import AppText from '../components/AppText';
-import Card from '../components/Card';
-import ListItem from '../components/ListItem';
-import ProfileCardListItem from '../components/ProfileCardListItem';
-import ScreenVarient from '../components/ScreenVarient';
-import colors from '../configs/colors';
+import AppText from '../../components/AppText';
+import Card from '../../components/Card';
+import ListItem from '../../components/ListItem';
+import ProfileCardListItem from '../../components/ProfileCardListItem';
+import ScreenVarient from '../../components/ScreenVarient';
+import colors from '../../configs/colors';
 
 const DocProfile = [
     {

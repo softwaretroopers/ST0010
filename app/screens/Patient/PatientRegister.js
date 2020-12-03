@@ -8,10 +8,10 @@ import {
   AppFormFieldVariant,
   AppFormPicker,
   SubmitButton,
-} from "../components/forms";
-import Screen from "../components/Screen";
-import PickerItemVariant from "../components/PickerItemVariant";
-import colors from "../configs/colors";
+} from "../../components/forms";
+import Screen from "../../components/Screen";
+import PickerItemVariant from "../../components/PickerItemVariant";
+import colors from "../../configs/colors";
 
 const validationSchema = Yup.object().shape({
   fName: Yup.string().required().min(1).label("First Name"),

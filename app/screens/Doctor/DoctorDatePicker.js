@@ -1,9 +1,9 @@
 import React from "react";
 import { ScrollView } from "react-native";
 
-import AppButtonVariant from "../components/AppButtonVariant";
-import Screen from "../components/Screen";
-import TimeSlotVariant from "../components/TimeSlotVariant";
+import AppButtonVariant from "../../components/AppButtonVariant";
+import Screen from "../../components/Screen";
+import TimeSlotVariant from "../../components/TimeSlotVariant";
 
 function DoctorDatePicker(props) {
   return (

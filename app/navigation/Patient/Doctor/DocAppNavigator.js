@@ -4,11 +4,12 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons'; 
 
 
-import PatientAppointment from "../../../screens/PatientAppointment";
+import PatientAppointment from "../../../screens/Patient/PatientAppointment";
 import DocTopNavigator from "./DocTopNavigator";
-import DoctorAppointment from "../../../screens/DoctorAppointment";
-import DoctorCompleted from "../../../screens/DoctorCompleted";
-import DoctorAccInfo from "../../../screens/DoctorAccInfo";
+import DoctorAppointment from "../../../screens/Doctor/DoctorAppointment";
+import DoctorCompleted from "../../../screens/Doctor/DoctorCompleted";
+import DoctorAccInfo from "../../../screens/Doctor/DoctorAccInfo";
+import colors from "../../../configs/colors";
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +21,7 @@ const DocAppNavigator = () => (
         component={DocTopNavigator}
         options={{
             tabBarIcon: ({ color,size }) =>
-            <MaterialCommunityIcons name="home" color={color} size={size}/>
+            <MaterialCommunityIcons name="home" color={"#009687"} size={size}/>
         }}
         />
 

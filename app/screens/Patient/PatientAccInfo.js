@@ -1,12 +1,12 @@
 import React from "react";
 import { View, StyleSheet, Button } from "react-native";
 
-import Icon from "../components/Icon";
-import ScreenVarient from "../components/ScreenVarient";
-import ListItem from "../components/ListItem";
-import colors from "../configs/colors";
-import AppText from "../components/AppText";
-import AppButton from "../components/AppButton";
+import Icon from "../../components/Icon";
+import ScreenVarient from "../../components/ScreenVarient";
+import ListItem from "../../components/ListItem";
+import colors from "../../configs/colors";
+import AppText from "../../components/AppText";
+import AppButton from "../../components/AppButton";
 
 function PatientAccInfo(props) {
   return (

@@ -1,40 +1,47 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import * as Yup from "yup";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import {
   AppForm,
   AppFormFieldVariant,
   SubmitButton,
-} from "../components/forms";
-import Screen from "../components/Screen";
+} from "../../components/forms";
+import Screen from "../../components/Screen";
+import colors from "../../configs/colors";
 
 const validationSchema = Yup.object().shape({
-  mNumber: Yup.string().required().min(10).max(10).label("Mobile Number"),
+  oTP: Yup.string().required().min(6).max(6).label("OTP"),
 });
 
-function MNumberConfirmation({ icon, ...otherProps }) {
+function OTPConfirmation({ icon, ...otherProps }) {
   return (
     <Screen>
       <AppForm
         initialValues={{
-          mNumber: "",
+          oTP: "",
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
         <View style={styles.container}>
-          <Text style={styles.text}>What's Your Mobile Number?</Text>
+          <Text style={styles.text}>Enter the code you recieved via SMS</Text>
+          <MaterialCommunityIcons
+            size={50}
+            color={colors.patientPrimary}
+            style={styles.iconContainer}
+            name="cellphone-message"
+          ></MaterialCommunityIcons>
           <AppFormFieldVariant
-            name="mNumber"
-            placeholder="Enter your Mobile Number"
-            icon="phone"
+            name="oTP"
+            placeholder="XXXXXX"
             keyboardType="number-pad"
-            maxLength={10}
+            maxLength={6}
           />
         </View>
         <View style={styles.buttonContainer}>
-          <SubmitButton title="Send otp" color="patientPrimary" />
+          <SubmitButton title="Submit" color="patientPrimary" />
         </View>
       </AppForm>
     </Screen>
@@ -48,14 +55,14 @@ const styles = StyleSheet.create({
     marginBottom: "10%",
   },
   container: {
-    marginTop: "10%",
+    marginTop: "20%",
     justifyContent: "center",
     alignItems: "center",
   },
   buttonContainer: {
-    width: "80%",
+    width: "60%",
     padding: 20,
   },
 });
 
-export default MNumberConfirmation;
+export default OTPConfirmation;

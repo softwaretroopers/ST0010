@@ -1,8 +1,8 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-import DoctorOngoing from '../../../screens/DoctorOngoing';
-import DoctorUpcoming from '../../../screens/DoctorUpcoming';
+import DoctorOngoing from '../../../screens/Doctor/DoctorOngoing';
+import DoctorUpcoming from '../../../screens/Doctor/DoctorUpcoming';
 import ScreenVarient from '../../../components/ScreenVarient';
 import colors from '../../../configs/colors';
 

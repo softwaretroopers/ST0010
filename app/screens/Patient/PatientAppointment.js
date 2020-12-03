@@ -1,7 +1,7 @@
 import React from 'react';
 
-import AppText from '../components/AppText';
-import Screen from '../components/Screen';
+import AppText from '../../components/AppText';
+import Screen from '../../components/Screen';
 
 function PatientAppointment(props) {
     return (

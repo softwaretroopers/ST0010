@@ -2,11 +2,11 @@ import React from "react";
 import { FlatList, View, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import Icon from "../components/Icon";
-import ListItem from "../components/ListItem";
-import colors from "../configs/colors";
-import ScreenVarient from "../components/ScreenVarient";
-import Patient from "../screens/PatientLogin";
+import Icon from "../../components/Icon";
+import ListItem from "../../components/ListItem";
+import colors from "../../configs/colors";
+import ScreenVarient from "../../components/ScreenVarient";
+import Patient from "./PatientLogin";
 
 
 const menuItems = [

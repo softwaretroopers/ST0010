@@ -4,10 +4,10 @@ import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import * as Yup from "yup";
 
-import Screen from "../components/Screen";
-import colors from "../configs/colors";
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
-import AppButton from "../components/AppButton";
+import Screen from "../../components/Screen";
+import colors from "../../configs/colors";
+import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
+import AppButton from "../../components/AppButton";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),

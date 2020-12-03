@@ -3,15 +3,15 @@ import { StyleSheet, View } from "react-native";
 import * as Yup from "yup";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-import colors from "../configs/colors";
-import Screen from "../components/Screen";
+import colors from "../../configs/colors";
+import Screen from "../../components/Screen";
 import {
   AppForm,
   AppFormField,
   AppFormPickerVariant,
   SubmitButton,
-} from "../components/forms";
-import PickerItemVariant from "../components/PickerItemVariant";
+} from "../../components/forms";
+import PickerItemVariant from "../../components/PickerItemVariant";
 
 const validationSchema = Yup.object().shape({
   companyName: Yup.object().required().label("Company Name"),

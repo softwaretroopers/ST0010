@@ -1,20 +1,20 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import AppTextInput from "../components/AppTextInput";
+import AppTextInput from "../../components/AppTextInput";
 import { Formik } from "formik";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import Screen from "../components/Screen";
-import AppButton from "../components/AppButton";
-import colors from "../configs/colors";
+import Screen from "../../components/Screen";
+import AppButton from "../../components/AppButton";
+import colors from "../../configs/colors";
 
-function CooperationLogin(props) {
+function DoctorLogin(props) {
   return (
     <Screen style={styles.container}>
       <MaterialIcons
         name="person"
         size={50}
-        color={colors.cooperationPrimary}
+        color={colors.doctorPrimary}
         style={styles.iconContainer}
       />
       <Formik
@@ -45,7 +45,7 @@ function CooperationLogin(props) {
 
               <AppButton
                 title="Login"
-                color="cooperationPrimary"
+                color="doctorPrimary"
                 onPress={handleSubmit}
               />
             </View>
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CooperationLogin;
+export default DoctorLogin;

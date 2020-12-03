@@ -1,9 +1,9 @@
 import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 
-import DatePicker from "../components/DatePicker";
-import Screen from "../components/Screen";
-import TimeSlot from "../components/TimeSlot";
+import DatePicker from "../../components/DatePicker";
+import Screen from "../../components/Screen";
+import TimeSlot from "../../components/TimeSlot";
 
 function PatientDateTimePicker(props) {
   return (

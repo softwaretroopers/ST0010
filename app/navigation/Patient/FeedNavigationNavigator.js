@@ -1,8 +1,8 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 
-import PatientLogin from '../../screens/PatientLogin';
-import PatientNavigation from '../../screens/PatientNavigation';
+import PatientLogin from '../../screens/Patient/PatientLogin';
+import PatientNavigation from '../../screens/Patient/PatientNavigation';
 
 const Stack= createStackNavigator();
 
