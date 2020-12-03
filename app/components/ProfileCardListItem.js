@@ -14,7 +14,7 @@ function ProfileCardListItem({
     return (
        <View style={[styles.container,style]}>
            {IconComponent}
-           {image && <Image style={styles.image} source={image}/>}
+           {image && <Image style={[styles.image ,style]} source={image}/>}
            <View style={styles.containerDetails}>
              <AppText style={styles.title}>{title}</AppText>
              {subtitle && <AppText>{subtitle}</AppText>}

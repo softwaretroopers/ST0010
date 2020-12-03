@@ -12,7 +12,6 @@ import ProfileCardListItem from './ProfileCardListItem';
 function profileCard({
     image ,
     name , 
-    iconname ,
     profession , 
     education , 
     university , 

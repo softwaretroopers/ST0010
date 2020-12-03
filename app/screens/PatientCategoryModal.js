@@ -1,12 +1,10 @@
 import React from 'react';
 import { View ,StyleSheet, Text } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
-import AppButton from '../components/AppButton';
-import AppText from '../components/AppText';
 
+import AppButton from '../components/AppButton';
 import ProfileCard from '../components/ProfileCard';
 import ScreenVarient from '../components/ScreenVarient';
-import colors from '../configs/colors';
 
 const list = [
     {
@@ -21,7 +19,7 @@ const list = [
         Videoprice:"LKR 2000 upward"
     }
 ]
-function PatientCategory(props) {
+function PatientCategoryModal(props) {
     return (
        <ScreenVarient>
         
@@ -69,4 +67,4 @@ const styles = StyleSheet.create({
     },
        
 })
-export default PatientCategory;
+export default PatientCategoryModal;
