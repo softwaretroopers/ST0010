@@ -6,6 +6,7 @@ import AuthNavigator from "./app/navigation/Patient/AuthNavigation";
 import PatientCategory from "./app/screens/PatientCategoryModal";
 import DocAppNavigator from "./app/navigation/Patient/Doctor/DocAppNavigator";
 import AppNavigator from "./app/navigation/Patient/Doctor/DocAppNavigator";
+<<<<<<< Updated upstream
 import PatientInvoice from "./app/screens/PatientInvoice";
 import PatientInvoiceBill from "./app/screens/PatientInvoiceBill";
 import DoctorCompleted from "./app/screens/DoctorCompleted";
@@ -19,4 +20,10 @@ export default function App() {
     < DoctorAppointment />
   );
 
+=======
+import TestExample from "./app/screens/TestExample";
+
+export default function App() {
+  return <TestExample></TestExample>;
+>>>>>>> Stashed changes
 }
