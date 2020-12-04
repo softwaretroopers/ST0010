@@ -8,7 +8,7 @@ import ScreenVarient from '../../components/ScreenVarient';
 const list = [
     {
         id:"1",
-        image:require("../assets/test.jpg"),
+        image:require("../../assets/test.jpg"),
         name:"Nithya Hansana",
         profession:"App Development",
         education:"Computing",

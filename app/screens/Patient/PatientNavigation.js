@@ -41,7 +41,7 @@ function PatientNavigation({navigation}) {
         <View style={styles.containerTop}>
           <ListItem
             title="Mr.Anonymous"
-            image={require("../assets/logo.png")}
+            image={require("../../assets/logo.png")}
           />
         </View>
         <View style={styles.container}>

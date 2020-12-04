@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import CardChanneling from '../components/CardChanneling';
-import colors from '../configs/colors';
+import CardChanneling from '../../components/CardChanneling';
+import colors from '../../configs/colors';
 
 function CompletedChanneling(props) {
     return (
@@ -15,14 +15,14 @@ function CompletedChanneling(props) {
         name="Dr.shehan"
         date="2020/12/10"
         time="05.20"
-        image={require("../assets/doctor.png")}
+        image={require("../../assets/doctor.png")}
         />
 
 <CardChanneling 
         name="Dr.nehanga"
         date="2020/12/10"
         time="05.20"
-        image={require("../assets/doctor.png")}
+        image={require("../../assets/doctor.png")}
         />
 
         </View>

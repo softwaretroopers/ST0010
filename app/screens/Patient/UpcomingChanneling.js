@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import CardChanneling from '../components/CardChanneling';
-import colors from '../configs/colors';
+import CardChanneling from '../../components/CardChanneling';
+import colors from '../../configs/colors';
 
 
 function UpcomingChanneling(props) {
@@ -16,27 +16,27 @@ function UpcomingChanneling(props) {
         name="Dr.shehan"
         date="2020/12/10"
         time="05.20"
-        image={require("../assets/love.jpg")}
+        image={require("../../assets/love.jpg")}
         />
 
 <CardChanneling 
         name="Dr.nehanga"
         date="2020/12/10"
         time="05.20"
-        image={require("../assets/love.jpg")}
+        image={require("../../assets/love.jpg")}
         />
 
 <CardChanneling 
         name="Dr.kushen"
         date="2020/12/10"
         time="05.20"
-        image={require("../assets/love.jpg")}
+        image={require("../../assets/love.jpg")}
         />
         <CardChanneling 
         name="Dr.rashith"
         date="2020/12/10"
         time="05.20"
-        image={require("../assets/love.jpg")}
+        image={require("../../assets/love.jpg")}
         />
 
         </View>

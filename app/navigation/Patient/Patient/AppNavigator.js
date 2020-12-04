@@ -2,10 +2,10 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import PatientAccInfo from "../../screens/PatientAccInfo";
-import PatientAppointment from "../../screens/PatientAppointment";
-import PatientNewsFeed from "../../screens/PatientNewsFeed";
+import PatientAccInfo from "../../../screens/Patient/PatientAccInfo";
 import FeedNavigator from "./FeedNavigator";
+import PatientNewsFeed from "../../../screens/Patient/PatientNewsFeed";
+import PatientTopNavigator from "./PatientTopNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,8 +31,8 @@ const AppNavigator = () => (
         />
 
          <Tab.Screen
-        name="Appointment"
-        component={PatientAppointment}
+        name="PatientTopNavigator"
+        component={PatientTopNavigator}
         options={{
             tabBarIcon: ({ color,size }) =>
             <MaterialCommunityIcons name="book" color={color} size={size}/>

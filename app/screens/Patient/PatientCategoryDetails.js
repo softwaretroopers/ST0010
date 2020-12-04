@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet,ImageBackground, Button,TouchableOpacity } from 'react-native';
-import colors from '../configs/colors'
-import AppText from '../components/AppText'
-import CardPatient from "../components/CardPatient";
-import Screen from '../components/Screen';
-import ScreenVarient from '../components/ScreenVarient';
+import colors from '../../configs/colors'
+import AppText from '../../components/AppText'
+import CardPatient from "../../components/CardPatient";
+import Screen from '../../components/Screen';
+import ScreenVarient from '../../components/ScreenVarient';
 import { color } from 'react-native-reanimated';
 import { FlatList } from 'react-native-gesture-handler';
 
@@ -12,19 +12,19 @@ const cardList =[
    {
        
        id:1,
-       image:require('../assets/test.jpg'),
+       image:require('../../assets/love.jpg'),
        title:'Dr.Anonymous',
        subTitle:'1300',
    },
    {
     id:2,
-    image:require('../assets/test.jpg'),
+    image:require('../../assets/love.jpg'),
     title:'Dr.Anonymous',
     subTitle:'1500',
     },
     {
     id:3,
-    image:require('../assets/test.jpg'),
+    image:require('../../assets/love.jpg'),
     title:'Dr.Anonymous',
     subTitle:'1800',
     },
