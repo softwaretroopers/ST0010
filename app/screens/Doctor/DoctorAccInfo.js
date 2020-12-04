@@ -51,7 +51,7 @@ function DoctorAccInfo(props) {
            <View >
            <View style={styles.containerTop}>
            <ListItem
-                image = {require("../assets/logo.png")}
+                image = {require("../../assets/logo.png")}
                 />
            </View>
            <View style={styles.ContainerButton} >

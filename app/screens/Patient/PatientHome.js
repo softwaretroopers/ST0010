@@ -11,19 +11,19 @@ const listings = [
         id: 1,
         title:'Doctor Channeling',
         des:'Doctor consultation is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle',
-        image: require('../assets/doctorChanneling.png')
+        image: require('../../assets/doctorChanneling.png')
     },
     {
         id: 2,
         title:'Anytime Doctor',
         des:'24 hrs Doctor channeling is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle',
-        image: require('../assets/anyTimeDoctor.png')
+        image: require('../../assets/anyTimeDoctor.png')
     },
     {
         id: 3,
         title:'Council',
         des:'Counsil is performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle',
-        image: require('../assets/Councillor.png')
+        image: require('../../assets/Councillor.png')
     },
 ];
 function PatientHome({navigation}) {
