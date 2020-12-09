@@ -1,16 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet,ImageBackground, Button,TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet,ImageBackground, ScrollView,TouchableOpacity } from 'react-native';
 import colors from '../../configs/colors'
 import AppText from '../../components/AppText'
 import CardPatient from "../../components/CardPatient";
-import Screen from '../../components/Screen';
 import ScreenVarient from '../../components/ScreenVarient';
-import { color } from 'react-native-reanimated';
 import { FlatList } from 'react-native-gesture-handler';
 
 const cardList =[
    {
-       
        id:1,
        image:require('../../assets/love.jpg'),
        title:'Dr.Anonymous',
@@ -33,7 +30,7 @@ const cardList =[
 function PatientCategoryDetails(props) {
     return (
         <ScreenVarient>
-            <View style={styles.screen}>
+            <ScrollView style={styles.screen}>
                 <View style={styles.containerTop}>
                     <AppText style={styles.heading}>Psychologist</AppText>
                     <View style={styles.topDetails}>
@@ -93,15 +90,12 @@ function PatientCategoryDetails(props) {
                                 <AppText style={styles.viewText}>View All</AppText>
                             </TouchableOpacity>
                 </View>
-            </View>
+            </ScrollView>
         </ScreenVarient>
-
-           
-  
     );
 }
 const styles = StyleSheet.create({
-    containerTop:{
+    screen:{
         paddingTop:50,
     },
     heading:{

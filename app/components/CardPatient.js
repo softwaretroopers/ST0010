@@ -1,46 +1,44 @@
 import React from 'react';
 import {View,StyleSheet,Image, ImageBackground} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
 import colors from '../configs/colors';
 import AppText from './AppText';
-import ScreenVarient from './ScreenVarient';
 
 
-function CardPatient({title,subTitle,image}) {
+function CardPatient({title,priceaudio,pricevideo,image}) {
     return (
-      
-
+       <TouchableOpacity>
         <View style={styles.card}>
             <ImageBackground style={styles.image} source={image} >
             <View style={styles.detailsContainer}>
-            <AppText style={styles.title}>{title}</AppText>
-            <AppText style={styles.subTitle}>{subTitle}</AppText>
+                <AppText style={styles.title}>{title}</AppText>
+                
+                <AppText style={styles.price}>{priceaudio}</AppText>
+                <AppText style={styles.price}>{pricevideo}</AppText>
             </View>
             </ImageBackground>
         </View>
-      
+       </TouchableOpacity>
     );
 }
 const styles = StyleSheet.create({
     card:{
         borderRadius:15,
-        marginBottom:20,
-        width:"100%",
-        height:"100%",
-        margin:10,
+        height:160,
+        margin:7.5,
         flex:1,
         backgroundColor:colors.white,
-
+        overflow:"hidden",
     },
     image:{
         width:"100%",
         height:"100%",
     },
     title:{
-        color:colors.white,
+        color:colors.black,
+        paddingTop:110
     },
-    subTitle:{
-        color:colors.white,
-    }
    
 })
 

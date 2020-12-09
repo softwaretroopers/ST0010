@@ -38,6 +38,7 @@ function PatientHome({navigation}) {
                  keyExtractor={listing => listing.id.toString()}
             renderItem={({item}) =>
             <Card
+            onPress={() => navigation.navigate("PatientCategoryDetails")}
             title={item.title}
             des={item.des}
             image={item.image} />

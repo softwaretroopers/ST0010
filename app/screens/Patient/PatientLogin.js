@@ -35,7 +35,7 @@ function PatientLogin({ navigation }) {
           }}
         >
           <ScrollView
-            style={{ width: "100%", marginTop: "35%" }}
+            style={{ width: "100%", marginTop: "10%" }}
             contentContainerStyle={{
               alignItems: "center",
               justifyContent: "center",
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  iconContainer: {},
   registerButton: {
     color: colors.patientPrimary,
     fontSize: 16,

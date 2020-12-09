@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { StyleSheet, View, TouchableOpacity, Text, Modal } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../configs/colors";
 import AppText from "./AppText";
@@ -49,7 +48,7 @@ function AppointmentPopUp(props) {
           setModalVisible(true);
         }}
       >
-        <Text style={styles.modalText}>Button</Text>
+      <Text style={styles.modalText}>Button</Text>
       </TouchableOpacity>
     </View>
   );

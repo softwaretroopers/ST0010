@@ -9,7 +9,7 @@ const list = [
     {
         id:"1",
         image:require("../../assets/test.jpg"),
-        name:"Nithya Hansana",
+        name:"Dr.Anonymous",
         profession:"App Development",
         education:"Computing",
         university:"Coventry",
@@ -19,9 +19,9 @@ const list = [
     }
 ]
 function PatientCategoryModal(props) {
+    const [modalVisible, setModalVisible] = useState(false);
     return (
        <ScreenVarient>
-        
            <View style={styles.screen} >
                <FlatList
                 data={list}
