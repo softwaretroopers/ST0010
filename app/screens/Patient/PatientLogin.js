@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity , ScrollView } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import * as Yup from "yup";
 
@@ -19,7 +19,7 @@ function PatientLogin({navigation}) {
     <Screen style={styles.container}>
       <AppForm
         initialValues={{ email: "", password: "" }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => navigation.navigate("AppNavigator")}
         validationSchema={validationSchema}
       >
         <MaterialIcons
@@ -49,7 +49,7 @@ function PatientLogin({navigation}) {
             textContentType="password"
           />
           <SubmitButton title="login" color="patientPrimary" />
-            <TouchableOpacity >
+            <TouchableOpacity onPress={() =>navigation.navigate("PatientRegister")} >
             <Text style={styles.registerButton}>Create an account</Text>
           </TouchableOpacity>
         </View>

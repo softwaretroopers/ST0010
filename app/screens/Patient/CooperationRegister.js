@@ -39,12 +39,12 @@ const companies = [
   },
 ];
 
-function CooperationRegister(props) {
+function CooperationRegister({navigation}) {
   return (
     <Screen style={styles.container}>
       <AppForm
         initialValues={{ companyName: [0], empID: "" }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => navigation.navigate("MNumberConfirmation")}
         validationSchema={validationSchema}
       >
         <View style={styles.buttonContainer}>
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     width: "100%",
     padding: 20,
-    marginTop: "50%",
+    marginTop: "20%",
   },
 });
 

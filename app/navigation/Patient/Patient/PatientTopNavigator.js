@@ -2,8 +2,8 @@ import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 import ScreenVarient from '../../../components/ScreenVarient';
-import UpcomingChanneling from '../../../screens/Patient/UpcomingChanneling';
-import CompletedChanneling from '../../../screens/Patient/CompletedChanneling';
+import AppointmentsUpcoming from '../../../screens/Patient/AppointmentsUpcoming';
+import AppointmentsCompleted from '../../../screens/Patient/AppointmentsCompleted';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -19,12 +19,12 @@ const PatientTopNavigator = () => (
   >
       <Tab.Screen
         name="DoctorOngoing"
-        component={UpcomingChanneling}
+        component={AppointmentsUpcoming}
         options={{ tabBarLabel: 'Up coming' }}
       />
       <Tab.Screen
         name="DoctorUpcoming"
-        component={CompletedChanneling}
+        component={AppointmentsCompleted}
         options={{ tabBarLabel: 'Completed' }}
       />
     </Tab.Navigator>

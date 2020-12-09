@@ -9,7 +9,7 @@ const Stack= createStackNavigator();
 const FeedNavigationNavigator = () => (
     <Stack.Navigator>
         <Stack.Screen name="PatientNavigation" component={PatientNavigation} options={{headerShown:false}} />
-        <Stack.Screen name="PatientLogin" component={PatientLogin} />
+        <Stack.Screen name="PatientLogin" component={PatientLogin} options={{headerShown:false}} />
     </Stack.Navigator>
 ) 
 export default FeedNavigationNavigator;

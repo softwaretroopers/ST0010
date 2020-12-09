@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Alert } from "react-native";
+import { StyleSheet, View,ScrollView, Alert } from "react-native";
 import * as Yup from "yup";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -51,6 +51,7 @@ const genders = [
 function PatientRegister({navigation}) {
   return (
     <Screen style={styles.container}>
+      
       <AppForm
         initialValues={{
           fName: "",
@@ -67,21 +68,20 @@ function PatientRegister({navigation}) {
             [
               {
                 text: "No",
-                onPress: () => console.log("No pressed"),
+                onPress: () => navigation.navigate("MNumberConfirmation"),
               },
               {
                 text: "Cancel",
-                onPress: () => console.log("Cancel Pressed"),
                 style: "cancel",
               },
-              { text: "Yes", onPress: () => console.log("Yes Pressed") },
+              { text: "Yes", onPress: () => navigation.navigate("CooperationRegister") },
             ],
             { cancelable: false }
           );
         }}
         validationSchema={validationSchema}
       >
-        <View style={styles.inputContainer}>
+        <ScrollView style={styles.inputContainer}>
           <AppFormFieldVariant
             maxLength={30}
             name="fName"
@@ -132,7 +132,7 @@ function PatientRegister({navigation}) {
             secureTextEntry
             icon="lock"
           />
-        </View>
+        </ScrollView>
         <View style={styles.buttonContainer}>
           <SubmitButton title="Sign up" color="patientPrimary" />
         </View>
@@ -148,6 +148,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: "100%",
     padding: 20,
+    paddingTop:0,
   },
   buttonContainer: {
     width: "100%",

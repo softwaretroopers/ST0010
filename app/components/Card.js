@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
         marginLeft:20,
         marginRight:20,
         padding:'5%',
+        overflow:"hidden",
+
         shadowColor:colors.patientPrimary,
         shadowOffset:{width:0,height:10},
         shadowOpacity:1,
@@ -38,7 +40,9 @@ const styles = StyleSheet.create({
         flexDirection:"row", 
     },
     des:{
-        color:colors.patientPrimary
+        color:colors.patientPrimary,
+        fontSize:16,
+        marginRight:"28%"
     },
     image:{
         height:110,

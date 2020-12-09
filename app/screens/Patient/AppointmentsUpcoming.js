@@ -1,38 +1,38 @@
 import React from 'react';
 import { View } from 'react-native';
-import CardChanneling from '../../components/CardChanneling';
+
+import CardAppointments from '../../components/CardAppointments';
 import colors from '../../configs/colors';
 
 
-function UpcomingChanneling(props) {
+function AppointmentsUpcoming(props) {
     return (
         <View style={{
             backgroundColor:colors.lightGrey,
               flex:1,
-               paddingTop:100,
         }}>
        
-             <CardChanneling 
+             <CardAppointments 
         name="Dr.shehan"
         date="2020/12/10"
         time="05.20"
         image={require("../../assets/love.jpg")}
         />
 
-<CardChanneling 
+<CardAppointments 
         name="Dr.nehanga"
         date="2020/12/10"
         time="05.20"
         image={require("../../assets/love.jpg")}
         />
 
-<CardChanneling 
+<CardAppointments 
         name="Dr.kushen"
         date="2020/12/10"
         time="05.20"
         image={require("../../assets/love.jpg")}
         />
-        <CardChanneling 
+        <CardAppointments 
         name="Dr.rashith"
         date="2020/12/10"
         time="05.20"
@@ -44,4 +44,4 @@ function UpcomingChanneling(props) {
     );
 }
 
-export default UpcomingChanneling;
+export default AppointmentsUpcoming;

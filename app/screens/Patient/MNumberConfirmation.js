@@ -1,3 +1,4 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import * as Yup from "yup";
@@ -13,14 +14,14 @@ const validationSchema = Yup.object().shape({
   mNumber: Yup.string().required().min(10).max(10).label("Mobile Number"),
 });
 
-function MNumberConfirmation({ icon, ...otherProps }) {
+function MNumberConfirmation({ navigation , icon, ...otherProps }) {
   return (
     <Screen>
       <AppForm
         initialValues={{
           mNumber: "",
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => navigation.navigate("OTPConfirmation")}
         validationSchema={validationSchema}
       >
         <View style={styles.container}>
@@ -34,7 +35,9 @@ function MNumberConfirmation({ icon, ...otherProps }) {
           />
         </View>
         <View style={styles.buttonContainer}>
-          <SubmitButton title="Send otp" color="patientPrimary" />
+          <SubmitButton 
+          title="Send otp" 
+          color="patientPrimary" />
         </View>
       </AppForm>
     </Screen>

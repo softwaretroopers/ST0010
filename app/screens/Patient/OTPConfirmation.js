@@ -15,14 +15,14 @@ const validationSchema = Yup.object().shape({
   oTP: Yup.string().required().min(6).max(6).label("OTP"),
 });
 
-function OTPConfirmation({ icon, ...otherProps }) {
+function OTPConfirmation({ navigation , icon, ...otherProps }) {
   return (
     <Screen>
       <AppForm
         initialValues={{
           oTP: "",
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => navigation.navigate("PatientLogin")}
         validationSchema={validationSchema}
       >
         <View style={styles.container}>

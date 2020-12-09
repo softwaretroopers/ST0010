@@ -10,10 +10,9 @@ function WelcomeScreen({navigation}) {
       <View style={styles.logoContainer}>
         <Image source={require("../assets/logo.png")} style={styles.logo} />
         <Text style={styles.logoText}>Ayushaadi Medical App</Text>
-        <Text>by Software Troopers</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <AppButton title="Patient" color="patientPrimary" onPress={() =>navigation.navigate("PatientLoginScreen")} />
+        <AppButton title="Patient" color="patientPrimary" onPress={() =>navigation.navigate("PatientAuthNavigtion")} />
         <AppButton title="Doctor" color="doctorPrimary" onPress={() =>navigation.navigate("DoctorLogin")} />
         <AppButton title="Cooperation" color="cooperationPrimary" onPress={() =>navigation.navigate("CooperationLogin")} />
       </View>
@@ -44,6 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     color: "red",
+    paddingTop:10,
   },
 });
 

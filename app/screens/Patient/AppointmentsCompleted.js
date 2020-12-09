@@ -1,24 +1,23 @@
 import React from 'react';
 import { View } from 'react-native';
-import CardChanneling from '../../components/CardChanneling';
+import CardAppointments from '../../components/CardAppointments';
 import colors from '../../configs/colors';
 
-function CompletedChanneling(props) {
+function AppointmentsCompleted(props) {
     return (
         <View style={{
             backgroundColor:colors.lightGrey,
               flex:1,
-               paddingTop:100,
         }}>
        
-             <CardChanneling 
+             <CardAppointments 
         name="Dr.shehan"
         date="2020/12/10"
         time="05.20"
         image={require("../../assets/doctor.png")}
         />
 
-<CardChanneling 
+<CardAppointments 
         name="Dr.nehanga"
         date="2020/12/10"
         time="05.20"
@@ -30,4 +29,4 @@ function CompletedChanneling(props) {
     );
 }
 
-export default CompletedChanneling;
+export default AppointmentsCompleted;

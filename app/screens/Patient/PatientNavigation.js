@@ -67,7 +67,7 @@ function PatientNavigation({navigation}) {
             IconComponent={
               <MaterialCommunityIcons name="logout" size={40} color="black" />
             }
-            onPress = { () => navigation.navigate("PatientLogin")}
+            onPress = { () => navigation.push("PatientLogin")}
           />
         </View>
       </View>

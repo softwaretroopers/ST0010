@@ -1,18 +1,23 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 
-import PatientHome from '../../../screens/Patient/PatientHome';
-import PatientNavigation from '../../../screens/Patient/PatientNavigation';
-import FeedNavigationNavigator from './FeedNavigationNavigator';
-import PatientLogin from '../../../screens/Patient/PatientLogin';
 import PatientRegister from '../../../screens/Patient/PatientRegister';
+import CooperationRegister from '../../../screens/Patient/CooperationRegister';
+import MNumberConfirmation from '../../../screens/Patient/MNumberConfirmation';
+import OTPConfirmation from '../../../screens/Patient/OTPConfirmation';
+import PatientLogin from '../../../screens/Patient/PatientLogin';
+import AppNavigator from './AppNavigator';
 
 const Stack= createStackNavigator();
 
 const PatientAuthNavigtion = () => (
     <Stack.Navigator >
-        <Stack.Screen name="Patient" component={PatientLogin} options={{headerShown:false}} />
-        <Stack.Screen name="PatientNavigation" component={PatientRegister} />
+        <Stack.Screen name="PatientLogin" component={PatientLogin} />
+        <Stack.Screen name="PatientRegister" component={PatientRegister} />
+        <Stack.Screen name="CooperationRegister" component={CooperationRegister} />
+        <Stack.Screen name="MNumberConfirmation" component={MNumberConfirmation} />
+        <Stack.Screen name="OTPConfirmation" component={OTPConfirmation} />
+        <Stack.Screen name="AppNavigator" component={AppNavigator}  options={{headerShown:false}}/>
     </Stack.Navigator>
 )
 export default PatientAuthNavigtion;
