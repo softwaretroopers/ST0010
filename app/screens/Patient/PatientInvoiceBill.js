@@ -22,7 +22,7 @@ const DocProfile = [
     }
 ]
 
-function PatientInvoiceBill(props) {
+function PatientInvoiceBill({navigation}) {
     return (
         <ScreenVarient>
             <View style={styles.heading}>
@@ -67,7 +67,7 @@ function PatientInvoiceBill(props) {
                      }
                     />
                     <View style={styles.button} >
-                      <AppButton title="Pay" color="black" />   
+                      <AppButton title="Pay" color="black" onPress={ () => navigation.navigate("PatientTopNavigator")}/>   
                     </View>
             </View>
         </ScreenVarient>

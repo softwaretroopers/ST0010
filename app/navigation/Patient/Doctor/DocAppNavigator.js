@@ -8,6 +8,9 @@ import DoctorAppointment from "../../../screens/Doctor/DoctorAppointment";
 import DoctorCompleted from "../../../screens/Doctor/DoctorCompleted";
 import DoctorAccInfo from "../../../screens/Doctor/DoctorAccInfo";
 import colors from "../../../configs/colors";
+import PatientAppointment from "../../../screens/Patient/PatientAppointment";
+import DoctorEditDate from "../../../screens/Doctor/DoctorEditDate";
+import EditNavigator from "./EditNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -28,16 +31,16 @@ const DocAppNavigator = () => (
         component={DoctorAppointment}
         options={{
             tabBarIcon: ({ color,size }) =>
-            <MaterialCommunityIcons name="calendar" color={color} size={size}/>
+            <MaterialCommunityIcons name="calendar" color={"#009687"} size={size}/>
         }}
         />
 
          <Tab.Screen
         name=" "
-        component={PatientAppointment}
+        component={EditNavigator}
         options={{
             tabBarIcon: ({ color,size }) =>
-            <AntDesign name="pluscircleo" color={color} size={size}/>
+            <AntDesign name="pluscircleo" color={"#009687"} size={size}/>
         }}
         />
 
@@ -46,7 +49,7 @@ const DocAppNavigator = () => (
         component={DoctorCompleted}
         options={{
             tabBarIcon: ({ color,size }) =>
-            <MaterialCommunityIcons name="view-grid-plus" color={color} size={size}/>
+            <MaterialCommunityIcons name="view-grid-plus" color={"#009687"} size={size}/>
         }}
         />
 
@@ -55,7 +58,7 @@ const DocAppNavigator = () => (
         component={DoctorAccInfo}
         options={{
             tabBarIcon: ({ color,size }) =>
-            <MaterialCommunityIcons name="account-box" color={color} size={size}/>
+            <MaterialCommunityIcons name="account-box" color={"#009687"} size={size}/>
         }}
         />
         

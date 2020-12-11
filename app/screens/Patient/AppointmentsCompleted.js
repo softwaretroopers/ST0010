@@ -11,17 +11,17 @@ function AppointmentsCompleted(props) {
         }}>
        
              <CardAppointments 
-        name="Dr.shehan"
+        name="Dr.Anonymous"
         date="2020/12/10"
         time="05.20"
-        image={require("../../assets/doctor.png")}
+        image={require("../../assets/categoryDoc1.png")}
         />
 
 <CardAppointments 
-        name="Dr.nehanga"
+        name="Dr.Anonymous"
         date="2020/12/10"
         time="05.20"
-        image={require("../../assets/doctor.png")}
+        image={require("../../assets/categoryDoc1.png")}
         />
 
         </View>

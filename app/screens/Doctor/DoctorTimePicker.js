@@ -5,7 +5,7 @@ import AppButtonVariant from "../../components/AppButtonVariant";
 import Screen from "../../components/Screen";
 import TimeSlotVariant from "../../components/TimeSlotVariant";
 
-function DoctorDatePicker(props) {
+function DoctorTimePicker({navigation}) {
   return (
     <Screen>
       <ScrollView>
@@ -14,9 +14,9 @@ function DoctorDatePicker(props) {
         <TimeSlotVariant primaryTimeSlot="03:00PM - 04:00PM"></TimeSlotVariant>
         <TimeSlotVariant primaryTimeSlot="04:00PM - 05:00PM"></TimeSlotVariant>
       </ScrollView>
-      <AppButtonVariant color="yes" title="Submit"></AppButtonVariant>
+      <AppButtonVariant color="yes" title="Done" onPress={()=>navigation.navigate("DoctorAppointment")}></AppButtonVariant>
     </Screen>
   );
 }
 
-export default DoctorDatePicker;
+export default DoctorTimePicker;

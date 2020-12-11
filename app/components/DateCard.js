@@ -1,11 +1,14 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import {useNavigation} from '@react-navigation/native';
+
 import colors from "../configs/colors";
 import AppText from "./AppText";
 import Icon from "./Icon";
 
 function DateCard({ day, date }) {
+  const navigation = useNavigation();
   return (
     <View style={styles.card}>
       <View style={styles.titleContainer}>
@@ -20,19 +23,19 @@ function DateCard({ day, date }) {
             <AppText style={styles.timeSlotText}>01:00 PM - 02:00 PM</AppText>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>01:00 PM - 02:00 PM</AppText>
+            <AppText style={styles.timeSlotText}>02:00 PM - 03:00 PM</AppText>
           </TouchableWithoutFeedback>
         </View>
         <View style={styles.timeSlotContainer}>
           <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>01:00 PM - 02:00 PM</AppText>
+            <AppText style={styles.timeSlotText}>03:00 PM - 04:00 PM</AppText>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>01:00 PM - 02:00 PM</AppText>
+            <AppText style={styles.timeSlotText}>04:00 PM - 05:00 PM</AppText>
           </TouchableWithoutFeedback>
         </View>
         <View style={styles.viewAllContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>navigation.navigate("DoctorTimePicker")}>
             <Icon
               name="chevron-right"
               backgroundColor={colors.doctorPrimary}
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: 15,
     backgroundColor: colors.white,
-    width: "100%",
+    width: "98%",
     marginBottom: "5%",
     padding: "5%",
     shadowColor: colors.black,

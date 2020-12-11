@@ -10,8 +10,8 @@ import colors from '../../configs/colors';
 const DocProfile = [
     {
         id:1,
-        image:require("../assets/test.jpg"),
-        name:'Nithya Hansana',
+        image:require("../../assets/doc.png"),
+        name:'Mr.Anonymous',
         date:'02/12/2020',
         time:'01:12 pm',
         doctorFee:'Rs.1200',
@@ -20,7 +20,7 @@ const DocProfile = [
     }
 ]
 
-function PatientInvoice(props) {
+function PatientInvoice({navigation}) {
     return (
         <ScreenVarient>
             <View style={styles.heading}>
@@ -62,7 +62,7 @@ function PatientInvoice(props) {
                      }
                     />
                     <View style={styles.button} >
-                      <AppButton title="Go" color="black" />   
+                      <AppButton title="Go" color="black" onPress={ () => navigation.navigate("PatientInvoiceBill")} />   
                     </View>
             </View>
         </ScreenVarient>

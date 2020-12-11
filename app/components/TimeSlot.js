@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useNavigation} from '@react-navigation/native';
 import {
   StyleSheet,
   View,
@@ -12,7 +13,6 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../configs/colors";
 import AppText from "./AppText";
 import Icon from "./Icon";
-import AppButton from "./AppButton";
 import AppButtonVariant from "./AppButtonVariant";
 
 function TimeSlot({
@@ -27,6 +27,7 @@ function TimeSlot({
   const [secondModalVisible, setSecondModalVisible] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+  const navigation = useNavigation();
   return (
     <View style={styles.centeredView}>
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
@@ -153,7 +154,7 @@ function TimeSlot({
                 Video Call
               </AppText>
             </View>
-            <AppButtonVariant title="submit" color="black"></AppButtonVariant>
+            <AppButtonVariant title="submit" color="black" onPress={() =>{setModalVisible(!modalVisible);setSecondModalVisible(!secondModalVisible);navigation.navigate("PatientInvoice"); }} />
             <TouchableOpacity
               style={{
                 padding: 10,

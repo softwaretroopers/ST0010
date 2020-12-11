@@ -8,7 +8,7 @@ import Screen from "../../components/Screen";
 import AppButton from "../../components/AppButton";
 import colors from "../../configs/colors";
 
-function DoctorLogin(props) {
+function DoctorLogin({navigation}) {
   return (
     <Screen style={styles.container}>
       <MaterialIcons
@@ -46,7 +46,7 @@ function DoctorLogin(props) {
               <AppButton
                 title="Login"
                 color="doctorPrimary"
-                onPress={handleSubmit}
+                onPress={()=>navigation.navigate("DocAppNavigator")}
               />
             </View>
           </>
@@ -63,11 +63,11 @@ const styles = StyleSheet.create({
   buttonContainer: {
     width: "100%",
     padding: 20,
-    marginTop: "60%",
+    marginTop: "40%",
   },
   iconContainer: {
     position: "absolute",
-    marginTop: "35%",
+    marginTop: "25%",
   },
 });
 

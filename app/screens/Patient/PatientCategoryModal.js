@@ -1,5 +1,6 @@
 import React from 'react';
-import { View ,StyleSheet , FlatList} from 'react-native';
+import { View ,StyleSheet , FlatList,
+    Modal} from 'react-native';
 
 import AppButton from '../../components/AppButton';
 import ProfileCard from '../../components/ProfileCard';
@@ -23,6 +24,7 @@ function PatientCategoryModal(props) {
     return (
        <ScreenVarient>
            <View style={styles.screen} >
+           <Modal animationType="slide" transparent={true} visible={modalVisible}>
                <FlatList
                 data={list}
                 keyExtractor={list => list.id.toString()}
@@ -45,6 +47,7 @@ function PatientCategoryModal(props) {
                />
             }
                />
+               </Modal>
            </View>
        </ScreenVarient>
     );

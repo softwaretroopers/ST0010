@@ -8,6 +8,7 @@ import colors from '../configs/colors';
 import AppText from './AppText';
 import Icon from './Icon';
 import ProfileCardListItem from './ProfileCardListItem';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function profileCard({
     image ,
@@ -18,13 +19,15 @@ function profileCard({
     language , 
     Callprice , 
     Videoprice ,
-    IconButton
+    IconButton,
+    Iconclose,
     })
      {
     return (
         <View style={styles.screen}>
                 <View style={styles.container}>
                     <ImageBackground style={styles.image} source={image}> 
+                    <View style={styles.IconClose}>{Iconclose}</View>
                     <View style={styles.containerText}>
                      <AppText style={styles.name}>{name}</AppText>
                      <AppText style={styles.profession} >{profession}</AppText>
@@ -55,7 +58,7 @@ function profileCard({
                     </View>
                     </View>
                     </ImageBackground>
-                    {IconButton}
+                    {IconButton}               
             </View>
         </View>
     );
@@ -82,6 +85,10 @@ const styles = StyleSheet.create({
     containerText:{
         marginLeft:15,
     },
+    IconClose:{
+        marginLeft:"87%",
+        marginTop:5
+    },
     image: {
         resizeMode: "cover",
         justifyContent: "center",
@@ -89,18 +96,22 @@ const styles = StyleSheet.create({
         height:400,
     },
     name:{
-        color:colors.white,
+        color:colors.black,
         fontWeight:'bold',
         fontSize:22,
-        paddingTop:"45%",
+        paddingTop:"40%",
     },
     profession:{
-        color:colors.white,
+        color:colors.black,
         fontWeight:'bold',
         fontSize:12,
         marginBottom:"1%"
     },
-    
+    screen:{
+        backgroundColor:colors.black,
+        overflow:"hidden",
+        borderRadius:20,
+    }
 })
 
 export default profileCard;

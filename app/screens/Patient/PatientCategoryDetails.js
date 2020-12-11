@@ -1,35 +1,40 @@
 import React from 'react';
-import { View, Text, StyleSheet,ImageBackground, ScrollView,TouchableOpacity } from 'react-native';
+import { View,FlatList , Text, StyleSheet,ImageBackground, ScrollView,TouchableOpacity } from 'react-native';
+
 import colors from '../../configs/colors'
 import AppText from '../../components/AppText'
 import CardPatient from "../../components/CardPatient";
 import ScreenVarient from '../../components/ScreenVarient';
-import { FlatList } from 'react-native-gesture-handler';
+import AppSearchBar from '../../components/AppSearchBar';
 
 const cardList =[
    {
        id:1,
-       image:require('../../assets/love.jpg'),
+       image:require('../../assets/doc.png'),
        title:'Dr.Anonymous',
-       subTitle:'1300',
+       priceaudio:'1300',
+       pricevideo:'1500',
    },
    {
     id:2,
-    image:require('../../assets/love.jpg'),
+    image:require('../../assets/categoryDoc2.png'),
     title:'Dr.Anonymous',
-    subTitle:'1500',
+    priceaudio:'1300',
+    pricevideo:'1500',
     },
     {
     id:3,
-    image:require('../../assets/love.jpg'),
+    image:require('../../assets/categoryDoc3.png'),
     title:'Dr.Anonymous',
-    subTitle:'1800',
+    priceaudio:'1300',
+    pricevideo:'1500',
     },
 ]
 
-function PatientCategoryDetails(props) {
+function PatientCategoryDetails({navigation}) {
     return (
         <ScreenVarient>
+                <AppSearchBar></AppSearchBar>
             <ScrollView style={styles.screen}>
                 <View style={styles.containerTop}>
                     <AppText style={styles.heading}>Psychologist</AppText>
@@ -40,8 +45,9 @@ function PatientCategoryDetails(props) {
                             renderItem={({item})=>
                                 <CardPatient
                                 title={item.title}
-                                subTitle={item.subTitle}
                                 image={item.image}
+                                priceaudio={"LKR" + item.priceaudio}
+                                pricevideo={"LKR" + item.pricevideo}
                                 />
                             }
                             />
@@ -52,7 +58,7 @@ function PatientCategoryDetails(props) {
                 </View>
 
                 <View style={styles.containerTop}>
-                    <AppText style={styles.heading}>Psychologist</AppText>
+                    <AppText style={styles.heading}>Cardiologist </AppText>
                     <View style={styles.topDetails}>
                             <FlatList numColumns={3}
                             data={cardList}
@@ -60,8 +66,9 @@ function PatientCategoryDetails(props) {
                             renderItem={({item})=>
                                 <CardPatient
                                 title={item.title}
-                                subTitle={item.subTitle}
                                 image={item.image}
+                                priceaudio={"LKR" + item.priceaudio}
+                                pricevideo={"LKR" + item.pricevideo}
                                 />
                             }
                             />
@@ -72,7 +79,7 @@ function PatientCategoryDetails(props) {
                 </View>
 
                 <View style={styles.containerTop}>
-                    <AppText style={styles.heading}>Psychologist</AppText>
+                    <AppText style={styles.heading}>Dental</AppText>
                     <View style={styles.topDetails}>
                             <FlatList numColumns={3}
                             data={cardList}
@@ -80,8 +87,9 @@ function PatientCategoryDetails(props) {
                             renderItem={({item})=>
                                 <CardPatient
                                 title={item.title}
-                                subTitle={item.subTitle}
                                 image={item.image}
+                                priceaudio={"LKR" + item.priceaudio}
+                                pricevideo={"LKR" + item.pricevideo}
                                 />
                             }
                             />
@@ -96,12 +104,12 @@ function PatientCategoryDetails(props) {
 }
 const styles = StyleSheet.create({
     screen:{
-        paddingTop:50,
+        flex:1,
     },
     heading:{
         fontWeight:'bold',
-        fontSize:25,
-        marginLeft:"10%",
+        fontSize:20,
+        marginLeft:"5%",
         marginBottom:"2%",
     },
     topDetails:{

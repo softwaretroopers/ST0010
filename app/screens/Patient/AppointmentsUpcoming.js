@@ -13,27 +13,27 @@ function AppointmentsUpcoming(props) {
         }}>
        
              <CardAppointments 
-        name="Dr.shehan"
+        name="Dr.Anonymous"
         date="2020/12/10"
         time="05.20"
         image={require("../../assets/love.jpg")}
         />
 
 <CardAppointments 
-        name="Dr.nehanga"
+        name="Dr.Anonymous"
         date="2020/12/10"
         time="05.20"
         image={require("../../assets/love.jpg")}
         />
 
 <CardAppointments 
-        name="Dr.kushen"
+        name="Dr.Anonymous"
         date="2020/12/10"
         time="05.20"
         image={require("../../assets/love.jpg")}
         />
         <CardAppointments 
-        name="Dr.rashith"
+        name="Dr.Anonymous"
         date="2020/12/10"
         time="05.20"
         image={require("../../assets/love.jpg")}
