@@ -14,7 +14,7 @@ const validationSchema = Yup.object().shape({
   mNumber: Yup.string().required().min(10).max(10).label("Mobile Number"),
 });
 
-function MNumberConfirmation({ navigation , icon, ...otherProps }) {
+function MNumberConfirmation({ navigation, icon, ...otherProps }) {
   return (
     <Screen>
       <AppForm
@@ -35,9 +35,7 @@ function MNumberConfirmation({ navigation , icon, ...otherProps }) {
           />
         </View>
         <View style={styles.buttonContainer}>
-          <SubmitButton 
-          title="Send otp" 
-          color="patientPrimary" />
+          <SubmitButton title="Send otp" color="patientPrimary" />
         </View>
       </AppForm>
     </Screen>

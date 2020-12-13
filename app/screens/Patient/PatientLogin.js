@@ -15,7 +15,7 @@ import colors from "../../configs/colors";
 import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().required().email().label("Email"),
+  mNumber: Yup.string().required().min(10).max(10).label("Mobile Number"),
   password: Yup.string().required().min(8).label("Password"),
 });
 
@@ -23,7 +23,7 @@ function PatientLogin({ navigation }) {
   return (
     <Screen style={styles.container}>
       <AppForm
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ mNumber: "", password: "" }}
         onSubmit={(values) => navigation.navigate("AppNavigator")}
         validationSchema={validationSchema}
       >
@@ -52,10 +52,11 @@ function PatientLogin({ navigation }) {
                 autoCapitalize="none"
                 autoCorrect={false}
                 icon="email"
-                keyboardType="email-address"
-                name="email"
-                placeholder="Email"
-                textContentType="emailAddress"
+                keyboardType="numeric"
+                name="mNumber"
+                placeholder="Mobile Number"
+                textContentType="telephoneNumber"
+                maxLength={10}
               />
 
               <AppFormField

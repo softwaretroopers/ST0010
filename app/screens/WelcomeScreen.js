@@ -4,17 +4,29 @@ import { Image, StyleSheet, View, Text, SafeAreaView } from "react-native";
 import AppButton from "../components/AppButton";
 import colors from "../configs/colors";
 
-function WelcomeScreen({navigation}) {
+function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.background}>
       <View style={styles.logoContainer}>
         <Image source={require("../assets/logo.png")} style={styles.logo} />
-        <Text style={styles.logoText}>Ayushaadi Medical App</Text>
+        <Text style={styles.logoText}>Ayushaadhi Medical App</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <AppButton title="Patient" color="patientPrimary" onPress={() =>navigation.navigate("PatientAuthNavigtion")} />
-        <AppButton title="Doctor" color="doctorPrimary" onPress={() =>navigation.navigate("DocAuthNavigation")} />
-        <AppButton title="Cooperation" color="cooperationPrimary" onPress={() =>navigation.navigate("CooperationLogin")} />
+        <AppButton
+          title="Patient"
+          color="patientPrimary"
+          onPress={() => navigation.navigate("PatientAuthNavigation")}
+        />
+        <AppButton
+          title="Doctor"
+          color="doctorPrimary"
+          onPress={() => navigation.navigate("DocAuthNavigation")}
+        />
+        <AppButton
+          title="Cooperate"
+          color="cooperationPrimary"
+          onPress={() => navigation.navigate("CooperationLogin")}
+        />
       </View>
     </View>
   );
@@ -43,7 +55,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     color: "red",
-    paddingTop:10,
+    paddingTop: 10,
   },
 });
 

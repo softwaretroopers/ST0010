@@ -1,19 +1,11 @@
 import React, { useState } from "react";
-import {useNavigation} from '@react-navigation/native';
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Text,
-  Modal,
-  Switch,
-} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, View, TouchableOpacity, Text, Modal } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../configs/colors";
 import AppText from "./AppText";
 import Icon from "./Icon";
-import AppButtonVariant from "./AppButtonVariant";
 
 function TimeSlot({
   color,
@@ -25,8 +17,6 @@ function TimeSlot({
 }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [secondModalVisible, setSecondModalVisible] = useState(false);
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const navigation = useNavigation();
   return (
     <View style={styles.centeredView}>
@@ -111,50 +101,57 @@ function TimeSlot({
                 padding: 20,
               }}
             >
-              <MaterialCommunityIcons
-                name="microphone"
-                size={26}
-                style={{
-                  color: colors.white,
-                  marginRight: 5,
-                }}
-              />
-              <AppText
-                style={{
-                  fontWeight: "bold",
-                  color: colors.white,
+              <TouchableOpacity
+                style={styles.callButton}
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                  setSecondModalVisible(!secondModalVisible);
+                  navigation.navigate("PatientInvoice");
                 }}
               >
-                Audio Call
-              </AppText>
-              <Switch
-                style={{
-                  marginHorizontal: 10,
-                }}
-                trackColor={{ false: colors.medium, true: colors.lightGrey }}
-                thumbColor={isEnabled ? colors.yes : colors.no}
-                ios_backgroundColor="#3e3e3e"
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-              <MaterialCommunityIcons
-                name="video"
-                size={26}
-                style={{
-                  color: colors.white,
-                  marginRight: 5,
-                }}
-              />
-              <AppText
-                style={{
-                  color: colors.white,
-                  fontWeight: "bold",
+                <MaterialCommunityIcons
+                  name="microphone"
+                  size={26}
+                  style={{
+                    color: colors.black,
+                    marginRight: 5,
+                  }}
+                />
+                <AppText
+                  style={{
+                    fontWeight: "bold",
+                    color: colors.black,
+                  }}
+                >
+                  Audio Call
+                </AppText>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.callButton}
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                  setSecondModalVisible(!secondModalVisible);
+                  navigation.navigate("PatientInvoice");
                 }}
               >
-                Video Call
-              </AppText>
+                <MaterialCommunityIcons
+                  name="video"
+                  size={26}
+                  style={{
+                    color: colors.black,
+                    marginRight: 5,
+                  }}
+                />
+                <AppText
+                  style={{
+                    color: colors.black,
+                    fontWeight: "bold",
+                  }}
+                >
+                  Video Call
+                </AppText>
+              </TouchableOpacity>
             </View>
-            <AppButtonVariant title="submit" color="black" onPress={() =>{setModalVisible(!modalVisible);setSecondModalVisible(!secondModalVisible);navigation.navigate("PatientInvoice"); }} />
             <TouchableOpacity
               style={{
                 padding: 10,
@@ -241,11 +238,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
   },
-  timeView: {
-    backgroundColor: "red",
-    padding: "3%",
-    borderRadius: 15,
-  },
   openButton: {
     borderRadius: 10,
     padding: 10,
@@ -273,6 +265,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+  },
+  callButton: {
+    backgroundColor: colors.white,
+    padding: "8%",
+    margin: "10%",
+    borderRadius: 15,
+    alignItems: "center",
   },
 });
 

@@ -55,16 +55,15 @@ function AppPicker({
       <Modal
         style={styles.listContainer}
         visible={modalVisible}
-        animationType="slide"
+        animationType="fade"
+        transparent={true}
+        onRequestClose={() => setModalVisible(false)}
+        onTouchCancel={() => setModalVisible(false)}
       >
-        <Screen>
-          <AppButtonVariant
-            title="Close"
-            color="black"
-            onPress={() => setModalVisible(false)}
-          />
+        <View style={styles.listContainer}>
           <FlatList
             style={styles.list}
+            contentContainerStyle={{}}
             data={items}
             numColumns={numberOfColumns}
             keyExtractor={(item) => item.value.toString()}
@@ -79,7 +78,7 @@ function AppPicker({
               />
             )}
           />
-        </Screen>
+        </View>
       </Modal>
     </>
   );
@@ -87,14 +86,12 @@ function AppPicker({
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 20,
     flexDirection: "row",
-    width: "100%",
+    width: "50%",
     padding: 15,
     marginVertical: 10,
-    borderStyle: "solid",
-    borderBottomWidth: 1,
-    borderBottomColor: colors.black,
+    flex: 1,
+    alignItems: "center",
   },
   icon: {
     marginRight: 10,
@@ -105,9 +102,18 @@ const styles = StyleSheet.create({
   },
   text: {
     flex: 1,
+    color: colors.medium,
+    textAlign: "center",
   },
   list: {
-    width: "100%",
+    width: "60%",
+  },
+  listContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 260,
+    marginLeft: 100,
   },
 });
 

@@ -43,7 +43,6 @@ function AppFormPickerVariant({
           IconFamily={IconFamily}
           PickerItemComponent={PickerItemComponent}
         />
-        <AppErrorMessage error={errors[name]} visible={touched[name]} />
       </View>
     </>
   );
@@ -51,18 +50,20 @@ function AppFormPickerVariant({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.lightGrey,
-    borderRadius: 15,
+    borderStyle: "solid",
+    borderBottomWidth: 1,
+    borderBottomColor: colors.black,
+    borderRadius: 10,
+    flexDirection: "row",
+    alignItems: "center",
   },
   text: {
-    marginLeft: "15%",
-    marginTop: "7%",
+    marginLeft: "5%",
+
     color: colors.medium,
   },
   icon: {
-    position: "absolute",
     marginLeft: "5%",
-    marginTop: "8%",
   },
 });
 

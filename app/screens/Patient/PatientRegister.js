@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View,ScrollView, Alert } from "react-native";
+import { StyleSheet, View, ScrollView, Alert } from "react-native";
 import * as Yup from "yup";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -7,10 +7,12 @@ import {
   AppForm,
   AppFormFieldVariant,
   AppFormPicker,
+  AppFormPickerVariant,
   SubmitButton,
 } from "../../components/forms";
 import Screen from "../../components/Screen";
 import PickerItemVariant from "../../components/PickerItemVariant";
+import PickerItem from "../../components/PickerItem";
 import colors from "../../configs/colors";
 
 const validationSchema = Yup.object().shape({
@@ -18,7 +20,7 @@ const validationSchema = Yup.object().shape({
   lName: Yup.string().required().min(1).label("Last Name"),
   gender: Yup.object().required().label("Gender"),
   age: Yup.number().required().min(2).label("Age"),
-  email: Yup.string().required().email().min(1).label("Email"),
+  email: Yup.string().email().min(1).label("Email"),
   password: Yup.string().required().min(1).label("Password"),
   confirmPassword: Yup.string()
     .required()
@@ -48,10 +50,9 @@ const genders = [
   },
 ];
 
-function PatientRegister({navigation}) {
+function PatientRegister({ navigation }) {
   return (
     <Screen style={styles.container}>
-      
       <AppForm
         initialValues={{
           fName: "",
@@ -61,24 +62,7 @@ function PatientRegister({navigation}) {
           email: "",
           password: "",
         }}
-        onSubmit={(values) => {
-          Alert.alert(
-            "Co-Operation User Confirmation",
-            "Are you registering under a Co-Operation?",
-            [
-              {
-                text: "No",
-                onPress: () => navigation.navigate("MNumberConfirmation"),
-              },
-              {
-                text: "Cancel",
-                style: "cancel",
-              },
-              { text: "Yes", onPress: () => navigation.navigate("CooperationRegister") },
-            ],
-            { cancelable: false }
-          );
-        }}
+        onSubmit={(values) => navigation.navigate("MNumberConfirmation")}
         validationSchema={validationSchema}
       >
         <ScrollView style={styles.inputContainer}>
@@ -95,13 +79,12 @@ function PatientRegister({navigation}) {
             placeholder="Last Name"
             icon="account-check"
           />
-          <AppFormPicker
+          <AppFormPickerVariant
             items={genders}
             name="gender"
-            placeholder="Gender"
-            icon="gender-male-female"
-            numberOfColumns={3}
-            PickerItemComponent={PickerItemVariant}
+            desc="Gender"
+            placeholderIcon="gender-male-female"
+            PickerItemComponent={PickerItem}
             IconFamily={MaterialCommunityIcons}
           />
           <AppFormFieldVariant
@@ -114,7 +97,7 @@ function PatientRegister({navigation}) {
           <AppFormFieldVariant
             maxLength={30}
             name="email"
-            placeholder="Email"
+            placeholder="Email (Optional)"
             icon="email"
             textContentType="emailAddress"
           />
@@ -148,7 +131,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: "100%",
     padding: 20,
-    paddingTop:0,
+    paddingTop: 0,
   },
   buttonContainer: {
     width: "100%",
