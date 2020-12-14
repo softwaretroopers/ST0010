@@ -7,6 +7,7 @@ import {
   ImageBackground,
   ScrollView,
   TouchableOpacity,
+  LogBox,
 } from "react-native";
 
 import colors from "../../configs/colors";
@@ -15,6 +16,7 @@ import CardPatient from "../../components/CardPatient";
 import ScreenVarient from "../../components/ScreenVarient";
 import AppSearchBar from "../../components/AppSearchBar";
 
+LogBox.ignoreAllLogs(true);
 const cardList = [
   {
     id: 1,
@@ -49,7 +51,10 @@ function PatientCategoryDetails({ navigation }) {
           <View style={styles.topDetails}>
             <FlatList
               numColumns={3}
-              contentContainerStyle={{ alignItems: "center" }}
+              contentContainerStyle={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}
               data={cardList}
               keyExtractor={(listing) => listing.id.toString()}
               renderItem={({ item }) => (

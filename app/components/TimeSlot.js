@@ -14,6 +14,10 @@ function TimeSlot({
   secondaryTimeSlotSecond,
   secondaryTimeSlotThird,
   secondaryTimeSlotFourth,
+  colorFirst,
+  colorSecond,
+  colorThird,
+  colorFourth,
 }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [secondModalVisible, setSecondModalVisible] = useState(false);
@@ -25,7 +29,7 @@ function TimeSlot({
           <View style={styles.modalView}>
             <TouchableOpacity
               style={{
-                backgroundColor: colors.medium,
+                backgroundColor: colors[colorFirst],
                 borderRadius: 10,
                 padding: 10,
                 margin: 10,
@@ -38,7 +42,7 @@ function TimeSlot({
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                backgroundColor: colors.no,
+                backgroundColor: colors[colorSecond],
                 borderRadius: 10,
                 padding: 10,
                 margin: 10,
@@ -51,7 +55,7 @@ function TimeSlot({
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                backgroundColor: colors.yes,
+                backgroundColor: colors[colorThird],
                 borderRadius: 10,
                 padding: 10,
                 margin: 10,
@@ -64,7 +68,7 @@ function TimeSlot({
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                backgroundColor: colors.yes,
+                backgroundColor: colors[colorFourth],
                 borderRadius: 10,
                 padding: 10,
                 margin: 10,
