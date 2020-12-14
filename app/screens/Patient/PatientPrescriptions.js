@@ -1,13 +1,13 @@
 import React from "react";
 
-import AppText from "../../components/AppText";
-import Screen from "../../components/Screen";
+import { AppChat } from "../../components/AppChat";
+import ScreenVarient from "../../components/ScreenVarient";
 
 function PatientPrescriptions(props) {
   return (
-    <Screen>
-      <AppText>Patient Prescriptions Screen</AppText>
-    </Screen>
+    <ScreenVarient>
+      <AppChat />
+    </ScreenVarient>
   );
 }
 
