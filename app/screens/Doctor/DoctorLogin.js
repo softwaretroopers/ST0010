@@ -1,57 +1,74 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import AppTextInput from "../../components/AppTextInput";
-import { Formik } from "formik";
+
+import { StyleSheet, View, ScrollView } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import * as Yup from "yup";
 
 import Screen from "../../components/Screen";
-import AppButton from "../../components/AppButton";
 import colors from "../../configs/colors";
+import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
 
-function DoctorLogin({navigation}) {
+const validationSchema = Yup.object().shape({
+  mNumber: Yup.string().required().min(10).max(10).label("Mobile Number"),
+  password: Yup.string().required().min(8).label("Password"),
+});
+
+function DoctorLogin({ navigation }) {
   return (
     <Screen style={styles.container}>
-      <MaterialIcons
-        name="person"
-        size={50}
-        color={colors.doctorPrimary}
-        style={styles.iconContainer}
-      />
-      <Formik
-        initialValues={{ email: "", password: "" }}
-        onSubmit={(values) => console.log(values)}
+      <AppForm
+        initialValues={{ mNumber: "", password: "" }}
+        onSubmit={(values) => navigation.navigate("DocAppNavigator")}
+        validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit }) => (
-          <>
-            <View style={styles.buttonContainer}>
-              <AppTextInput
+        <View
+          style={{
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <ScrollView
+            style={{ width: "100%", marginTop: "10%" }}
+            contentContainerStyle={{
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <MaterialIcons
+              name="person"
+              size={50}
+              color={colors.doctorPrimary}
+              style={styles.iconContainer}
+            />
+            <View style={styles.inputContainer}>
+              <AppFormField
                 autoCapitalize="none"
                 autoCorrect={false}
-                icon="email"
-                onChangeText={handleChange("email")}
-                keyboardType="email-address"
-                placeholder="Email"
-                textContentType="emailAddress"
+                icon="cellphone"
+                keyboardType="numeric"
+                name="mNumber"
+                placeholder="Mobile Number"
+                textContentType="telephoneNumber"
+                maxLength={10}
               />
-              <AppTextInput
+
+              <AppFormField
                 autoCapitalize="none"
                 autoCorrect={false}
                 icon="lock"
-                onChangeText={handleChange("password")}
                 placeholder="Password"
+                name="password"
                 secureTextEntry
                 textContentType="password"
               />
-
-              <AppButton
-                title="Login"
-                color="doctorPrimary"
-                onPress={()=>navigation.navigate("DocAppNavigator")}
-              />
             </View>
-          </>
-        )}
-      </Formik>
+          </ScrollView>
+          <View style={styles.buttonContainer}>
+            <SubmitButton title="login" color="doctorPrimary" />
+          </View>
+        </View>
+      </AppForm>
     </Screen>
   );
 }
@@ -61,13 +78,20 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   buttonContainer: {
-    width: "100%",
-    padding: 20,
-    marginTop: "40%",
+    width: "90%",
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  iconContainer: {
-    position: "absolute",
-    marginTop: "25%",
+  registerButton: {
+    color: colors.doctorPrimary,
+    fontSize: 16,
+    marginTop: "5%",
+  },
+  inputContainer: {
+    width: "100%",
+    padding: 10,
+    marginVertical: "10%",
   },
 });
 

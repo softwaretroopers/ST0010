@@ -51,7 +51,7 @@ function PatientLogin({ navigation }) {
               <AppFormField
                 autoCapitalize="none"
                 autoCorrect={false}
-                icon="email"
+                icon="cellphone"
                 keyboardType="numeric"
                 name="mNumber"
                 placeholder="Mobile Number"
