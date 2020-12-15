@@ -9,21 +9,10 @@ import DoctorAccInfo from "../../screens/Doctor/DoctorAccInfo";
 
 const Stack = createStackNavigator();
 
-const EditNavigator = () => (
+const DocAccNavigator = () => (
   <Stack.Navigator>
-    <Stack.Screen
-      name="DoctorEditDate"
-      component={DoctorEditDate}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen name="DoctorTimePicker" component={DoctorTimePicker} />
-    <Stack.Screen
-      name="DoctorAppointment"
-      component={DoctorAppointment}
-      options={{ headerShown: false }}
-    />
     <Stack.Screen name="DoctorAccount" component={DoctorAccount} />
-     <Stack.Screen name="DoctorAccInfo" component={DoctorAccInfo} />
+     <Stack.Screen name="DoctorAccInfo" component={DoctorAccInfo} options={{headerShown:false}} />
   </Stack.Navigator>
 );
-export default EditNavigator;
+export default DocAccNavigator;

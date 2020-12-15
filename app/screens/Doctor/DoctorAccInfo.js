@@ -1,5 +1,6 @@
 import React from 'react';
 import { View ,StyleSheet, Button, FlatList } from 'react-native';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
 import AppText from '../../components/AppText';
 import Card from '../../components/Card';
@@ -48,22 +49,19 @@ function DoctorAccInfo(props) {
            <View style={styles.containerHeading}>
                <AppText style={styles.HeadingFont}>My Information</AppText>
             </View>
-           <View >
+            <ScrollView>
            <View style={styles.containerTop}>
            <ListItem
                 image = {require("../../assets/logo.png")}
                 />
            </View>
-           <View style={styles.ContainerButton} >
-             <Button 
-                 title="Edit Profile Photo"
-             />
-           </View>
+           <TouchableOpacity style={styles.ContainerButton} >
+             <AppText style={{fontSize:14,fontWeight:'bold'}}>Edit Profile Photo</AppText> 
+           </TouchableOpacity>
         <View style={styles.containers}>
         <FlatList
         data={listing}
         keyExtractor={listing => listing.id.toString()}
-       
         renderItem={ ( { item}) =>
         <ListItem
         title={item.details}
@@ -76,11 +74,10 @@ function DoctorAccInfo(props) {
         <Button
           color="black"
           title="Update"
-          
         />
   
       </View>
-      </View>
+      </ScrollView>
        </ScreenVarient>
     );
 }
@@ -116,10 +113,6 @@ const styles = StyleSheet.create({
     HeadingFont:{
         fontWeight:'bold'
     },
-    screen:{
-        padding:3
-    }
-
 })
 
 export default DoctorAccInfo;

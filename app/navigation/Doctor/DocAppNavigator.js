@@ -11,6 +11,7 @@ import colors from "../../configs/colors";
 import PatientAppointment from "../../screens/Patient/PatientAppointment";
 import DoctorEditDate from "../../screens/Doctor/DoctorEditDate";
 import EditNavigator from "./EditNavigator";
+import DocAccNavigator from "./DocAccNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -66,7 +67,7 @@ const DocAppNavigator = () => (
 
     <Tab.Screen
       name="Acount"
-      component={DoctorAccInfo}
+      component={DocAccNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons
