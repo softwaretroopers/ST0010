@@ -62,7 +62,7 @@ function PatientDateTimePicker(props) {
             colorFourth="yes"
           />
         </ScrollView>
-        <View style={{ alignItems: "center" }}>
+        <View style={{ alignItems: "center",flexDirection:"row"}}>
           <AppTextVariant
             style={{ fontWeight: "bold" }}
             color="yes"

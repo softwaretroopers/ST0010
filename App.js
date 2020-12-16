@@ -12,7 +12,7 @@ import DocAppNavigator from "./app/navigation/Doctor/DocAppNavigator";
 export default function App() {
   return (
     <NavigationContainer>
-      <AuthNavigator></AuthNavigator>
+     <AuthNavigator></AuthNavigator>
     </NavigationContainer>
   );
 }
