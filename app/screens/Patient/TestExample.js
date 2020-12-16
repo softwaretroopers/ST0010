@@ -91,87 +91,51 @@ const FlatListData = [
       },
     ],
   },
-  {
-    categories: "Dentist",
-    doctors: [
-      {
-        id: 1,
-        image: require("../../assets/doc.png"),
-        title: "Dr.Anonymous 7",
-        priceAudio: "1300",
-        priceVideo: "1500",
-        language: "Sinhala",
-        profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
-      },
-      {
-        id: 2,
-        image: require("../../assets/categoryDoc2.png"),
-        title: "Dr.Anonymous 8",
-        priceAudio: "1300",
-        priceVideo: "1500",
-        language: "Sinhala",
-        profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
-      },
-      {
-        id: 3,
-        image: require("../../assets/categoryDoc3.png"),
-        title: "Dr.Anonymous 9",
-        priceAudio: "1300",
-        priceVideo: "1500",
-        language: "Sinhala",
-        profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
-      },
-    ],
-  },
 ];
 
-function PatientCategoryDetails({ navigation }) {
+function TestExample({ navigation }) {
   return (
     <ScreenVarient>
       <AppSearchBar></AppSearchBar>
-      <View style={styles.containerTop}>
-        <FlatList
-          data={FlatListData}
-          renderItem={({ item }) => (
-            <>
-              <AppText style={styles.heading}>{item.categories}</AppText>
-              <View style={styles.topDetails}>
-                <FlatList
-                  numColumns={3}
-                  contentContainerStyle={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  data={item.doctors}
-                  renderItem={({ item }) => (
-                    <CardPatient
-                      title={item.title}
-                      image={item.image}
-                      priceAudio={"LKR" + item.priceAudio}
-                      priceVideo={"LKR" + item.priceVideo}
-                      language={item.language}
-                      profession={item.profession}
-                      education={item.education}
-                      university={item.university}
-                    />
-                  )}
-                  keyExtractor={(item) => item.id.toString()}
-                />
-              </View>
-              <TouchableOpacity style={styles.viewAll}>
-                <AppText style={styles.viewText}>View All</AppText>
-              </TouchableOpacity>
-            </>
-          )}
-          keyExtractor={(item, id) => id}
-        />
-      </View>
+      <ScrollView style={styles.screen}>
+        <View style={styles.containerTop}>
+          <FlatList
+            data={FlatListData}
+            renderItem={({ item }) => (
+              <>
+                <AppText style={styles.heading}>{item.categories}</AppText>
+                <View style={styles.topDetails}>
+                  <FlatList
+                    numColumns={3}
+                    contentContainerStyle={{
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                    data={item.doctors}
+                    renderItem={({ item }) => (
+                      <CardPatient
+                        title={item.title}
+                        image={item.image}
+                        priceAudio={"LKR" + item.priceAudio}
+                        priceVideo={"LKR" + item.priceVideo}
+                        language={item.language}
+                        profession={item.profession}
+                        education={item.education}
+                        university={item.university}
+                      />
+                    )}
+                    keyExtractor={(item) => item.id.toString()}
+                  />
+                </View>
+                <TouchableOpacity style={styles.viewAll}>
+                  <AppText style={styles.viewText}>View All</AppText>
+                </TouchableOpacity>
+              </>
+            )}
+            keyExtractor={(item, id) => id}
+          />
+        </View>
+      </ScrollView>
     </ScreenVarient>
   );
 }
@@ -199,4 +163,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PatientCategoryDetails;
+export default TestExample;

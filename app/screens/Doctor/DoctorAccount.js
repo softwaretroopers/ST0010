@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, View, StyleSheet ,TouchableOpacity } from "react-native";
+import { FlatList, View, StyleSheet, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 // import {useNavigation} from '@react-navigation/native';
 
@@ -34,7 +34,7 @@ const menuItems = [
   },
 ];
 
-function DoctorAccount({navigation}) {
+function DoctorAccount({ navigation }) {
   // const navigation = useNavigation();
   return (
     <ScreenVarient>
@@ -43,61 +43,62 @@ function DoctorAccount({navigation}) {
                <AppText style={styles.HeadingFont}>My Information</AppText>
         </View> */}
         <View style={styles.containerTop}>
-            <ListItem
-                image = {require("../../assets/logo.png")}
-            />
-        <TouchableOpacity  onPress={() => navigation.navigate("DoctorAccInfo")} >
-            <AppText style={{fontSize:14,fontWeight:'bold'}}>Edit Profile Photo</AppText>
-        </TouchableOpacity>
+          <ListItem image={require("../../assets/logo.png")} />
+          <TouchableOpacity
+            onPress={() => navigation.navigate("DoctorAccInfo")}
+          >
+            <AppText style={{ fontSize: 14, fontWeight: "bold" }}>
+              Edit Profile
+            </AppText>
+          </TouchableOpacity>
         </View>
-        </View>
+      </View>
 
-        <View style={styles.containerDetails}>
-          <FlatList
-            data={menuItems}
-            keyExtractor={(menuItems) => menuItems.title}
-            renderItem={({ item }) => (
-              <ListItem
-                title={item.title}
-                IconComponent={
-                  <Icon
-                    name={item.icon.name}
-                    backgroundColor={item.icon.backgroundColor}
-                  />
-                }
-              />
-            )}
-          />
-        </View>
+      <View style={styles.containerDetails}>
+        <FlatList
+          data={menuItems}
+          keyExtractor={(menuItems) => menuItems.title}
+          renderItem={({ item }) => (
+            <ListItem
+              title={item.title}
+              IconComponent={
+                <Icon
+                  name={item.icon.name}
+                  backgroundColor={item.icon.backgroundColor}
+                />
+              }
+            />
+          )}
+        />
+      </View>
     </ScreenVarient>
   );
 }
 
 const styles = StyleSheet.create({
-    containerDetails: {
-        marginTop:"10%",
+  containerDetails: {
+    marginTop: "10%",
   },
-  containerHeading:{
-    borderBottomRightRadius:20,
-    borderBottomLeftRadius:20,
-    backgroundColor:colors.white,
-    padding:'5%',
-    marginBottom:"2%",
-    shadowColor:colors.patientPrimary,
-    shadowOffset:{width:0,height:10},
-    shadowOpacity:1,
-    shadowRadius:10,
-    elevation:15,
-},
+  containerHeading: {
+    borderBottomRightRadius: 20,
+    borderBottomLeftRadius: 20,
+    backgroundColor: colors.white,
+    padding: "5%",
+    marginBottom: "2%",
+    shadowColor: colors.patientPrimary,
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 1,
+    shadowRadius: 10,
+    elevation: 15,
+  },
   containerTop: {
     // marginBottom:"8%",
-    alignItems:"center",
-//    backgroundColor: colors.lightGrey,
- },
- HeadingFont:{
-    fontWeight:'bold'
-},
-
+    alignItems: "center",
+    //    backgroundColor: colors.lightGrey,
+  },
+  HeadingFont: {
+    fontWeight: "bold",
+  },
 });
 
 export default DoctorAccount;
