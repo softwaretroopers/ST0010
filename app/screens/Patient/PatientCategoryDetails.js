@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  View,
-  FlatList,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  LogBox,
-} from "react-native";
+import { View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 
 import colors from "../../configs/colors";
 import AppText from "../../components/AppText";
@@ -20,7 +13,7 @@ const FlatListData = [
     doctors: [
       {
         id: 1,
-        image: require("../../assets/doc.png"),
+        image: require("../../assets/categoryDoc1.png"),
         title: "Dr.Anonymous 1",
         priceAudio: "1300",
         priceVideo: "1500",
@@ -51,6 +44,17 @@ const FlatListData = [
         education: "Bsc",
         university: "Colombo",
       },
+      {
+        id: 4,
+        image: require("../../assets/categoryDoc4.png"),
+        title: "Dr.Anonymous 4",
+        priceAudio: "1300",
+        priceVideo: "1500",
+        language: "Sinhala",
+        profession: "Doctor",
+        education: "Bsc",
+        university: "Colombo",
+      },
     ],
   },
   {
@@ -58,8 +62,8 @@ const FlatListData = [
     doctors: [
       {
         id: 1,
-        image: require("../../assets/doc.png"),
-        title: "Dr.Anonymous 4",
+        image: require("../../assets/categoryDoc1.png"),
+        title: "Dr.Anonymous 5",
         priceAudio: "1300",
         priceVideo: "1500",
         language: "Sinhala",
@@ -70,7 +74,7 @@ const FlatListData = [
       {
         id: 2,
         image: require("../../assets/categoryDoc2.png"),
-        title: "Dr.Anonymous 5",
+        title: "Dr.Anonymous 6",
         priceAudio: "1300",
         priceVideo: "1500",
         language: "Sinhala",
@@ -81,7 +85,18 @@ const FlatListData = [
       {
         id: 3,
         image: require("../../assets/categoryDoc3.png"),
-        title: "Dr.Anonymous 6",
+        title: "Dr.Anonymous 7",
+        priceAudio: "1300",
+        priceVideo: "1500",
+        language: "Sinhala",
+        profession: "Doctor",
+        education: "Bsc",
+        university: "Colombo",
+      },
+      {
+        id: 4,
+        image: require("../../assets/categoryDoc4.png"),
+        title: "Dr.Anonymous 8",
         priceAudio: "1300",
         priceVideo: "1500",
         language: "Sinhala",
@@ -96,8 +111,8 @@ const FlatListData = [
     doctors: [
       {
         id: 1,
-        image: require("../../assets/doc.png"),
-        title: "Dr.Anonymous 7",
+        image: require("../../assets/categoryDoc1.png"),
+        title: "Dr.Anonymous 9",
         priceAudio: "1300",
         priceVideo: "1500",
         language: "Sinhala",
@@ -108,7 +123,7 @@ const FlatListData = [
       {
         id: 2,
         image: require("../../assets/categoryDoc2.png"),
-        title: "Dr.Anonymous 8",
+        title: "Dr.Anonymous 10",
         priceAudio: "1300",
         priceVideo: "1500",
         language: "Sinhala",
@@ -119,7 +134,18 @@ const FlatListData = [
       {
         id: 3,
         image: require("../../assets/categoryDoc3.png"),
-        title: "Dr.Anonymous 9",
+        title: "Dr.Anonymous 11",
+        priceAudio: "1300",
+        priceVideo: "1500",
+        language: "Sinhala",
+        profession: "Doctor",
+        education: "Bsc",
+        university: "Colombo",
+      },
+      {
+        id: 4,
+        image: require("../../assets/categoryDoc4.png"),
+        title: "Dr.Anonymous 12",
         priceAudio: "1300",
         priceVideo: "1500",
         language: "Sinhala",
@@ -135,7 +161,11 @@ function PatientCategoryDetails({ navigation }) {
   return (
     <ScreenVarient>
       <AppSearchBar></AppSearchBar>
-      <View style={styles.containerTop}>
+      <View
+        style={
+          styles.containerTop /*Remove the styling of this after fixing bottom tabs*/
+        }
+      >
         <FlatList
           data={FlatListData}
           renderItem={({ item }) => (
@@ -143,7 +173,7 @@ function PatientCategoryDetails({ navigation }) {
               <AppText style={styles.heading}>{item.categories}</AppText>
               <View style={styles.topDetails}>
                 <FlatList
-                  numColumns={3}
+                  horizontal={true}
                   contentContainerStyle={{
                     justifyContent: "center",
                     alignItems: "center",
@@ -161,7 +191,7 @@ function PatientCategoryDetails({ navigation }) {
                       university={item.university}
                     />
                   )}
-                  keyExtractor={(item) => item.id.toString()}
+                  keyExtractor={(item, index) => String(index)}
                 />
               </View>
               <TouchableOpacity style={styles.viewAll}>
@@ -169,7 +199,7 @@ function PatientCategoryDetails({ navigation }) {
               </TouchableOpacity>
             </>
           )}
-          keyExtractor={(item, id) => id}
+          keyExtractor={(item, index) => String(index)}
         />
       </View>
     </ScreenVarient>
@@ -196,6 +226,9 @@ const styles = StyleSheet.create({
   viewText: {
     fontWeight: "bold",
     color: colors.patientPrimary,
+  },
+  containerTop: {
+    marginBottom: 73, //Remove this after fixing bottom tabs
   },
 });
 
