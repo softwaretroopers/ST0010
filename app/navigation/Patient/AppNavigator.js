@@ -6,6 +6,7 @@ import PatientAccInfo from "../../screens/Patient/PatientAccInfo";
 import FeedNavigator from "./FeedNavigator";
 import PatientPrescriptions from "../../screens/Patient/PatientPrescriptions";
 import PatientTopNavigator from "./PatientTopNavigator";
+import DrawerNavigation from "./DrawerNavigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,7 +14,7 @@ const AppNavigator = () => (
   <Tab.Navigator>
     <Tab.Screen
       name="Home"
-      component={FeedNavigator}
+      component={DrawerNavigation}
       options={{
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={size} />

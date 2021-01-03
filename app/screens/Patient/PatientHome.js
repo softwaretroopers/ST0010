@@ -1,6 +1,11 @@
 import React from "react";
-import { FlatList, StyleSheet, View, TouchableOpacity } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import {
+  FlatList,
+  StyleSheet,
+  View,
+  TouchableWithoutFeedback,
+} from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import Card from "../../components/Card";
 import ScreenVarient from "../../components/ScreenVarient";
@@ -32,16 +37,14 @@ const listings = [
 function PatientHome({ navigation }) {
   return (
     <ScreenVarient>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("PatientNavigation")}
-      >
-        <AntDesign
-          name="menufold"
+      <TouchableWithoutFeedback onPress={() => navigation.openDrawer()}>
+        <MaterialIcons
+          name="menu"
           size={24}
           color="black"
           style={styles.navigationPanel}
         />
-      </TouchableOpacity>
+      </TouchableWithoutFeedback>
       <View style={styles.screen}>
         <FlatList
           data={listings}
