@@ -9,9 +9,9 @@ function CardAppointments({name , date ,time, image}) {
         <View style={styles.card}>
             <Image style={styles.image} source={image} />
             <View style={styles.detailsContainer}>
-                <AppText style={styles.name} >{name}</AppText>
-                <AppText>{date}</AppText>
-                <AppText>{time}</AppText>
+                <AppText style={styles.Detailstextname} >{name}</AppText>
+                <AppText style={styles.Detailstext}>{date}</AppText>
+                <AppText style={styles.Detailstext}>{time}</AppText>
             </View>
         </View>
 
@@ -24,8 +24,15 @@ const styles = StyleSheet.create({
         backgroundColor:colors.white,
         flexDirection:"row",
         alignItems:"center",
-        justifyContent:"space-evenly"
-
+        justifyContent:"space-evenly",
+    },
+    Detailstextname:{
+        fontSize:16,
+        fontWeight:'700'
+    },
+    Detailstext:{
+        fontSize:16,
+        fontWeight:'600'
     },
     image:{
         width:75,
