@@ -1,11 +1,11 @@
 import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
+import { Chip } from "react-native-paper";
 
-import AppText from "../../components/AppText";
-import AppTextVariant from "../../components/AppTextVariant";
 import DatePicker from "../../components/DatePicker";
 import Screen from "../../components/Screen";
 import TimeSlot from "../../components/TimeSlot";
+import colors from "../../configs/colors";
 
 function PatientDateTimePicker(props) {
   return (
@@ -62,28 +62,22 @@ function PatientDateTimePicker(props) {
             colorFourth="yes"
           />
         </ScrollView>
-        <View style={{ alignItems: "center",flexDirection:"row"}}>
-          <AppTextVariant
-            style={{ fontWeight: "bold" }}
-            color="yes"
-            name="square"
-          >
+        <View
+          style={{ margin: 10, alignItems: "center", flexDirection: "row" }}
+        >
+          <Chip selectedColor={colors.yes} style={{ margin: 10 }} icon="circle">
             Available
-          </AppTextVariant>
-          <AppTextVariant
-            style={{ fontWeight: "bold" }}
-            color="medium"
-            name="square"
-          >
-            Unavailable
-          </AppTextVariant>
-          <AppTextVariant
-            style={{ fontWeight: "bold" }}
-            color="no"
-            name="square"
+          </Chip>
+          <Chip selectedColor={colors.no} style={{ margin: 10 }} icon="circle">
+            Unavalible
+          </Chip>
+          <Chip
+            selectedColor={colors.medium}
+            style={{ margin: 10 }}
+            icon="circle"
           >
             Booked
-          </AppTextVariant>
+          </Chip>
         </View>
       </View>
     </Screen>

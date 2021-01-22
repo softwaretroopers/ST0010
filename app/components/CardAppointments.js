@@ -1,48 +1,115 @@
-import React from 'react';
-import { View , StyleSheet ,Image  } from 'react-native';
+import React from "react";
+import { View, StyleSheet, Image } from "react-native";
+import { Divider } from "react-native-paper";
+import { AntDesign } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
-import colors from '../configs/colors';
-import AppText from './AppText';
+import colors from "../configs/colors";
+import AppText from "./AppText";
 
-function CardAppointments({name , date ,time, image}) {
-    return (
-        <View style={styles.card}>
-            <Image style={styles.image} source={image} />
-            <View style={styles.detailsContainer}>
-                <AppText style={styles.Detailstextname} >{name}</AppText>
-                <AppText style={styles.Detailstext}>{date}</AppText>
-                <AppText style={styles.Detailstext}>{time}</AppText>
-            </View>
+function CardAppointments({
+  name,
+  date,
+  time,
+  image,
+  category,
+  type = "keyboard-voice",
+}) {
+  return (
+    <View style={styles.card}>
+      <Image style={styles.image} source={image} />
+      <Divider
+        style={{
+          backgroundColor: colors.patientPrimary,
+          width: 2,
+          height: "80%",
+          marginHorizontal: "2%",
+        }}
+      />
+      <View style={styles.detailsContainer}>
+        <AppText style={styles.Detailstextname}>{name}</AppText>
+        <View flexDirection="row" style={{ alignItems: "center" }}>
+          <AppText style={styles.category}>{category}</AppText>
+          <View
+            style={{
+              width: 16,
+              height: 16,
+              borderRadius: 8,
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: colors.patientPrimary,
+              marginLeft: "2%",
+            }}
+          >
+            <MaterialIcons size={8} color="white" name={type}></MaterialIcons>
+          </View>
         </View>
-
-    );
+        <View style={styles.timeContainer}>
+          <View
+            style={{ marginRight: "10%", padding: "2%" }}
+            backgroundColor={colors.patientPrimary}
+            borderRadius={5}
+          >
+            <AppText style={styles.date}>{date}</AppText>
+          </View>
+          <View
+            style={{ marginLeft: "10%", padding: "2%" }}
+            backgroundColor={colors.patientPrimary}
+            borderRadius={5}
+          >
+            <AppText style={styles.time}>{time}</AppText>
+          </View>
+        </View>
+      </View>
+      <AntDesign name="rightcircle" size={24} color={colors.patientPrimary} />
+    </View>
+  );
 }
 const styles = StyleSheet.create({
-    card:{
-        marginBottom:8,
-        width:"100%",
-        backgroundColor:colors.white,
-        flexDirection:"row",
-        alignItems:"center",
-        justifyContent:"space-evenly",
-    },
-    Detailstextname:{
-        fontSize:16,
-        fontWeight:'700'
-    },
-    Detailstext:{
-        fontSize:16,
-        fontWeight:'600'
-    },
-    image:{
-        width:75,
-        height:75,
-        margin:"3%"
-    },
-    detailsContainer:{
-        margin:"3%",
-     
-    },
-})
+  card: {
+    marginHorizontal: "2%",
+    marginTop: "2%",
+    backgroundColor: colors.white,
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 15,
+    padding: "2%",
+  },
+  Detailstextname: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: colors.medium,
+  },
+  date: {
+    fontSize: 12,
+    fontWeight: "bold",
+    color: colors.white,
+  },
+  time: {
+    fontSize: 12,
+    fontWeight: "bold",
+    color: colors.white,
+  },
+
+  category: {
+    fontSize: 16,
+    color: colors.patientPrimary,
+    fontWeight: "bold",
+  },
+  image: {
+    width: 100,
+    height: 100,
+    borderRadius: 10,
+    alignSelf: "flex-start",
+  },
+  detailsContainer: {
+    margin: "3%",
+    width: "52%",
+  },
+  timeContainer: {
+    flexDirection: "row",
+    marginTop: "8%",
+  },
+});
 
 export default CardAppointments;

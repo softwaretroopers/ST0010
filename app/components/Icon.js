@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import { Entypo} from "@expo/vector-icons"; 
+import { Entypo } from "@expo/vector-icons";
 
 function Icon({
   name,

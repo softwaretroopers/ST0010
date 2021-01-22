@@ -1,41 +1,65 @@
 import React from "react";
-import { View, StyleSheet, Button } from "react-native";
+import { View, StyleSheet } from "react-native";
+import {
+  FAB,
+  Text,
+  Avatar,
+  Title,
+  Subheading,
+  Caption,
+} from "react-native-paper";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import Icon from "../../components/Icon";
 import ScreenVarient from "../../components/ScreenVarient";
-import ListItem from "../../components/ListItem";
 import colors from "../../configs/colors";
 import AppText from "../../components/AppText";
-import AppButton from "../../components/AppButton";
 
 function PatientAccInfo(props) {
   return (
     <ScreenVarient>
       <View style={styles.accounttop}>
-        <ListItem
-          title="Mr.Anonymous"
-          IconComponent={<Icon name="user" size={75} />}
-        />
-        <View style={styles.title}>
-          <ListItem
-            title="+94 77 252 5258"
-            IconComponent={<Icon name="mobile" size={25} />}
-          />
-          <ListItem
-            title="softwaretroopers.com"
-            IconComponent={<Icon name="email" size={25} />}
-          />
+        <FAB style={styles.fab} small icon="pen" />
+        <Avatar.Image size={100} source={require("../../assets/logo.png")} />
+        <Title style={{ color: colors.white }}>Software Troopers</Title>
+        <Subheading style={{ color: colors.white }}>071 400 9020</Subheading>
+        <Caption style={{ color: colors.white }}>
+          support@softwaretroopers.com
+        </Caption>
+        <View flexDirection="row" style={{ margin: "2%" }}>
+          <View
+            flexDirection="row"
+            style={{
+              width: "20%",
+              backgroundColor: colors.white,
+              padding: "1%",
+              borderRadius: 10,
+              justifyContent: "center",
+              alignItems: "center",
+              marginHorizontal: "2%",
+            }}
+          >
+            <MaterialCommunityIcons name="calendar" size={16} color="black" />
+            <Text style={{ fontWeight: "bold", marginLeft: 5 }}>18</Text>
+          </View>
+          <View
+            flexDirection="row"
+            style={{
+              width: "20%",
+              backgroundColor: colors.white,
+              padding: "1%",
+              borderRadius: 10,
+              justifyContent: "center",
+              marginHorizontal: "2%",
+            }}
+          >
+            <MaterialCommunityIcons
+              name="gender-male-female"
+              size={16}
+              color="black"
+            />
+            <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Male</Text>
+          </View>
         </View>
-      </View>
-
-      <View style={styles.buttonContainer}>
-        <AppButton title="Edit" color="black" />
-      </View>
-
-      <View style={styles.accountMiddle}>
-        <AppText style={styles.accountMiddleDetail}>Age</AppText>
-        <AppText style={styles.accountMiddleDetail}>Gender</AppText>
-        <AppText style={styles.accountMiddleDetail}>Address</AppText>
       </View>
       <View>
         <AppText style={styles.accountBottom}>Reports</AppText>
@@ -47,9 +71,10 @@ function PatientAccInfo(props) {
 const styles = StyleSheet.create({
   accounttop: {
     backgroundColor: colors.patientPrimary,
-    height: "42%",
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
+    borderRadius: 20,
+    margin: "2%",
+    padding: "2%",
+    alignItems: "center",
   },
   accountMiddle: {
     padding: 20,
@@ -74,6 +99,12 @@ const styles = StyleSheet.create({
   title: {
     marginTop: 20,
     marginLeft: 10,
+  },
+  fab: {
+    position: "absolute",
+    right: 10,
+    top: 10,
+    backgroundColor: "white",
   },
 });
 
