@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "ST0010",
+    "name": "Ayushaadhi",
     "slug": "ST0010",
+    "owner": "softwaretroopers",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -16,7 +17,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.softwaretroopers.ayushaadhi"
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
