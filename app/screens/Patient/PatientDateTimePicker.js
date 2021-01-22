@@ -69,7 +69,7 @@ function PatientDateTimePicker(props) {
             Available
           </Chip>
           <Chip selectedColor={colors.no} style={{ margin: 10 }} icon="circle">
-            Unavalible
+            Unavailable
           </Chip>
           <Chip
             selectedColor={colors.medium}
