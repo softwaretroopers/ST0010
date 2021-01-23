@@ -13,6 +13,7 @@ const DocChannelingNavigator = () => (
       component={PatientCategoryDetails}
       options={{ headerShown: false }}
     />
+
     <Stack.Screen
       name="PatientDateTimePicker"
       component={PatientDateTimePicker}

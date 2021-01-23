@@ -160,7 +160,7 @@ const FlatListData = [
 function PatientCategoryDetails({ navigation }) {
   return (
     <ScreenVarient>
-      <AppSearchBar></AppSearchBar>
+      <AppSearchBar />
       <View
         style={
           styles.containerTop /*Remove the styling of this after fixing bottom tabs*/
@@ -194,7 +194,12 @@ function PatientCategoryDetails({ navigation }) {
                   keyExtractor={(item, index) => String(index)}
                 />
               </View>
-              <TouchableOpacity style={styles.viewAll}>
+              <TouchableOpacity
+                style={styles.viewAll}
+                onPress={() => {
+                  navigation.navigate("PatientCategorySpecific");
+                }}
+              >
                 <AppText style={styles.viewText}>View All</AppText>
               </TouchableOpacity>
             </>
@@ -228,7 +233,8 @@ const styles = StyleSheet.create({
     color: colors.patientPrimary,
   },
   containerTop: {
-    marginBottom: 73, //Remove this after fixing bottom tabs
+    marginTop: "1%",
+    marginBottom: 73, //#TODO Remove this after fixing bottom tabs
   },
 });
 

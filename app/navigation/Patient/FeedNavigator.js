@@ -9,6 +9,7 @@ import PatientDateTimePicker from "../../screens/Patient/PatientDateTimePicker";
 import PatientInvoice from "../../screens/Patient/PatientInvoice";
 import PatientInvoiceBill from "../../screens/Patient/PatientInvoiceBill";
 import PatientTopNavigator from "./PatientTopNavigator";
+import PatientCategorySpecific from "../../screens/Patient/PatientCategorySpecific";
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,11 @@ const FeedNavigator = () => (
       name="PatientCategoryDetails"
       component={PatientCategoryDetails}
       options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="PatientCategorySpecific"
+      component={PatientCategorySpecific}
+      options={{ headerShown: true }}
     />
     <Stack.Screen
       name="PatientDateTimePicker"

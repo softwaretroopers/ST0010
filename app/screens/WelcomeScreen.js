@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Image,
   StyleSheet,
   View,
   Text,
@@ -12,13 +11,11 @@ import * as Animatable from "react-native-animatable";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import AppButton from "../components/AppButton";
 import colors from "../configs/colors";
 
 function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#032940" barStyle="light-content" />
       <View style={styles.header}>
         <Animatable.Image
           animation="bounceIn"
@@ -27,6 +24,12 @@ function WelcomeScreen({ navigation }) {
           style={styles.logo}
           resizeMode="stretch"
         />
+        <Animatable.Text
+          animation="slideInUp"
+          style={{ color: colors.white, fontSize: 25, fontWeight: "bold" }}
+        >
+          Welcome!
+        </Animatable.Text>
       </View>
       <Animatable.View
         style={[
