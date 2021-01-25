@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     flex: 1,
     alignItems: "center",
+    backgroundColor: colors.lightGrey,
   },
   icon: {
     marginRight: 10,

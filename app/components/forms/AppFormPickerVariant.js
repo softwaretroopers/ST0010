@@ -52,10 +52,11 @@ const styles = StyleSheet.create({
   container: {
     borderStyle: "solid",
     borderBottomWidth: 1,
-    borderBottomColor: colors.black,
-    borderRadius: 10,
+    borderBottomColor: colors.medium,
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: colors.lightGrey,
+    marginBottom: "2%",
   },
   text: {
     marginLeft: "5%",
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     color: colors.medium,
   },
   icon: {
-    marginLeft: "5%",
+    marginLeft: 12,
   },
 });
 
