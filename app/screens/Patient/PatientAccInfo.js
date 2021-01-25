@@ -9,15 +9,20 @@ import {
   Caption,
 } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import * as Animatable from "react-native-animatable";
 
+import ReportCard from "../../components/ReportCard";
 import ScreenVarient from "../../components/ScreenVarient";
 import colors from "../../configs/colors";
-import AppText from "../../components/AppText";
 
 function PatientAccInfo(props) {
   return (
     <ScreenVarient>
-      <View style={styles.accounttop}>
+      <Animatable.View
+        animation="bounceInDown"
+        duration={1500}
+        style={styles.accounttop}
+      >
         <FAB style={styles.fab} small icon="pen" />
         <Avatar.Image size={100} source={require("../../assets/logo.png")} />
         <Title style={{ color: colors.white }}>Software Troopers</Title>
@@ -60,9 +65,24 @@ function PatientAccInfo(props) {
             <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Male</Text>
           </View>
         </View>
-      </View>
-      <View>
-        <AppText style={styles.accountBottom}>Reports</AppText>
+      </Animatable.View>
+      <View style={styles.ReportCards}>
+        <Title style={{ marginBottom: "2%" }}>Reports</Title>
+        <ReportCard
+          title="Blood Report"
+          subtitle="Dr.Anonymous 1"
+          image={require("../../assets/report.png")}
+        />
+        <ReportCard
+          title="Laboratory Report"
+          subtitle="Dr.Anonymous 2"
+          image={require("../../assets/report.png")}
+        />
+        <ReportCard
+          title="Consultation"
+          subtitle="Dr.Anonymous 3"
+          image={require("../../assets/report.png")}
+        />
       </View>
     </ScreenVarient>
   );
@@ -105,6 +125,12 @@ const styles = StyleSheet.create({
     right: 10,
     top: 10,
     backgroundColor: "white",
+  },
+  ReportCards: {
+    flex: 1,
+    display: "flex",
+    marginTop: 10,
+    marginHorizontal: 30,
   },
 });
 
