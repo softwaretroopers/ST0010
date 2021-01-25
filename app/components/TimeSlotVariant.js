@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
-import CheckBox from "@react-native-community/checkbox";
+import { Checkbox } from "react-native-paper";
 
 import colors from "../configs/colors";
 
 function TimeSlotVariant({ primaryTimeSlot }) {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [checked, setChecked] = useState(false);
   return (
     <View style={styles.centeredView}>
       <TouchableOpacity
@@ -21,11 +21,11 @@ function TimeSlotVariant({ primaryTimeSlot }) {
         }}
       >
         <Text style={styles.textStyle}>{primaryTimeSlot}</Text>
-        <CheckBox
-          disabled={false}
-          value={toggleCheckBox}
-          onValueChange={(newValue) => setToggleCheckBox(newValue)}
-          tintColors={{ true: colors.white, false: colors.black }}
+        <Checkbox
+          status={checked ? "checked" : "unchecked"}
+          onPress={() => {
+            setChecked(!checked);
+          }}
         />
       </TouchableOpacity>
     </View>

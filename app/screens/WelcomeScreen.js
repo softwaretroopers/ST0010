@@ -46,7 +46,7 @@ function WelcomeScreen({ navigation }) {
               onPress={() => navigation.navigate("PatientAuthNavigation")}
             >
               <LinearGradient
-                colors={["#e02b97", "#7d2d81"]}
+                colors={[colors.themeLight, colors.themeMedium]}
                 style={styles.signIn}
               >
                 <Text style={styles.textSign}>Patient</Text>
@@ -57,7 +57,7 @@ function WelcomeScreen({ navigation }) {
               onPress={() => navigation.navigate("DocAuthNavigation")}
             >
               <LinearGradient
-                colors={["#e02b97", "#7d2d81"]}
+                colors={[colors.themeLight, colors.themeMedium]}
                 style={styles.signIn}
               >
                 <Text style={styles.textSign}>Doctor</Text>
@@ -68,7 +68,7 @@ function WelcomeScreen({ navigation }) {
               onPress={() => navigation.navigate("CooperationLogin")}
             >
               <LinearGradient
-                colors={["#e02b97", "#7d2d81"]}
+                colors={[colors.themeLight, colors.themeMedium]}
                 style={styles.signIn}
               >
                 <Text style={styles.textSign}>Cooperation</Text>
@@ -103,12 +103,12 @@ const styles = StyleSheet.create({
   logoText: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#032940",
+    color: colors.themeDark,
     paddingTop: 10,
   },
   container: {
     flex: 1,
-    backgroundColor: "#032940",
+    backgroundColor: colors.themeDark,
   },
   header: {
     flex: 2,
@@ -129,12 +129,12 @@ const styles = StyleSheet.create({
     height: height_logo,
   },
   title: {
-    color: "#05375a",
+    color: colors.themeDark,
     fontSize: 30,
     fontWeight: "bold",
   },
   text: {
-    color: "#e02b97",
+    color: colors.themeLight,
     marginTop: 5,
   },
   button: {

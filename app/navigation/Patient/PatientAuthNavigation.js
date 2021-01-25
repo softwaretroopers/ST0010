@@ -6,15 +6,36 @@ import MNumberConfirmation from "../../screens/Patient/MNumberConfirmation";
 import OTPConfirmation from "../../screens/Patient/OTPConfirmation";
 import PatientLogin from "../../screens/Patient/PatientLogin";
 import AppNavigator from "./AppNavigator";
+import colors from "../../configs/colors";
 
 const Stack = createStackNavigator();
 
 const PatientAuthNavigation = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="PatientLogin" component={PatientLogin} />
-    <Stack.Screen name="PatientRegister" component={PatientRegister} />
+  <Stack.Navigator
+    screenOptions={{
+      headerStyle: { backgroundColor: colors.themeDark },
+      headerTintColor: colors.themeLight,
+      headerTitleStyle: {
+        fontWeight: "bold",
+      },
+    }}
+  >
+    <Stack.Screen
+      name="PatientLogin"
+      component={PatientLogin}
+      options={{ title: "Login" }}
+    />
+    <Stack.Screen
+      name="PatientRegister"
+      component={PatientRegister}
+      options={{ title: "Register" }}
+    />
     <Stack.Screen name="MNumberConfirmation" component={MNumberConfirmation} />
-    <Stack.Screen name="OTPConfirmation" component={OTPConfirmation} />
+    <Stack.Screen
+      name="OTPConfirmation"
+      component={OTPConfirmation}
+      options={{ title: "OTP" }}
+    />
     <Stack.Screen
       name="AppNavigator"
       component={AppNavigator}
