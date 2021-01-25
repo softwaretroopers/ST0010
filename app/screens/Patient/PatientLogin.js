@@ -24,7 +24,7 @@ function PatientLogin({ navigation }) {
     <Screen style={styles.container}>
       <AppForm
         initialValues={{ mNumber: "", password: "" }}
-        onSubmit={(values) => navigation.navigate("AppNavigator")}
+        onSubmit={(values) => navigation.navigate("DrawerNavigation")}
         validationSchema={validationSchema}
       >
         <View

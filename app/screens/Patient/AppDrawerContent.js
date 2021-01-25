@@ -66,7 +66,7 @@ function AppDrawerContent(props) {
       <Drawer.Section style={styles.bottomDrawerSection}>
         <DrawerItem
           label="Logout"
-          onPress={() => props.navigation.push("PatientLogin")}
+          onPress={() => props.navigation.popToTop()}
           icon={({ color, size }) => (
             <MaterialCommunityIcons name="logout" color={color} size={size} />
           )}

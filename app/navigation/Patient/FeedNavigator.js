@@ -1,9 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import FeedNavigationNavigator from "./FeedNavigationNavigator";
 import PatientHome from "../../screens/Patient/PatientHome";
-import DocChannelingNavigator from "./DocChannelingNavigator";
 import PatientCategoryDetails from "../../screens/Patient/PatientCategoryDetails";
 import PatientDateTimePicker from "../../screens/Patient/PatientDateTimePicker";
 import PatientInvoice from "../../screens/Patient/PatientInvoice";

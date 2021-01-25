@@ -37,14 +37,6 @@ const listings = [
 function PatientHome({ navigation }) {
   return (
     <ScreenVarient>
-      <TouchableWithoutFeedback onPress={() => navigation.openDrawer()}>
-        <MaterialIcons
-          name="menu"
-          size={24}
-          color="black"
-          style={styles.navigationPanel}
-        />
-      </TouchableWithoutFeedback>
       <View style={styles.screen}>
         <FlatList
           data={listings}
@@ -65,14 +57,7 @@ function PatientHome({ navigation }) {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    paddingTop: 30,
-    backgroundColor: colors.lightGrey,
-  },
-  navigationPanel: {
-    backgroundColor: colors.lightGrey,
-    paddingTop: 15,
-    paddingLeft: "3.5%",
-    // width:30,
+    paddingTop: 20,
   },
 });
 export default PatientHome;

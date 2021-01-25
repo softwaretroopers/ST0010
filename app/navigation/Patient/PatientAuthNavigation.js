@@ -1,11 +1,12 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import PatientRegister from "../../screens/Patient/PatientRegister";
 import MNumberConfirmation from "../../screens/Patient/MNumberConfirmation";
 import OTPConfirmation from "../../screens/Patient/OTPConfirmation";
 import PatientLogin from "../../screens/Patient/PatientLogin";
-import AppNavigator from "./AppNavigator";
+import DrawerNavigation from "./DrawerNavigation";
 import colors from "../../configs/colors";
 
 const Stack = createStackNavigator();
@@ -23,7 +24,9 @@ const PatientAuthNavigation = () => (
     <Stack.Screen
       name="PatientLogin"
       component={PatientLogin}
-      options={{ title: "Login" }}
+      options={{
+        title: "Login",
+      }}
     />
     <Stack.Screen
       name="PatientRegister"
@@ -37,8 +40,8 @@ const PatientAuthNavigation = () => (
       options={{ title: "OTP" }}
     />
     <Stack.Screen
-      name="AppNavigator"
-      component={AppNavigator}
+      name="DrawerNavigation"
+      component={DrawerNavigation}
       options={{ headerShown: false }}
     />
   </Stack.Navigator>
