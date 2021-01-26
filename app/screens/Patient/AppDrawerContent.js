@@ -22,6 +22,15 @@ function AppDrawerContent(props) {
           </View>
           <Drawer.Section style={styles.drawerSection}>
             <DrawerItem
+              label="Home"
+              onPress={() => {
+                props.navigation.navigate("Home");
+              }}
+              icon={({ color, size }) => (
+                <MaterialCommunityIcons name="home" color={color} size={size} />
+              )}
+            />
+            <DrawerItem
               label="Wallet"
               onPress={() => {
                 props.navigation.navigate("Home");
@@ -64,6 +73,19 @@ function AppDrawerContent(props) {
         </View>
       </DrawerContentScrollView>
       <Drawer.Section style={styles.bottomDrawerSection}>
+        <DrawerItem
+          label="Invite Friends"
+          onPress={() => {
+            props.navigation.navigate("Home");
+          }}
+          icon={({ color, size }) => (
+            <MaterialCommunityIcons
+              name="share-variant"
+              color={color}
+              size={size}
+            />
+          )}
+        />
         <DrawerItem
           label="Logout"
           onPress={() => props.navigation.popToTop()}

@@ -1,11 +1,24 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { TouchableOpacity } from "react-native";
-import { GiftedChat } from "react-native-gifted-chat";
+import { GiftedChat, InputToolbar, Composer } from "react-native-gifted-chat";
 import colors from "../configs/colors";
 import Icon from "./Icon";
 
 export function AppChat() {
   const [messages, setMessages] = useState([]);
+  const customtInputToolbar = (props) => {
+    return (
+      <InputToolbar
+        {...props}
+        containerStyle={{
+          backgroundColor: colors.themeDark,
+        }}
+      />
+    );
+  };
+  const customtComposer = (props) => {
+    return <Composer {...props} placeholder={"Upload Your Prescription"} />;
+  };
 
   useEffect(() => {
     setMessages([
@@ -16,7 +29,7 @@ export function AppChat() {
         user: {
           _id: 2,
           name: "Ayushaadhi",
-          avatar: "",
+          avatar: require("../assets/logo.png"),
         },
       },
     ]);
@@ -35,12 +48,15 @@ export function AppChat() {
       user={{
         _id: 1,
       }}
+      renderComposer={customtComposer}
+      disableComposer={true}
+      renderInputToolbar={(props) => customtInputToolbar(props)}
       renderActions={() => (
         <React.Fragment>
           <TouchableOpacity style={{ marginLeft: 5, padding: 5 }}>
             <Icon
-              backgroundColor={colors.patientPrimary}
-              iconColor="white"
+              backgroundColor={colors.themeMedium}
+              iconColor={colors.themeLight}
               name="plus"
             />
           </TouchableOpacity>
