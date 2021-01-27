@@ -1,103 +1,156 @@
 import React from "react";
-import { FlatList, View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet } from "react-native";
+import {
+  FAB,
+  Avatar,
+  Title,
+  Subheading,
+  Caption,
+  Text,
+  Button,
+} from "react-native-paper";
+import * as Animatable from "react-native-animatable";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-// import {useNavigation} from '@react-navigation/native';
 
-import Icon from "../../components/Icon";
-import ListItem from "../../components/ListItem";
 import colors from "../../configs/colors";
 import ScreenVarient from "../../components/ScreenVarient";
-import AppText from "../../components/AppText";
 
-const menuItems = [
-  {
-    title: "Balance",
-    icon: {
-      name: "wallet",
-      backgroundColor: colors.black,
-    },
-  },
-  {
-    title: "About Us",
-    icon: {
-      name: "info",
-      backgroundColor: colors.black,
-    },
-  },
-  {
-    title: "Help",
-    icon: {
-      name: "help",
-      backgroundColor: colors.black,
-    },
-    targetScreen: "PatientLogin",
-  },
-];
-
-function DoctorAccount({ navigation }) {
-  // const navigation = useNavigation();
+function DoctorAccount({ navigation, ...otherProps }) {
   return (
     <ScreenVarient>
       <View style={styles.screen}>
-        {/* <View style={styles.containerHeading}>
-               <AppText style={styles.HeadingFont}>My Information</AppText>
-        </View> */}
-        <View style={styles.containerTop}>
-          <ListItem image={require("../../assets/logo.png")} />
-          <TouchableOpacity
+        <Animatable.View
+          animation="bounceInDown"
+          duration={1500}
+          style={styles.accounttop}
+        >
+          <FAB
             onPress={() => navigation.navigate("DoctorAccInfo")}
-          >
-            <AppText style={{ fontSize: 14, fontWeight: "bold" }}>
-              Edit Profile
-            </AppText>
-          </TouchableOpacity>
-        </View>
-      </View>
+            style={styles.fab}
+            small
+            icon="pen"
+          />
+          <Avatar.Image size={100} source={require("../../assets/doc.png")} />
+          <Title style={{ color: colors.white }}>Dr. Anonymous</Title>
 
-      <View style={styles.containerDetails}>
-        <FlatList
-          data={menuItems}
-          keyExtractor={(menuItems) => menuItems.title}
-          renderItem={({ item }) => (
-            <ListItem
-              title={item.title}
-              IconComponent={
-                <Icon
-                  name={item.icon.name}
-                  backgroundColor={item.icon.backgroundColor}
-                />
-              }
-            />
-          )}
-        />
+          <Subheading style={{ color: colors.white, marginHorizontal: "2%" }}>
+            071 400 9020
+          </Subheading>
+          <View flexDirection="row">
+            <View flexDirection="row" style={styles.details}>
+              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>
+                Psychologist
+              </Text>
+            </View>
+            <View flexDirection="row" style={styles.details}>
+              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Sinhala</Text>
+            </View>
+          </View>
+          <View flexDirection="row">
+            <View flexDirection="row" style={styles.details}>
+              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>
+                Bachelors
+              </Text>
+            </View>
+            <View flexDirection="row" style={styles.details}>
+              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>
+                Colombo University
+              </Text>
+            </View>
+          </View>
+        </Animatable.View>
+        <Animatable.View
+          animation="bounceInDown"
+          duration={1500}
+          style={styles.accounttop}
+        >
+          <Title style={{ color: colors.white }}>Prices</Title>
+          <View flexDirection="row" style={{ margin: "2%" }}>
+            <View flexDirection="row" style={styles.price}>
+              <MaterialCommunityIcons
+                name="microphone"
+                size={16}
+                color="black"
+              />
+              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Rs.1000</Text>
+            </View>
+            <View flexDirection="row" style={styles.price}>
+              <MaterialCommunityIcons name="video" size={16} color="black" />
+              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Rs.1200</Text>
+            </View>
+          </View>
+          <Button color={colors.white} icon="square-edit-outline">
+            Change
+          </Button>
+        </Animatable.View>
       </View>
+      <Button
+        style={{ width: "50%", alignSelf: "center" }}
+        color={colors.black}
+        mode="outlined"
+        icon="logout"
+        onPress={() => navigation.popToTop()}
+      >
+        Log Out
+      </Button>
     </ScreenVarient>
   );
 }
 
 const styles = StyleSheet.create({
-  containerDetails: {
-    marginTop: "10%",
-  },
-  containerHeading: {
-    borderBottomRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    backgroundColor: colors.white,
-    padding: "5%",
-    marginBottom: "2%",
-    shadowColor: colors.patientPrimary,
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    elevation: 15,
-  },
-  containerTop: {
-    // marginBottom:"8%",
+  accounttop: {
+    backgroundColor: colors.doctorPrimary,
+    borderRadius: 20,
+    margin: "2%",
+    padding: "2%",
     alignItems: "center",
-    //    backgroundColor: colors.lightGrey,
   },
-  HeadingFont: {
+  accountMiddle: {
+    padding: 20,
+  },
+  accountMiddleDetail: {
+    marginTop: 20,
+    marginLeft: 50,
+    marginRight: 50,
+    borderBottomWidth: 1,
     fontWeight: "bold",
+  },
+  accountBottom: {
+    marginTop: 30,
+    marginLeft: 20,
+    fontWeight: "bold",
+  },
+  buttonContainer: {
+    width: "18%",
+    height: 30,
+    marginLeft: "40%",
+  },
+  title: {
+    marginTop: 20,
+    marginLeft: 10,
+  },
+  fab: {
+    position: "absolute",
+    right: 10,
+    top: 10,
+    backgroundColor: "white",
+  },
+  price: {
+    backgroundColor: colors.white,
+    padding: "3%",
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    marginHorizontal: "2%",
+  },
+  details: {
+    backgroundColor: colors.white,
+    padding: "3%",
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "2%",
+    width: "40%",
   },
 });
 

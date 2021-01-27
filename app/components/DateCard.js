@@ -1,13 +1,20 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
 import colors from "../configs/colors";
 import AppText from "./AppText";
 import Icon from "./Icon";
 
-function DateCard({ day, date }) {
+function DateCard({
+  day,
+  date,
+  firstTimeSlot,
+  secondTimeSlot,
+  thirdTimeSlot,
+  fourthTimeSlot,
+}) {
   const navigation = useNavigation();
   return (
     <View style={styles.card}>
@@ -17,25 +24,27 @@ function DateCard({ day, date }) {
         </AppText>
         <AppText style={{ fontSize: 14 }}>({date})</AppText>
       </View>
-      <View>                        
+      <View>
         <View style={styles.timeSlotContainer}>
           <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>01:00 PM - 02:00 PM</AppText>
+            <AppText style={styles.timeSlotText}>{firstTimeSlot}</AppText>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>02:00 PM - 03:00 PM</AppText>
+            <AppText style={styles.timeSlotText}>{secondTimeSlot}</AppText>
           </TouchableWithoutFeedback>
         </View>
         <View style={styles.timeSlotContainer}>
           <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>03:00 PM - 04:00 PM</AppText>
+            <AppText style={styles.timeSlotText}>{thirdTimeSlot}</AppText>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>04:00 PM - 05:00 PM</AppText>
+            <AppText style={styles.timeSlotText}>{fourthTimeSlot}</AppText>
           </TouchableWithoutFeedback>
         </View>
         <View style={styles.viewAllContainer}>
-          <TouchableOpacity onPress={()=>navigation.navigate("DoctorTimePicker")}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("DoctorTimePicker")}
+          >
             <Icon
               name="chevron-right"
               backgroundColor={colors.doctorPrimary}

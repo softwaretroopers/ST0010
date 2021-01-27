@@ -1,15 +1,8 @@
 import React from "react";
-import {
-  FlatList,
-  StyleSheet,
-  View,
-  TouchableWithoutFeedback,
-} from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
+import { FlatList, StyleSheet, View } from "react-native";
 
 import Card from "../../components/Card";
 import ScreenVarient from "../../components/ScreenVarient";
-import colors from "../../configs/colors";
 
 const listings = [
   {

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import {
   FAB,
   Text,
@@ -14,6 +14,27 @@ import * as Animatable from "react-native-animatable";
 import ReportCard from "../../components/ReportCard";
 import ScreenVarient from "../../components/ScreenVarient";
 import colors from "../../configs/colors";
+
+const reports = [
+  {
+    id: 1,
+    title: "Blood Report",
+    subtitle: "Dr.Anonymous 1",
+    image: require("../../assets/report.png"),
+  },
+  {
+    id: 2,
+    title: "Laboratory Report",
+    subtitle: "Dr.Anonymous 2",
+    image: require("../../assets/report.png"),
+  },
+  {
+    id: 3,
+    title: "Consultation",
+    subtitle: "Dr.Anonymous 3",
+    image: require("../../assets/report.png"),
+  },
+];
 
 function PatientAccInfo(props) {
   return (
@@ -67,21 +88,18 @@ function PatientAccInfo(props) {
         </View>
       </Animatable.View>
       <View style={styles.ReportCards}>
-        <Title style={{ marginBottom: "2%" }}>Reports</Title>
-        <ReportCard
-          title="Blood Report"
-          subtitle="Dr.Anonymous 1"
-          image={require("../../assets/report.png")}
-        />
-        <ReportCard
-          title="Laboratory Report"
-          subtitle="Dr.Anonymous 2"
-          image={require("../../assets/report.png")}
-        />
-        <ReportCard
-          title="Consultation"
-          subtitle="Dr.Anonymous 3"
-          image={require("../../assets/report.png")}
+        <Title>Reports</Title>
+        <FlatList
+          horizontal={true}
+          data={reports}
+          keyExtractor={(report) => report.id.toString()}
+          renderItem={({ item }) => (
+            <ReportCard
+              title={item.title}
+              subtitle={item.subtitle}
+              image={item.image}
+            />
+          )}
         />
       </View>
     </ScreenVarient>
@@ -129,8 +147,8 @@ const styles = StyleSheet.create({
   ReportCards: {
     flex: 1,
     display: "flex",
-    marginTop: 10,
-    marginHorizontal: 30,
+    marginTop: "2%",
+    marginHorizontal: "2%",
   },
 });
 

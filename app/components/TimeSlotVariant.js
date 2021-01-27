@@ -4,7 +4,7 @@ import { Checkbox } from "react-native-paper";
 
 import colors from "../configs/colors";
 
-function TimeSlotVariant({ primaryTimeSlot }) {
+function TimeSlotVariant({ slot }) {
   const [checked, setChecked] = useState(false);
   return (
     <View style={styles.centeredView}>
@@ -20,7 +20,7 @@ function TimeSlotVariant({ primaryTimeSlot }) {
           alignItems: "center",
         }}
       >
-        <Text style={styles.textStyle}>{primaryTimeSlot}</Text>
+        <Text style={styles.textStyle}>{slot}</Text>
         <Checkbox
           status={checked ? "checked" : "unchecked"}
           onPress={() => {

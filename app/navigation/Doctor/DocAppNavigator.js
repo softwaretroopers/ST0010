@@ -36,7 +36,11 @@ const DocAppNavigator = () => (
       component={DoctorAppointment}
       options={{
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="calendar" color={"white"} size={24} />
+          <MaterialCommunityIcons
+            name="calendar-today"
+            color={"white"}
+            size={24}
+          />
         ),
       }}
     />
@@ -58,7 +62,7 @@ const DocAppNavigator = () => (
       options={{
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons
-            name="view-grid-plus"
+            name="calendar-multiple-check"
             color={"white"}
             size={24}
           />
