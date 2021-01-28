@@ -1,14 +1,14 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
-import ScreenVarient from "../../components/ScreenVarient";
+import ScreenVariant from "../../components/ScreenVariant";
 import AppointmentsUpcoming from "../../screens/Patient/AppointmentsUpcoming";
 import AppointmentsCompleted from "../../screens/Patient/AppointmentsCompleted";
 
 const Tab = createMaterialTopTabNavigator();
 
 const PatientTopNavigator = () => (
-  <ScreenVarient>
+  <ScreenVariant>
     <Tab.Navigator
       tabBarOptions={{
         activeTintColor: "#009687",
@@ -26,7 +26,7 @@ const PatientTopNavigator = () => (
         options={{ tabBarLabel: "Completed" }}
       />
     </Tab.Navigator>
-  </ScreenVarient>
+  </ScreenVariant>
 );
 
 export default PatientTopNavigator;

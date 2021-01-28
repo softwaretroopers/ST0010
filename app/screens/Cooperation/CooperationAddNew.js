@@ -1,12 +1,11 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import * as Yup from "yup";
-import { Button, Text } from "react-native-paper";
+import { Button } from "react-native-paper";
 
-import Screen from "../../components/Screen";
 import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
-import AppText from "../../components/AppText";
 import colors from "../../configs/colors";
+import ScreenVariant from "../../components/ScreenVariant";
 
 const validationSchema = Yup.object().shape({
   empName: Yup.string().required().min(2).label("Name"),
@@ -16,10 +15,10 @@ const validationSchema = Yup.object().shape({
 
 function CooperationAddNew(props) {
   return (
-    <Screen style={styles.container}>
+    <ScreenVariant style={styles.container}>
       <AppForm
         initialValues={{ empName: "", empID: "", empNIC: "" }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => props.navigation.navigate("CoHomeScreen")}
         validationSchema={validationSchema}
       >
         <View style={styles.buttonContainer}>
@@ -59,7 +58,7 @@ function CooperationAddNew(props) {
           <SubmitButton title="Done" color="cooperationPrimary" />
         </View>
       </AppForm>
-    </Screen>
+    </ScreenVariant>
   );
 }
 

@@ -6,10 +6,6 @@ import { AntDesign } from "@expo/vector-icons";
 import DocTopNavigator from "./DocTopNavigator";
 import DoctorAppointment from "../../screens/Doctor/DoctorAppointment";
 import DoctorCompleted from "../../screens/Doctor/DoctorCompleted";
-import DoctorAccInfo from "../../screens/Doctor/DoctorAccInfo";
-import colors from "../../configs/colors";
-import PatientAppointment from "../../screens/Patient/PatientAppointment";
-import DoctorEditDate from "../../screens/Doctor/DoctorEditDate";
 import EditNavigator from "./EditNavigator";
 import DocAccNavigator from "./DocAccNavigator";
 

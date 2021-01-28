@@ -33,7 +33,7 @@ function CoAppDrawerContent(props) {
             <DrawerItem
               label="Profile"
               onPress={() => {
-                props.navigation.navigate("CooperationProfile");
+                props.navigation.navigate("CoProfile");
               }}
               icon={({ color, size }) => (
                 <MaterialCommunityIcons

@@ -4,7 +4,7 @@ import { View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import colors from "../../configs/colors";
 import AppText from "../../components/AppText";
 import CardPatient from "../../components/CardPatient";
-import ScreenVarient from "../../components/ScreenVarient";
+import ScreenVariant from "../../components/ScreenVariant";
 import AppSearchBar from "../../components/AppSearchBar";
 
 const FlatListData = [
@@ -159,7 +159,7 @@ const FlatListData = [
 
 function PatientCategoryDetails({ navigation }) {
   return (
-    <ScreenVarient>
+    <ScreenVariant>
       <AppSearchBar />
       <View
         style={
@@ -207,7 +207,7 @@ function PatientCategoryDetails({ navigation }) {
           keyExtractor={(item, index) => String(index)}
         />
       </View>
-    </ScreenVarient>
+    </ScreenVariant>
   );
 }
 const styles = StyleSheet.create({

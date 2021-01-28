@@ -65,7 +65,7 @@ function WelcomeScreen({ navigation }) {
               </LinearGradient>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => navigation.navigate("CooperationAuthNavigation")}
+              onPress={() => navigation.navigate("CooperationNavigation")}
             >
               <LinearGradient
                 colors={[colors.themeLight, colors.themeMedium]}

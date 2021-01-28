@@ -3,13 +3,13 @@ import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Button } from "react-native-paper";
 
 import AppText from "../../components/AppText";
-import ScreenVarient from "../../components/ScreenVarient";
+import ScreenVariant from "../../components/ScreenVariant";
 import ListItem from "../../components/ListItem";
 import colors from "../../configs/colors";
 
 function CooperationProfileEdit(props) {
   return (
-    <ScreenVarient style={styles.screen}>
+    <ScreenVariant style={styles.screen}>
       <View style={styles.containerTop}>
         <ListItem image={require("../../assets/logo.png")} />
       </View>
@@ -29,7 +29,7 @@ function CooperationProfileEdit(props) {
           Update
         </Button>
       </View>
-    </ScreenVarient>
+    </ScreenVariant>
   );
 }
 

@@ -1,16 +1,9 @@
 import React from "react";
 import { View, FlatList, StyleSheet } from "react-native";
-import {
-  Button,
-  Avatar,
-  Title,
-  Caption,
-  FAB,
-  Appbar,
-} from "react-native-paper";
+import { Button, Avatar, Title, Caption, FAB } from "react-native-paper";
 import AppSearchBar from "../../components/AppSearchBar";
 
-import ScreenVarient from "../../components/ScreenVarient";
+import ScreenVariant from "../../components/ScreenVariant";
 import colors from "../../configs/colors";
 
 const users = [
@@ -62,11 +55,7 @@ const users = [
 
 function CooperationHome({ navigation }) {
   return (
-    <ScreenVarient>
-      <Appbar style={{ backgroundColor: colors.cooperationPrimary }}>
-        <Appbar.Action icon="menu" onPress={() => navigation.openDrawer()} />
-        <Appbar.Content title="Home" />
-      </Appbar>
+    <ScreenVariant>
       <AppSearchBar />
       <FlatList
         data={users}
@@ -105,7 +94,7 @@ function CooperationHome({ navigation }) {
         icon="plus"
         onPress={() => navigation.navigate("CooperationAddNew")}
       />
-    </ScreenVarient>
+    </ScreenVariant>
   );
 }
 

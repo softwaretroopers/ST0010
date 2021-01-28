@@ -12,7 +12,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
 
 import ReportCard from "../../components/ReportCard";
-import ScreenVarient from "../../components/ScreenVarient";
+import ScreenVariant from "../../components/ScreenVariant";
 import colors from "../../configs/colors";
 
 const reports = [
@@ -38,7 +38,7 @@ const reports = [
 
 function CooperationUser({ navigation }) {
   return (
-    <ScreenVarient>
+    <ScreenVariant>
       <Animatable.View
         animation="bounceInDown"
         duration={1500}
@@ -106,7 +106,7 @@ function CooperationUser({ navigation }) {
           )}
         />
       </Animatable.View>
-    </ScreenVarient>
+    </ScreenVariant>
   );
 }
 
