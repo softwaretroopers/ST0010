@@ -2,9 +2,9 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import WelcomeScreen from "../screens/WelcomeScreen";
-import CooperationLogin from "../screens/Cooperation/CooperationLogin";
 import PatientAuthNavigation from "./Patient/PatientAuthNavigation";
 import DocAuthNavigation from "./Doctor/DocAuthNavigation";
+import CooperationAuthNavigation from "./Coopeartion/CooperationAuthNavigation";
 
 const Stack = createStackNavigator();
 
@@ -25,7 +25,11 @@ const AuthNavigator = () => (
       component={DocAuthNavigation}
       options={{ headerShown: false }}
     />
-    <Stack.Screen name="CooperationLogin" component={CooperationLogin} />
+    <Stack.Screen
+      name="CooperationAuthNavigation"
+      component={CooperationAuthNavigation}
+      options={{ headerShown: false }}
+    />
   </Stack.Navigator>
 );
 export default AuthNavigator;

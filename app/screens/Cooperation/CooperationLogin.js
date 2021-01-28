@@ -13,12 +13,13 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(8).label("Password"),
 });
 
-function CooperationLogin() {
+function CooperationLogin({ navigation }) {
   return (
     <Screen style={styles.container}>
       <AppForm
         initialValues={{ mNumber: "", password: "" }}
         validationSchema={validationSchema}
+        onSubmit={(values) => navigation.navigate("CoDrawerNavigation")}
       >
         <View
           style={{

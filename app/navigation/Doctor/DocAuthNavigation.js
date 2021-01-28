@@ -3,7 +3,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import DoctorLogin from "../../screens/Doctor/DoctorLogin";
 import DocAppNavigator from "./DocAppNavigator";
-import DoctorAccInfo from "../../screens/Doctor/DoctorAccInfo";
 
 const Stack = createStackNavigator();
 

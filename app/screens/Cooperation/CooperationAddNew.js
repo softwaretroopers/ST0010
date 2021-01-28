@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import * as Yup from "yup";
+import { Button, Text } from "react-native-paper";
 
 import Screen from "../../components/Screen";
 import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
 import AppText from "../../components/AppText";
-import AppButtonVariant from "../../components/AppButtonVariant";
+import colors from "../../configs/colors";
 
 const validationSchema = Yup.object().shape({
   empName: Yup.string().required().min(2).label("Name"),
@@ -47,15 +48,15 @@ function CooperationAddNew(props) {
             name="empNIC"
           />
           <View style={styles.uploadContainer}>
-            <AppText style={styles.uploadLabel}>Report</AppText>
-            <AppButtonVariant
-              textStyle={styles.uploadButtonText}
-              title="Select"
-              style={styles.uploadButton}
-              color="cooperationPrimary"
-            ></AppButtonVariant>
+            <Button
+              color={colors.cooperationPrimary}
+              icon="file-plus"
+              mode="outlined"
+            >
+              Add Reports
+            </Button>
           </View>
-          <SubmitButton title="submit" color="cooperationPrimary" />
+          <SubmitButton title="Done" color="cooperationPrimary" />
         </View>
       </AppForm>
     </Screen>
@@ -71,24 +72,12 @@ const styles = StyleSheet.create({
     padding: 20,
     marginTop: "35%",
   },
-  uploadButton: {
-    width: 80,
-    height: 35,
-    marginLeft: "3%",
-    marginRight: 10,
-  },
-  uploadButtonText: {
-    fontSize: 12,
-  },
-  uploadLabel: {
-    marginTop: "4%",
-  },
   uploadContainer: {
     flexDirection: "row",
     padding: "3%",
-    width: "100%",
     justifyContent: "center",
     marginBottom: "10%",
+    alignItems: "center",
   },
 });
 

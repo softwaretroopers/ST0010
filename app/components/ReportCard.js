@@ -53,4 +53,3 @@ export default class ReportCard extends React.Component {
     );
   }
 }
-const styles = StyleSheet.create({});
