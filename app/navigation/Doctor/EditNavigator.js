@@ -16,14 +16,20 @@ const EditNavigator = () => (
       component={DoctorEditDate}
       options={{ headerShown: false }}
     />
-    <Stack.Screen name="DoctorTimePicker" component={DoctorTimePicker} />
     <Stack.Screen
-      name="DoctorAppointment"
-      component={DoctorAppointment}
-      options={{ headerShown: false }}
+      name="EditNavigation"
+      component={EditNavigation}
+      options={{ headerShown: false, tabBarVisible: true }}
     />
+  </Stack.Navigator>
+);
+
+const EditNavigation = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="DoctorTimePicker" component={DoctorTimePicker} />
+    <Stack.Screen name="DoctorAppointment" component={DoctorAppointment} />
     <Stack.Screen name="DoctorAccount" component={DoctorAccount} />
-     <Stack.Screen name="DoctorAccInfo" component={DoctorAccInfo} />
+    <Stack.Screen name="DoctorAccInfo" component={DoctorAccInfo} />
   </Stack.Navigator>
 );
 export default EditNavigator;

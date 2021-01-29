@@ -1,7 +1,6 @@
 import React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
 
 import DocTopNavigator from "./DocTopNavigator";
 import DoctorAppointment from "../../screens/Doctor/DoctorAppointment";
@@ -47,7 +46,11 @@ const DocAppNavigator = () => (
       options={{
         title: "",
         tabBarIcon: ({ color, size }) => (
-          <AntDesign name="pluscircleo" color={"white"} size={24} />
+          <MaterialCommunityIcons
+            name="plus-circle-outline"
+            color={"white"}
+            size={24}
+          />
         ),
       }}
     />

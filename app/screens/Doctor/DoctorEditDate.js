@@ -35,7 +35,7 @@ function DoctorEditDate(props) {
   return (
     <Screen>
       <DatePicker></DatePicker>
-      <View>
+      <View style={{ marginBottom: 95 }}>
         <FlatList
           data={dateCards}
           keyExtractor={(dateCard) => dateCard.date.toString()}

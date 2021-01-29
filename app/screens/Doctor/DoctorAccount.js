@@ -84,15 +84,17 @@ function DoctorAccount({ navigation, ...otherProps }) {
           </Button>
         </Animatable.View>
       </View>
-      <Button
-        style={{ width: "50%", alignSelf: "center" }}
-        color={colors.black}
-        mode="outlined"
-        icon="logout"
-        onPress={() => navigation.popToTop()}
-      >
-        Log Out
-      </Button>
+      <Animatable.View animation="bounceInDown" duration={1500}>
+        <Button
+          style={{ width: "50%", alignSelf: "center" }}
+          color={colors.black}
+          mode="outlined"
+          icon="logout"
+          onPress={() => navigation.popToTop()}
+        >
+          Log Out
+        </Button>
+      </Animatable.View>
     </ScreenVarient>
   );
 }
