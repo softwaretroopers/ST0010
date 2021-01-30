@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import DoctorLogin from "../../screens/Doctor/DoctorLogin";
-import DocAppNavigator from "./DocAppNavigator";
+import EditNavigator from "./EditNavigator";
 import colors from "../../configs/colors";
 
 const Stack = createStackNavigator();
@@ -25,8 +25,8 @@ const DocAuthNavigation = () => (
       component={DoctorLogin}
     />
     <Stack.Screen
-      name="DocAppNavigator"
-      component={DocAppNavigator}
+      name="EditNavigator"
+      component={EditNavigator}
       options={{ headerShown: false }}
     />
   </Stack.Navigator>

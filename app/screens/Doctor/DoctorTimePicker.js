@@ -33,7 +33,9 @@ function DoctorTimePicker({ navigation }) {
       <FAB
         style={styles.fab}
         icon="alarm-plus"
-        onPress={() => navigation.navigate("DoctorAppointment")}
+        onPress={() =>
+          navigation.navigate("DocAppNavigator", { screen: "Appointment" })
+        }
       />
     </Screen>
   );

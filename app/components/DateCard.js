@@ -43,7 +43,7 @@ function DateCard({
         </View>
         <View style={styles.viewAllContainer}>
           <TouchableOpacity
-            onPress={() => navigation.navigate("EditNavigation")}
+            onPress={() => navigation.navigate("DoctorTimePicker")}
           >
             <Icon
               name="chevron-right"

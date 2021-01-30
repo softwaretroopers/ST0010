@@ -5,8 +5,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import DocTopNavigator from "./DocTopNavigator";
 import DoctorAppointment from "../../screens/Doctor/DoctorAppointment";
 import DoctorCompleted from "../../screens/Doctor/DoctorCompleted";
-import EditNavigator from "./EditNavigator";
 import DocAccNavigator from "./DocAccNavigator";
+import DoctorEditDate from "../../screens/Doctor/DoctorEditDate";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -41,8 +41,8 @@ const DocAppNavigator = () => (
     />
 
     <Tab.Screen
-      name="Edit"
-      component={EditNavigator}
+      name="DoctorEditDate"
+      component={DoctorEditDate}
       options={{
         title: "",
         tabBarIcon: ({ color, size }) => (
