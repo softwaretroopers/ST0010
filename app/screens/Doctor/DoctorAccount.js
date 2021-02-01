@@ -25,7 +25,7 @@ function DoctorAccount({ navigation, ...otherProps }) {
           style={styles.accounttop}
         >
           <FAB
-            onPress={() => navigation.navigate("DoctorAccInfo")}
+            onPress={() => navigation.navigate("DoctorAccInfoEdit")}
             style={styles.fab}
             small
             icon="pen"
