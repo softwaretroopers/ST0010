@@ -9,9 +9,8 @@ import {
 } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import * as Yup from "yup";
-import { Menu, Divider, Provider, Appbar } from "react-native-paper";
+import { Menu, Provider, Appbar } from "react-native-paper";
 
-import Screen from "../../components/Screen";
 import colors from "../../configs/colors";
 import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
 import ScreenVariant from "../../components/ScreenVariant";
@@ -30,16 +29,17 @@ function PatientLogin({ navigation }) {
   return (
     <ScreenVariant style={styles.container}>
       <Provider>
-        <Appbar.Header style={{ backgroundColor: colors.themeDark }}>
+        <Appbar style={{ backgroundColor: colors.themeDark }}>
+          <Appbar.BackAction onPress={() => navigation.goBack()} />
           <Appbar.Content title="Login" subtitle="Patient" />
           <Appbar.Action icon="dots-vertical" onPress={openMenu} />
-        </Appbar.Header>
+        </Appbar>
 
         <View>
           <Menu
             visible={visible}
             onDismiss={closeMenu}
-            anchor={{ x: 600, y: 80 }}
+            anchor={{ x: 600, y: 60 }}
           >
             <Menu.Item
               onPress={() => navigation.navigate("DocAuthNavigation")}
@@ -49,7 +49,6 @@ function PatientLogin({ navigation }) {
               onPress={() => navigation.navigate("CooperationNavigation")}
               title="Cooperation"
             />
-            <Divider />
           </Menu>
         </View>
 

@@ -1,21 +1,21 @@
 import React from "react";
 import {
-  StyleSheet,
   View,
   Text,
   TouchableOpacity,
   Dimensions,
+  StyleSheet,
+  StatusBar,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { LinearGradient } from "expo-linear-gradient";
-import { MaterialIcons } from "@expo/vector-icons";
-import { Menu, Divider, Provider, Appbar } from "react-native-paper";
-
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import colors from "../configs/colors";
 
-function WelcomeScreen({ navigation }) {
+const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor={colors.themeDark} barStyle="light-content" />
       <View style={styles.header}>
         <Animatable.Image
           animation="bounceIn"
@@ -24,78 +24,55 @@ function WelcomeScreen({ navigation }) {
           style={styles.logo}
           resizeMode="stretch"
         />
-        <Animatable.Text
-          animation="slideInUp"
-          style={{ color: colors.white, fontSize: 25, fontWeight: "bold" }}
-        >
-          Welcome!
-        </Animatable.Text>
       </View>
-
       <Animatable.View
         style={[
           styles.footer,
           {
-            backgroundColor: "white",
+            backgroundColor: colors.white,
           },
         ]}
         animation="fadeInUpBig"
       >
-        <View style={styles.background}>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("DrawerNavigation")}
+        <Text
+          style={[
+            styles.title,
+            {
+              color: colors.themeDark,
+            },
+          ]}
+        >
+          Stay connected with everyone!
+        </Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("PatientAuthNavigation")}
+        >
+          <Text style={styles.text}>Sign in with account</Text>
+        </TouchableOpacity>
+        <View style={styles.button}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("DrawerNavigation")}
+          >
+            <LinearGradient
+              colors={[colors.themeMedium, colors.themeLight]}
+              style={styles.signIn}
             >
-              <LinearGradient
-                colors={[colors.themeLight, colors.themeMedium]}
-                style={styles.signIn}
-              >
-                <Text style={styles.textSign}>Get Started</Text>
-                <MaterialIcons name="navigate-next" color="white" size={20} />
-              </LinearGradient>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("PatientAuthNavigation")}
-            >
-              <LinearGradient
-                colors={[colors.themeLight, colors.themeMedium]}
-                style={styles.signIn}
-              >
-                <Text style={styles.textSign}>Login</Text>
-                <MaterialIcons name="navigate-next" color="white" size={20} />
-              </LinearGradient>
-            </TouchableOpacity>
-          </View>
+              <Text style={styles.textSign}>Get Started</Text>
+              <MaterialIcons name="navigate-next" color="#fff" size={20} />
+            </LinearGradient>
+          </TouchableOpacity>
         </View>
       </Animatable.View>
     </View>
   );
-}
+};
+
+export default WelcomeScreen;
 
 const { height } = Dimensions.get("screen");
 const height_logo = height * 0.28;
+
 const styles = StyleSheet.create({
-  background: {
-    backgroundColor: colors.background,
-    flex: 1,
-    justifyContent: "flex-end",
-    alignItems: "center",
-  },
-  buttonContainer: {
-    width: "100%",
-    padding: 20,
-  },
-  logoContainer: {
-    position: "absolute",
-    top: "10%",
-    alignItems: "center",
-  },
-  logoText: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: colors.themeDark,
-    paddingTop: 10,
-  },
   container: {
     flex: 1,
     backgroundColor: colors.themeDark,
@@ -107,19 +84,17 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#fff",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingTop: 50,
-    justifyContent: "center",
-    alignItems: "center",
+    paddingHorizontal: 30,
   },
   logo: {
     width: height_logo,
     height: height_logo,
   },
   title: {
-    color: colors.themeDark,
     fontSize: 30,
     fontWeight: "bold",
   },
@@ -131,18 +106,14 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   signIn: {
-    width: "100%",
-    padding: "7%",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 50,
+    borderRadius: 10,
     flexDirection: "row",
+    padding: "5%",
   },
   textSign: {
     color: "white",
     fontWeight: "bold",
-    fontSize: 18,
   },
 });
-
-export default WelcomeScreen;

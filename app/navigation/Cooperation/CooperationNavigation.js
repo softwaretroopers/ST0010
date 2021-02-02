@@ -32,6 +32,7 @@ const CooperationNavigation = () => (
       }}
       name="CooperationLogin"
       component={CooperationLogin}
+      options={{ headerShown: false }}
     />
     <Stack.Screen
       name="CoDrawerNavigation"

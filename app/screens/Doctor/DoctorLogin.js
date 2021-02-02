@@ -3,10 +3,11 @@ import React from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import * as Yup from "yup";
+import { Appbar } from "react-native-paper";
 
-import Screen from "../../components/Screen";
 import colors from "../../configs/colors";
 import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
+import ScreenVariant from "../../components/ScreenVariant";
 
 const validationSchema = Yup.object().shape({
   mNumber: Yup.string().required().min(10).max(10).label("Mobile Number"),
@@ -15,7 +16,11 @@ const validationSchema = Yup.object().shape({
 
 function DoctorLogin({ navigation }) {
   return (
-    <Screen style={styles.container}>
+    <ScreenVariant style={styles.container}>
+      <Appbar style={{ backgroundColor: colors.themeDark }}>
+        <Appbar.BackAction onPress={() => navigation.goBack()} />
+        <Appbar.Content title="Login" subtitle="Doctor" />
+      </Appbar>
       <AppForm
         initialValues={{ mNumber: "", password: "" }}
         onSubmit={(values) => navigation.navigate("EditNavigator")}
@@ -69,7 +74,7 @@ function DoctorLogin({ navigation }) {
           </ScrollView>
         </View>
       </AppForm>
-    </Screen>
+    </ScreenVariant>
   );
 }
 

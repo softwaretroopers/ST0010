@@ -23,6 +23,7 @@ const DocAuthNavigation = () => (
       }}
       name="DoctorLogin"
       component={DoctorLogin}
+      options={{ headerShown: false }}
     />
     <Stack.Screen
       name="EditNavigator"
