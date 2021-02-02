@@ -4,12 +4,12 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { createStackNavigator } from "@react-navigation/stack";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import FeedNavigator from "./FeedNavigator";
 import PatientAccInfo from "../../screens/Patient/PatientAccInfo";
 import PatientPrescriptions from "../../screens/Patient/PatientPrescriptions";
 import PatientTopNavigator from "./PatientTopNavigator";
 import colors from "../../configs/colors";
 import PatientAccInfoEdit from "../../screens/Patient/PatientAccInfoEdit";
+import PatientHome from "../../screens/Patient/PatientHome";
 
 const HomeStack = createStackNavigator();
 const PrescriptionsStack = createStackNavigator();
@@ -30,7 +30,7 @@ const AppNavigator = () => (
   >
     <Tab.Screen
       name="Home"
-      component={HomeStackScreen}
+      component={PatientHomeScreen}
       options={{
         tabBarIcon: () => (
           <MaterialCommunityIcons
@@ -89,7 +89,7 @@ const AppNavigator = () => (
 
 export default AppNavigator;
 
-const HomeStackScreen = ({ navigation }) => (
+const PatientHomeScreen = ({ navigation }) => (
   <HomeStack.Navigator
     screenOptions={{
       headerStyle: { backgroundColor: colors.themeDark },
@@ -101,7 +101,7 @@ const HomeStackScreen = ({ navigation }) => (
   >
     <HomeStack.Screen
       name="HomeStack"
-      component={FeedNavigator}
+      component={PatientHome}
       options={{
         title: "Home",
         headerLeft: () => (
@@ -201,11 +201,6 @@ const AccountStackScreen = ({ navigation }) => (
           />
         ),
       }}
-    />
-    <AccountStack.Screen
-      name="PatientAccInfoEdit"
-      component={PatientAccInfoEdit}
-      options={{ headerShown: false }}
     />
   </AccountStack.Navigator>
 );

@@ -92,8 +92,14 @@ function PatientAccInfo(props) {
           </View>
         </View>
       </Animatable.View>
-      <View style={styles.ReportCards}>
-        <Title>Reports</Title>
+      <Animatable.View
+        animation="bounceInDown"
+        duration={1500}
+        style={styles.accounttop}
+      >
+        <Title style={{ color: colors.white, fontWeight: "bold" }}>
+          Reports
+        </Title>
         <FlatList
           horizontal={true}
           data={reports}
@@ -106,7 +112,7 @@ function PatientAccInfo(props) {
             />
           )}
         />
-      </View>
+      </Animatable.View>
     </ScreenVarient>
   );
 }

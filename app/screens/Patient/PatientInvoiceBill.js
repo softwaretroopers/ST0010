@@ -22,9 +22,6 @@ const DocProfile = [
 function PatientInvoiceBill({ navigation }) {
   return (
     <ScreenVarient>
-      <View style={styles.heading}>
-        <AppText style={styles.headText}>Invoice</AppText>
-      </View>
       <View style={styles.screenTop}>
         <FlatList
           data={DocProfile}
@@ -66,11 +63,7 @@ function PatientInvoiceBill({ navigation }) {
           <AppButton
             title="Pay"
             color="black"
-            onPress={() =>
-              navigation.navigate("AppNavigator", {
-                screen: "Appointments",
-              })
-            }
+            onPress={() => navigation.navigate("Appointments")}
           />
         </View>
       </View>

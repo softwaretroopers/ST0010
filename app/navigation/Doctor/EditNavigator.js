@@ -2,8 +2,8 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import DoctorTimePicker from "../../screens/Doctor/DoctorTimePicker";
-import DoctorAppointment from "../../screens/Doctor/DoctorAppointment";
 import DocAppNavigator from "./DocAppNavigator";
+import DoctorAccInfoEdit from "../../screens/Doctor/DoctorAccInfoEdit";
 
 const Stack = createStackNavigator();
 
@@ -15,6 +15,11 @@ const EditNavigator = () => (
       options={{ headerShown: false }}
     />
     <Stack.Screen name="DoctorTimePicker" component={DoctorTimePicker} />
+    <Stack.Screen
+      name="DoctorAccInfoEdit"
+      component={DoctorAccInfoEdit}
+      options={{ headerShown: false }}
+    />
   </Stack.Navigator>
 );
 export default EditNavigator;

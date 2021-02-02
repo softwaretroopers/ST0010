@@ -3,6 +3,7 @@ import { View, FlatList } from "react-native";
 import DateCard from "../../components/DateCard";
 import Screen from "../../components/Screen";
 import DatePicker from "../../components/DatePicker";
+import ScreenVariant from "../../components/ScreenVariant";
 
 const dateCards = [
   {
@@ -33,7 +34,7 @@ const dateCards = [
 
 function DoctorEditDate(props) {
   return (
-    <Screen>
+    <View style={{ flex: 1, alignItems: "center" }}>
       <DatePicker></DatePicker>
       <View style={{ marginBottom: 95 }}>
         <FlatList
@@ -51,7 +52,7 @@ function DoctorEditDate(props) {
           )}
         />
       </View>
-    </Screen>
+    </View>
   );
 }
 

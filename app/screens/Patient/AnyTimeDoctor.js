@@ -57,7 +57,6 @@ function AnyTimeDoctor(props) {
       <View>
         <FlatList
           data={FlatListData}
-          numColumns={2}
           renderItem={({ item }) => (
             <CardAnyTime
               title={item.title}

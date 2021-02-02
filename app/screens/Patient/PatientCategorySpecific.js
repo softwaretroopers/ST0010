@@ -57,7 +57,6 @@ function PatientCategorySpecific(props) {
       <View style={styles.topDetails}>
         <FlatList
           data={FlatListData}
-          numColumns={2}
           renderItem={({ item }) => (
             <CardPatientVariant
               title={item.title}

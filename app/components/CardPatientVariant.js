@@ -71,7 +71,13 @@ function CardPatientVariant({
         }}
       >
         <View>
-          <Card style={{ margin: 10 }}>
+          <Card
+            style={{
+              margin: 10,
+              paddingHorizontal: "18%",
+              backgroundColor: colors.light,
+            }}
+          >
             <Card.Content
               style={{ justifyContent: "center", alignItems: "center" }}
             >

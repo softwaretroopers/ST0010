@@ -3,13 +3,13 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 
 import DoctorOngoing from "../../screens/Doctor/DoctorOngoing";
 import DoctorUpcoming from "../../screens/Doctor/DoctorUpcoming";
-import ScreenVarient from "../../components/ScreenVarient";
 import colors from "../../configs/colors";
+import ScreenVariant from "../../components/ScreenVariant";
 
 const Tab = createMaterialTopTabNavigator();
 
 const DocTopNavigator = () => (
-  <ScreenVarient>
+  <ScreenVariant>
     <Tab.Navigator
       tabBarOptions={{
         activeTintColor: "#009687",
@@ -27,7 +27,7 @@ const DocTopNavigator = () => (
         options={{ tabBarLabel: "Upcoming" }}
       />
     </Tab.Navigator>
-  </ScreenVarient>
+  </ScreenVariant>
 );
 
 export default DocTopNavigator;

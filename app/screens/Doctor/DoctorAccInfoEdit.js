@@ -31,7 +31,7 @@ function DoctorAccInfoEdit(props) {
 
   return (
     <ScreenVariant style={styles.screen}>
-      <Appbar.Header style={{ backgroundColor: colors.doctorPrimary }}>
+      <Appbar style={{ backgroundColor: colors.doctorPrimary }}>
         <Appbar.BackAction onPress={() => props.navigation.goBack()} />
         <Appbar.Content title="Edit Information" />
         {RenderIf(
@@ -52,7 +52,7 @@ function DoctorAccInfoEdit(props) {
             }}
           />
         )}
-      </Appbar.Header>
+      </Appbar>
       <View style={styles.containerTop}>
         <ListItem image={require("../../assets/logo.png")} />
       </View>

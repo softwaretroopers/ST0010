@@ -44,7 +44,8 @@ function DoctorLogin({ navigation }) {
               name="person"
               size={50}
               color={colors.doctorPrimary}
-              style={styles.iconContainer}
+              // style={styles.iconContainer}
+              style={{ marginTop: "30%" }}
             />
             <View style={styles.inputContainer}>
               <AppFormField

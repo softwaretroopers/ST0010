@@ -68,7 +68,7 @@ function PatientLogin({ navigation }) {
               name="person"
               size={50}
               color={colors.patientPrimary}
-              style={{ marginTop: 100 }}
+              style={{ marginTop: "30%" }}
             />
             <View style={styles.inputContainer}>
               <AppFormField

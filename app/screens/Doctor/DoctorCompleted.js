@@ -4,9 +4,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 import Icon from "../../components/Icon";
 import DoctorListItem from '../../components/DoctorListItem';
-import ScreenVarient from '../../components/ScreenVarient';
 import colors from '../../configs/colors';
 import AppText from '../../components/AppText';
+import ScreenVariant from '../../components/ScreenVariant';
 
 const completeList=[
     {
@@ -27,7 +27,7 @@ const completeList=[
 
 function DoctorCompleted(props) {
     return (
-        <ScreenVarient>
+        <ScreenVariant>
             <View style={styles.screen}>
                 <View style={styles.Header} >
                     <AppText style={styles.HeaderText}>Completed</AppText>
@@ -50,7 +50,7 @@ function DoctorCompleted(props) {
              />
             </View>
             </View>
-        </ScreenVarient>
+        </ScreenVariant>
     );
 }
 
