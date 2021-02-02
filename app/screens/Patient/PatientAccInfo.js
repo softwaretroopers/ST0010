@@ -44,7 +44,12 @@ function PatientAccInfo(props) {
         duration={1500}
         style={styles.accounttop}
       >
-        <FAB style={styles.fab} small icon="pen" />
+        <FAB
+          style={styles.fab}
+          small
+          icon="pen"
+          onPress={() => props.navigation.navigate("PatientAccInfoEdit")}
+        />
         <Avatar.Image size={100} source={require("../../assets/logo.png")} />
         <Title style={{ color: colors.white }}>Software Troopers</Title>
         <Subheading style={{ color: colors.white }}>071 400 9020</Subheading>

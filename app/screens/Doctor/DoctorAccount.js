@@ -48,13 +48,11 @@ function DoctorAccount({ navigation, ...otherProps }) {
           </View>
           <View flexDirection="row">
             <View flexDirection="row" style={styles.details}>
-              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>
-                Bachelors
-              </Text>
+              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Nawaloka Hospital</Text>
             </View>
             <View flexDirection="row" style={styles.details}>
               <Text style={{ fontWeight: "bold", marginLeft: 5 }}>
-                Colombo University
+                SLMC Number
               </Text>
             </View>
           </View>

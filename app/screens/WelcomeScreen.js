@@ -5,11 +5,11 @@ import {
   Text,
   TouchableOpacity,
   Dimensions,
-  StatusBar,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from "@expo/vector-icons";
+import { Menu, Divider, Provider, Appbar } from "react-native-paper";
 
 import colors from "../configs/colors";
 
@@ -31,6 +31,7 @@ function WelcomeScreen({ navigation }) {
           Welcome!
         </Animatable.Text>
       </View>
+
       <Animatable.View
         style={[
           styles.footer,
@@ -43,35 +44,24 @@ function WelcomeScreen({ navigation }) {
         <View style={styles.background}>
           <View style={styles.buttonContainer}>
             <TouchableOpacity
+              onPress={() => navigation.navigate("DrawerNavigation")}
+            >
+              <LinearGradient
+                colors={[colors.themeLight, colors.themeMedium]}
+                style={styles.signIn}
+              >
+                <Text style={styles.textSign}>Get Started</Text>
+                <MaterialIcons name="navigate-next" color="white" size={20} />
+              </LinearGradient>
+            </TouchableOpacity>
+            <TouchableOpacity
               onPress={() => navigation.navigate("PatientAuthNavigation")}
             >
               <LinearGradient
                 colors={[colors.themeLight, colors.themeMedium]}
                 style={styles.signIn}
               >
-                <Text style={styles.textSign}>Patient</Text>
-                <MaterialIcons name="navigate-next" color="white" size={20} />
-              </LinearGradient>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("DocAuthNavigation")}
-            >
-              <LinearGradient
-                colors={[colors.themeLight, colors.themeMedium]}
-                style={styles.signIn}
-              >
-                <Text style={styles.textSign}>Doctor</Text>
-                <MaterialIcons name="navigate-next" color="white" size={20} />
-              </LinearGradient>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("CooperationNavigation")}
-            >
-              <LinearGradient
-                colors={[colors.themeLight, colors.themeMedium]}
-                style={styles.signIn}
-              >
-                <Text style={styles.textSign}>Cooperation</Text>
+                <Text style={styles.textSign}>Login</Text>
                 <MaterialIcons name="navigate-next" color="white" size={20} />
               </LinearGradient>
             </TouchableOpacity>

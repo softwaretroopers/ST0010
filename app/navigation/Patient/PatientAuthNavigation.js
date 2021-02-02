@@ -1,6 +1,5 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import PatientRegister from "../../screens/Patient/PatientRegister";
 import MNumberConfirmation from "../../screens/Patient/MNumberConfirmation";
@@ -26,6 +25,7 @@ const PatientAuthNavigation = () => (
       component={PatientLogin}
       options={{
         title: "Login",
+        headerShown: false,
       }}
     />
     <Stack.Screen

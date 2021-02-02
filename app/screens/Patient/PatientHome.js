@@ -11,6 +11,7 @@ const listings = [
     des:
       "Doctor consultation is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
     image: require("../../assets/doctorChanneling.png"),
+    nav: "PatientCategoryDetails",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const listings = [
     des:
       "24 hrs Doctor channeling is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
     image: require("../../assets/anyTimeDoctor.png"),
+    nav: "AnyTimeDoctor",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const listings = [
     des:
       "Counsil is performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
     image: require("../../assets/Councillor.png"),
+    nav: "ReportReading",
   },
 ];
 function PatientHome({ navigation }) {
@@ -36,7 +39,7 @@ function PatientHome({ navigation }) {
           keyExtractor={(listing) => listing.id.toString()}
           renderItem={({ item }) => (
             <Card
-              onPress={() => navigation.navigate("PatientCategoryDetails")}
+              onPress={() => navigation.navigate(item.nav)}
               title={item.title}
               des={item.des}
               image={item.image}

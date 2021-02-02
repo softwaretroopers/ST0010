@@ -8,6 +8,8 @@ import PatientInvoice from "../../screens/Patient/PatientInvoice";
 import PatientInvoiceBill from "../../screens/Patient/PatientInvoiceBill";
 import PatientTopNavigator from "./PatientTopNavigator";
 import PatientCategorySpecific from "../../screens/Patient/PatientCategorySpecific";
+import AnyTimeDoctor from "../../screens/Patient/AnyTimeDoctor";
+import ReportReading from "../../screens/Patient/ReportReading";
 
 const Stack = createStackNavigator();
 
@@ -21,7 +23,6 @@ const FeedNavigator = () => (
     <Stack.Screen
       name="PatientCategoryDetails"
       component={PatientCategoryDetails}
-      options={{ headerShown: false }}
     />
     <Stack.Screen
       name="PatientCategorySpecific"
@@ -40,6 +41,8 @@ const FeedNavigator = () => (
       component={PatientTopNavigator}
       options={{ headerShown: false }}
     />
+    <Stack.Screen name="AnyTimeDoctor" component={AnyTimeDoctor} />
+    <Stack.Screen name="ReportReading" component={ReportReading} />
   </Stack.Navigator>
 );
 export default FeedNavigator;

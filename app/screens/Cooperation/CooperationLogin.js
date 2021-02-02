@@ -63,10 +63,10 @@ function CooperationLogin({ navigation }) {
                 textContentType="password"
               />
             </View>
+            <View style={styles.buttonContainer}>
+              <SubmitButton title="login" color="cooperationPrimary" />
+            </View>
           </ScrollView>
-          <View style={styles.buttonContainer}>
-            <SubmitButton title="login" color="cooperationPrimary" />
-          </View>
         </View>
       </AppForm>
     </Screen>

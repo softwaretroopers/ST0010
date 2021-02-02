@@ -9,10 +9,12 @@ import {
 } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import * as Yup from "yup";
+import { Menu, Divider, Provider, Appbar } from "react-native-paper";
 
 import Screen from "../../components/Screen";
 import colors from "../../configs/colors";
 import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
+import ScreenVariant from "../../components/ScreenVariant";
 
 const validationSchema = Yup.object().shape({
   mNumber: Yup.string().required().min(10).max(10).label("Mobile Number"),
@@ -20,22 +22,44 @@ const validationSchema = Yup.object().shape({
 });
 
 function PatientLogin({ navigation }) {
+  const [visible, setVisible] = React.useState(false);
+
+  const openMenu = () => setVisible(true);
+
+  const closeMenu = () => setVisible(false);
   return (
-    <Screen style={styles.container}>
-      <AppForm
-        initialValues={{ mNumber: "", password: "" }}
-        onSubmit={(values) => navigation.navigate("DrawerNavigation")}
-        validationSchema={validationSchema}
-      >
-        <View
-          style={{
-            width: "100%",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+    <ScreenVariant style={styles.container}>
+      <Provider>
+        <Appbar.Header style={{ backgroundColor: colors.themeDark }}>
+          <Appbar.Content title="Login" subtitle="Patient" />
+          <Appbar.Action icon="dots-vertical" onPress={openMenu} />
+        </Appbar.Header>
+
+        <View>
+          <Menu
+            visible={visible}
+            onDismiss={closeMenu}
+            anchor={{ x: 600, y: 80 }}
+          >
+            <Menu.Item
+              onPress={() => navigation.navigate("DocAuthNavigation")}
+              title="Doctor"
+            />
+            <Menu.Item
+              onPress={() => navigation.navigate("CooperationNavigation")}
+              title="Cooperation"
+            />
+            <Divider />
+          </Menu>
+        </View>
+
+        <AppForm
+          initialValues={{ mNumber: "", password: "" }}
+          onSubmit={(values) => navigation.navigate("DrawerNavigation")}
+          validationSchema={validationSchema}
         >
           <ScrollView
-            style={{ width: "100%", marginTop: "10%" }}
+            style={{ width: "100%" }}
             contentContainerStyle={{
               alignItems: "center",
               justifyContent: "center",
@@ -45,7 +69,7 @@ function PatientLogin({ navigation }) {
               name="person"
               size={50}
               color={colors.patientPrimary}
-              style={styles.iconContainer}
+              style={{ marginTop: 100 }}
             />
             <View style={styles.inputContainer}>
               <AppFormField
@@ -69,25 +93,22 @@ function PatientLogin({ navigation }) {
                 textContentType="password"
               />
             </View>
+            <View style={styles.buttonContainer}>
+              <SubmitButton title="login" color="patientPrimary" />
+              <TouchableOpacity
+                onPress={() => navigation.navigate("PatientRegister")}
+              >
+                <Text style={styles.registerButton}>Create an account</Text>
+              </TouchableOpacity>
+            </View>
           </ScrollView>
-          <View style={styles.buttonContainer}>
-            <SubmitButton title="login" color="patientPrimary" />
-            <TouchableOpacity
-              onPress={() => navigation.navigate("PatientRegister")}
-            >
-              <Text style={styles.registerButton}>Create an account</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </AppForm>
-    </Screen>
+        </AppForm>
+      </Provider>
+    </ScreenVariant>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-  },
   buttonContainer: {
     width: "90%",
     padding: 10,

@@ -63,10 +63,10 @@ function DoctorLogin({ navigation }) {
                 textContentType="password"
               />
             </View>
+            <View style={styles.buttonContainer}>
+              <SubmitButton title="login" color="doctorPrimary" />
+            </View>
           </ScrollView>
-          <View style={styles.buttonContainer}>
-            <SubmitButton title="login" color="doctorPrimary" />
-          </View>
         </View>
       </AppForm>
     </Screen>

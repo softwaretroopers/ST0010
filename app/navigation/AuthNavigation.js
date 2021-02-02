@@ -5,6 +5,7 @@ import WelcomeScreen from "../screens/WelcomeScreen";
 import PatientAuthNavigation from "./Patient/PatientAuthNavigation";
 import DocAuthNavigation from "./Doctor/DocAuthNavigation";
 import CooperationNavigation from "./Cooperation/CooperationNavigation";
+import DrawerNavigation from "./Patient/DrawerNavigation";
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,11 @@ const AuthNavigator = () => (
     <Stack.Screen
       name="CooperationNavigation"
       component={CooperationNavigation}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="DrawerNavigation"
+      component={DrawerNavigation}
       options={{ headerShown: false }}
     />
   </Stack.Navigator>

@@ -9,6 +9,7 @@ import PatientAccInfo from "../../screens/Patient/PatientAccInfo";
 import PatientPrescriptions from "../../screens/Patient/PatientPrescriptions";
 import PatientTopNavigator from "./PatientTopNavigator";
 import colors from "../../configs/colors";
+import PatientAccInfoEdit from "../../screens/Patient/PatientAccInfoEdit";
 
 const HomeStack = createStackNavigator();
 const PrescriptionsStack = createStackNavigator();
@@ -200,6 +201,11 @@ const AccountStackScreen = ({ navigation }) => (
           />
         ),
       }}
+    />
+    <AccountStack.Screen
+      name="PatientAccInfoEdit"
+      component={PatientAccInfoEdit}
+      options={{ headerShown: false }}
     />
   </AccountStack.Navigator>
 );

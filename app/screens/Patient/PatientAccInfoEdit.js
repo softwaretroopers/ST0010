@@ -15,23 +15,22 @@ import RenderIf from "../../components/RenderIf";
 
 const userDetails = [
   {
-    detail: "Dr.Anonymous",
+    detail: "Mr.Anonymous",
     label: "Name",
     icon: "account",
   },
   { detail: "0714009020", label: "Mobile Number", icon: "account" },
-  { detail: "166666", label: "SLMC Number", icon: "account" },
-  { detail: "Psychologist", label: "Category", icon: "account" },
-  { detail: "Sinhala", label: "Languages", icon: "account" },
-  { detail: "Nawaloka Hospital", label: "Hospital", icon: "account" },
+  { detail: "support@softwaretroopers.com", label: "Email", icon: "account" },
+  { detail: "18", label: "Age", icon: "account" },
+  { detail: "Male", label: "Gender", icon: "account" },
 ];
 
-function DoctorAccInfoEdit(props) {
+function PatientAccInfoEdit(props) {
   const [visibility, setVisibility] = useState(true);
 
   return (
     <ScreenVariant style={styles.screen}>
-      <Appbar.Header style={{ backgroundColor: colors.doctorPrimary }}>
+      <Appbar.Header style={{ backgroundColor: colors.themeDark }}>
         <Appbar.BackAction onPress={() => props.navigation.goBack()} />
         <Appbar.Content title="Edit Information" />
         {RenderIf(
@@ -111,4 +110,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DoctorAccInfoEdit;
+export default PatientAccInfoEdit;
