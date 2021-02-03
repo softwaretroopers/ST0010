@@ -1,25 +1,24 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { TouchableOpacity } from "react-native";
+import { IconButton } from "react-native-paper";
 import { GiftedChat, InputToolbar, Composer } from "react-native-gifted-chat";
-import colors from "../configs/colors";
-import Icon from "./Icon";
+import RenderIf from "./RenderIf";
+import { View } from "react-native";
 
-export function AppChat() {
+export function AppChat({
+  containerStyle,
+  iconStyle,
+  iconName,
+  iconColor,
+  composerDisability,
+  composerPlaceholder,
+}) {
   const [messages, setMessages] = useState([]);
-  const customtInputToolbar = (props) => {
-    return (
-      <InputToolbar
-        {...props}
-        containerStyle={{
-          backgroundColor: colors.themeDark,
-        }}
-      />
-    );
+  const customInputToolbar = (props) => {
+    return <InputToolbar {...props} containerStyle={containerStyle} />;
   };
-  const customtComposer = (props) => {
-    return <Composer {...props} placeholder={"Upload Your Prescription"} />;
+  const customComposer = (props) => {
+    return <Composer {...props} placeholder={composerPlaceholder} />;
   };
-
   useEffect(() => {
     setMessages([
       {
@@ -48,19 +47,22 @@ export function AppChat() {
       user={{
         _id: 1,
       }}
-      renderComposer={customtComposer}
-      disableComposer={true}
-      renderInputToolbar={(props) => customtInputToolbar(props)}
+      renderComposer={customComposer}
+      disableComposer={composerDisability}
+      renderInputToolbar={(props) => customInputToolbar(props)}
       renderActions={() => (
-        <React.Fragment>
-          <TouchableOpacity style={{ marginLeft: 5, padding: 5 }}>
-            <Icon
-              backgroundColor={colors.themeMedium}
-              iconColor={colors.themeLight}
-              name="plus"
+        <View>
+          {RenderIf(
+            !composerDisability,
+            <IconButton
+              icon={iconName}
+              color={iconColor}
+              size={25}
+              onPress={() => console.log("Pressed")}
+              style={iconStyle}
             />
-          </TouchableOpacity>
-        </React.Fragment>
+          )}
+        </View>
       )}
     />
   );

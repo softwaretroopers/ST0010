@@ -1,8 +1,7 @@
 import React from "react";
 import { View, FlatList } from "react-native";
-import CardAnyTime from "../../components/CardAnyTime";
 
-import CardPatientVariant from "../../components/CardPatientVariant";
+import CardReport from "../../components/CardReport";
 import Screen from "../../components/Screen";
 
 const FlatListData = [
@@ -10,45 +9,41 @@ const FlatListData = [
     id: 1,
     image: require("../../assets/categoryDoc1.png"),
     title: "Dr.Anonymous 1",
-    priceAudio: "1300",
-    priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
     education: "Bsc",
     university: "Colombo",
+    price: "Rs.250",
   },
   {
     id: 2,
     image: require("../../assets/categoryDoc2.png"),
     title: "Dr.Anonymous 2",
-    priceAudio: "1300",
-    priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
     education: "Bsc",
     university: "Colombo",
+    price: "Rs.350",
   },
   {
     id: 3,
     image: require("../../assets/categoryDoc3.png"),
     title: "Dr.Anonymous 3",
-    priceAudio: "1300",
-    priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
     education: "Bsc",
     university: "Colombo",
+    price: "Rs.450",
   },
   {
     id: 4,
     image: require("../../assets/categoryDoc4.png"),
     title: "Dr.Anonymous 4",
-    priceAudio: "1300",
-    priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
     education: "Bsc",
     university: "Colombo",
+    price: "Rs.150",
   },
 ];
 
@@ -59,15 +54,14 @@ function ReportReading(props) {
         <FlatList
           data={FlatListData}
           renderItem={({ item }) => (
-            <CardAnyTime
+            <CardReport
               title={item.title}
               image={item.image}
-              priceAudio={"LKR" + item.priceAudio}
-              priceVideo={"LKR" + item.priceVideo}
               language={item.language}
               profession={item.profession}
               education={item.education}
               university={item.university}
+              price={item.price}
             />
           )}
           keyExtractor={(item, index) => String(index)}
