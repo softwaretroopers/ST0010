@@ -19,10 +19,10 @@ const userDetails = [
     label: "Name",
     icon: "account",
   },
-  { detail: "0714009020", label: "Mobile Number", icon: "account" },
-  { detail: "support@softwaretroopers.com", label: "Email", icon: "account" },
-  { detail: "18", label: "Age", icon: "account" },
-  { detail: "Male", label: "Gender", icon: "account" },
+  { detail: "0714009020", label: "Mobile Number", icon: "cellphone" },
+  { detail: "support@softwaretroopers.com", label: "Email", icon: "email" },
+  { detail: "18", label: "Age", icon: "calendar" },
+  { detail: "Male", label: "Gender", icon: "gender-male-female" },
 ];
 
 function PatientAccInfoEdit(props) {

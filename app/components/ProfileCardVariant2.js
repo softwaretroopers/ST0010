@@ -1,22 +1,21 @@
 import React from "react";
 import { View, StyleSheet, ImageBackground } from "react-native";
-import { Fontisto } from "@expo/vector-icons";
-import { FontAwesome } from "@expo/vector-icons";
-import { Avatar } from "react-native-paper";
+import { Avatar, Chip, Text } from "react-native-paper";
 
 import colors from "../configs/colors";
-import AppText from "./AppText";
-import Icon from "./Icon";
 import ProfileCardListItem from "./ProfileCardListItem";
+import RenderIf from "./RenderIf";
 
-function ProfileCardVariant({
+function ProfileCardVariant2({
+  status,
   image,
   name,
-  price,
   profession,
-  education,
-  university,
+  slmc,
+  hospital,
   language,
+  Callprice,
+  Videoprice,
   IconButton,
   Iconclose,
 }) {
@@ -24,53 +23,83 @@ function ProfileCardVariant({
     <View style={styles.screen}>
       <View style={styles.container}>
         <ImageBackground style={styles.image} source={image}>
-          <View style={styles.IconClose}>{Iconclose}</View>
+          <View style={{ flexDirection: "row" }}>
+            {RenderIf(
+              status,
+              <Chip
+                selectedColor={colors.yes}
+                style={{ margin: 10 }}
+                icon="circle"
+              >
+                Online
+              </Chip>
+            )}
+            {RenderIf(
+              !status,
+              <Chip
+                selectedColor={colors.no}
+                style={{ margin: 10 }}
+                icon="circle"
+              >
+                Offline
+              </Chip>
+            )}
+
+            <View style={styles.IconClose}>{Iconclose}</View>
+          </View>
           <View style={styles.containerText}>
-            <AppText style={styles.name}>{name}</AppText>
-            <AppText style={styles.profession}>{profession}</AppText>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.profession}>{profession}</Text>
 
             <View style={styles.containerMiddle}>
               <ProfileCardListItem
-                title={education}
+                title={slmc}
                 IconComponent={
-                  <Icon
-                    IconFamily={Fontisto}
-                    name={"doctor"}
+                  <Avatar.Icon
+                    style={styles.avatarIcon}
                     size={25}
-                    color="white"
+                    icon="card-account-details"
                   />
                 }
               />
               <ProfileCardListItem
-                title={university}
+                title={hospital}
                 IconComponent={
-                  <Icon
-                    IconFamily={FontAwesome}
-                    name={"university"}
+                  <Avatar.Icon
+                    style={styles.avatarIcon}
                     size={25}
-                    color="white"
+                    icon="hospital-building"
                   />
                 }
               />
               <ProfileCardListItem
                 title={language}
                 IconComponent={
-                  <Icon
-                    IconFamily={Fontisto}
-                    name={"language"}
+                  <Avatar.Icon
+                    style={styles.avatarIcon}
                     size={25}
-                    color="white"
+                    icon="alphabetical"
                   />
                 }
               />
               <View style={styles.Calltype}>
                 <ProfileCardListItem
-                  title={price}
+                  title={Callprice}
                   IconComponent={
                     <Avatar.Icon
-                      style={{ backgroundColor: colors.black }}
+                      style={styles.avatarIcon}
                       size={25}
-                      icon="chat"
+                      icon="microphone"
+                    />
+                  }
+                />
+                <ProfileCardListItem
+                  title={Videoprice}
+                  IconComponent={
+                    <Avatar.Icon
+                      style={styles.avatarIcon}
+                      size={25}
+                      icon="video"
                     />
                   }
                 />
@@ -106,9 +135,9 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   IconClose: {
-    marginLeft: "87%",
-    marginTop: 5,
+    marginLeft: "58%",
   },
+  avatarIcon: { backgroundColor: colors.patientPrimary },
   image: {
     resizeMode: "cover",
     justifyContent: "center",
@@ -116,22 +145,21 @@ const styles = StyleSheet.create({
     height: 400,
   },
   name: {
-    color: colors.black,
+    color: colors.themeDark,
     fontWeight: "bold",
     fontSize: 22,
     paddingTop: "40%",
   },
   profession: {
-    color: colors.black,
+    color: colors.themeDark,
     fontWeight: "bold",
     fontSize: 12,
     marginBottom: "1%",
   },
   screen: {
-    backgroundColor: colors.black,
     overflow: "hidden",
     borderRadius: 20,
   },
 });
 
-export default ProfileCardVariant;
+export default ProfileCardVariant2;

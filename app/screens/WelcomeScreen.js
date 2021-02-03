@@ -18,8 +18,7 @@ const WelcomeScreen = ({ navigation }) => {
       <StatusBar backgroundColor={colors.themeDark} barStyle="light-content" />
       <View style={styles.header}>
         <Animatable.Image
-          animation="bounceIn"
-          duraton="1500"
+          animation="zoomInDown"
           source={require("../assets/logo_square.png")}
           style={styles.logo}
           resizeMode="stretch"
@@ -49,7 +48,7 @@ const WelcomeScreen = ({ navigation }) => {
         >
           <Text style={styles.text}>Sign in with account</Text>
         </TouchableOpacity>
-        <View style={styles.button}>
+        <Animatable.View animation="pulse" style={styles.button}>
           <TouchableOpacity
             onPress={() => navigation.navigate("DrawerNavigation")}
           >
@@ -61,7 +60,7 @@ const WelcomeScreen = ({ navigation }) => {
               <MaterialIcons name="navigate-next" color="#fff" size={20} />
             </LinearGradient>
           </TouchableOpacity>
-        </View>
+        </Animatable.View>
       </Animatable.View>
     </View>
   );

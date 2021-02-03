@@ -44,8 +44,7 @@ function DoctorLogin({ navigation }) {
               name="person"
               size={50}
               color={colors.doctorPrimary}
-              // style={styles.iconContainer}
-              style={{ marginTop: "30%" }}
+              style={{ marginTop: "20%" }}
             />
             <View style={styles.inputContainer}>
               <AppFormField
@@ -82,6 +81,8 @@ function DoctorLogin({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    alignItems: "center",
+    justifyContent: "center",
   },
   buttonContainer: {
     width: "90%",

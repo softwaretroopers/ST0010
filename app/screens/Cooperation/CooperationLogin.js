@@ -44,7 +44,7 @@ function CooperationLogin({ navigation }) {
               name="person"
               size={50}
               color={colors.cooperationPrimary}
-              style={{ marginTop: "30%" }}
+              style={{ marginTop: "20%" }}
             />
             <View style={styles.inputContainer}>
               <AppFormField

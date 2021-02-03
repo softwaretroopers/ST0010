@@ -13,19 +13,21 @@ const FlatListData = [
     priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165055",
+    hospital: "Nawaloka Hospital",
+    status: true,
   },
   {
     id: 2,
-    image: require("../../assets/categoryDoc2.png"),
+    image: require("../../assets/doc1.jpg"),
     title: "Dr.Anonymous 2",
     priceAudio: "1300",
     priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165056",
+    hospital: "Browns Hospital",
+    status: false,
   },
   {
     id: 3,
@@ -35,8 +37,9 @@ const FlatListData = [
     priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165057",
+    hospital: "Hemas Hospital",
+    status: true,
   },
   {
     id: 4,
@@ -46,8 +49,9 @@ const FlatListData = [
     priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165058",
+    hospital: "Colombo General Hospital",
+    status: true,
   },
 ];
 
@@ -61,12 +65,13 @@ function AnyTimeDoctor(props) {
             <CardAnyTime
               title={item.title}
               image={item.image}
-              priceAudio={"LKR" + item.priceAudio}
-              priceVideo={"LKR" + item.priceVideo}
+              priceAudio={"Rs." + item.priceAudio}
+              priceVideo={"Rs." + item.priceVideo}
               language={item.language}
               profession={item.profession}
-              education={item.education}
-              university={item.university}
+              slmc={item.slmc}
+              hospital={item.hospital}
+              status={item.status}
             />
           )}
           keyExtractor={(item, index) => String(index)}

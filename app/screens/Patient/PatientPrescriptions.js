@@ -19,6 +19,13 @@ const prescriptionData = [
     docName: "Dr. Anonymous - 2",
     date: "10/12/2020",
   },
+  {
+    id: 3,
+    docImage: require("../../assets/categoryDoc2.png"),
+    reportImage: require("../../assets/prescription.jpg"),
+    docName: "Dr. Anonymous - 3",
+    date: "31/01/2021",
+  },
 ];
 
 function PatientPrescriptions() {

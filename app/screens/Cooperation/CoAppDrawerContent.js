@@ -1,8 +1,17 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Share } from "react-native";
 import { DrawerItem, DrawerContentScrollView } from "@react-navigation/drawer";
 import { Avatar, Title, Caption, Drawer } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+const messageDetails =
+  "Hey, \nAyushaadhi is a Mobile Application helps you to channel doctors online in Sri Lanka at your convenience.\nGet it for free at https://play.google.com/store/apps/details?id=com.softwaretroopers.ayushaadhi&hl=en&gl=US";
+
+const shareMessage = () => {
+  Share.share({
+    message: messageDetails.toString(),
+  });
+};
 
 function CoAppDrawerContent(props) {
   return (
@@ -76,9 +85,7 @@ function CoAppDrawerContent(props) {
       <Drawer.Section style={styles.bottomDrawerSection}>
         <DrawerItem
           label="Invite Friends"
-          onPress={() => {
-            props.navigation.navigate("CooperationHome");
-          }}
+          onPress={shareMessage}
           icon={({ color, size }) => (
             <MaterialCommunityIcons
               name="share-variant"

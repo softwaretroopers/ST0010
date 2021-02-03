@@ -85,11 +85,9 @@ const CoAppNavigation = ({ navigation }) => (
       component={CooperationUser}
     />
     <Stack.Screen
-      options={{
-        title: "Edit Employee Details",
-      }}
       name="CooperationUserEdit"
       component={CooperationUserEdit}
+      options={{ headerShown: false }}
     />
     <Stack.Screen
       options={{
@@ -124,9 +122,7 @@ const CoProfile = () => (
       component={CooperationProfile}
     />
     <Stack.Screen
-      options={{
-        title: "Edit Account Details",
-      }}
+      options={{ headerShown: false }}
       name="CooperationProfileEdit"
       component={CooperationProfileEdit}
     />

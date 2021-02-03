@@ -33,7 +33,7 @@ function AppDrawerContent(props) {
             <DrawerItem
               label="Home"
               onPress={() => {
-                props.navigation.navigate("Home");
+                props.navigation.navigate("Home", { screen: "Home" });
               }}
               icon={({ color, size }) => (
                 <MaterialCommunityIcons name="home" color={color} size={size} />

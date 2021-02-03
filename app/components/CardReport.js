@@ -76,7 +76,7 @@ function CardReport({
             style={{
               margin: 10,
               paddingHorizontal: "18%",
-              backgroundColor: colors.light,
+              backgroundColor: colors.whitesmoke,
             }}
           >
             <Card.Content

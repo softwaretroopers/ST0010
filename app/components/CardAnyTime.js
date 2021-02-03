@@ -1,24 +1,32 @@
 import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Modal } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Avatar, Card, Title, Paragraph, Caption } from "react-native-paper";
+import {
+  Avatar,
+  Card,
+  Title,
+  Paragraph,
+  Caption,
+  Button,
+  IconButton,
+} from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./AppText";
 import colors from "../configs/colors";
 import Icon from "./Icon";
-import AppButton from "../components/AppButton";
-import ProfileCard from "../components/ProfileCard";
+import ProfileCardVariant2 from "./ProfileCardVariant2";
 
 function CardAnyTime({
+  status,
   title,
   priceAudio,
   priceVideo,
   image,
   language,
   profession,
-  education,
-  university,
+  slmc,
+  hospital,
 }) {
   const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
@@ -27,34 +35,41 @@ function CardAnyTime({
     <>
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
         <View style={styles.screen}>
-          <ProfileCard
+          <ProfileCardVariant2
             image={image}
             Iconclose={
-              <TouchableOpacity
+              <IconButton
+                icon="close-circle"
+                color={colors.patientPrimary}
+                size={30}
                 onPress={() => {
                   setModalVisible(!modalVisible);
                 }}
-              >
-                <Icon name="cross" backgroundColor={colors.black}></Icon>
-              </TouchableOpacity>
+              />
             }
             name={title}
             profession={profession}
-            education={education}
-            university={university}
+            slmc={slmc}
+            hospital={hospital}
             language={language}
             Callprice={priceAudio}
             Videoprice={priceVideo}
+            status={status}
             IconButton={
-              <View style={styles.buttonContainer}>
-                <AppButton
-                  title="Book Now"
-                  color="black"
-                  onPress={() => {
-                    setSecondModalVisible(true);
-                  }}
-                />
-              </View>
+              <Button
+                disabled={!status}
+                style={{
+                  backgroundColor: colors.patientPrimary,
+                  padding: "2%",
+                }}
+                icon="check-circle"
+                mode="contained"
+                onPress={() => {
+                  setSecondModalVisible(true);
+                }}
+              >
+                Book Now
+              </Button>
             }
           />
         </View>
@@ -145,11 +160,13 @@ function CardAnyTime({
         }}
       >
         <View>
-          <Card style={{
+          <Card
+            style={{
               margin: 10,
               paddingHorizontal: "18%",
-              backgroundColor: colors.light,
-            }}>
+              backgroundColor: colors.whitesmoke,
+            }}
+          >
             <Card.Content
               style={{ justifyContent: "center", alignItems: "center" }}
             >
@@ -273,7 +290,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: colors.white,
     fontWeight: "bold",
-    textAlign: "center",
     fontSize: 20,
   },
   openButton: {

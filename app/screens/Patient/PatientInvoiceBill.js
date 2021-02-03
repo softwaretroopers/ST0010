@@ -1,9 +1,9 @@
 import React from "react";
 import { View, StyleSheet, FlatList } from "react-native";
-import AppButton from "../../components/AppButton";
+import { Appbar, Button } from "react-native-paper";
 
 import AppText from "../../components/AppText";
-import ScreenVarient from "../../components/ScreenVarient";
+import ScreenVariant from "../../components/ScreenVariant";
 import colors from "../../configs/colors";
 
 const DocProfile = [
@@ -21,7 +21,10 @@ const DocProfile = [
 
 function PatientInvoiceBill({ navigation }) {
   return (
-    <ScreenVarient>
+    <ScreenVariant>
+      <Appbar>
+        <Appbar.Content title="Invoice" />
+      </Appbar>
       <View style={styles.screenTop}>
         <FlatList
           data={DocProfile}
@@ -60,14 +63,16 @@ function PatientInvoiceBill({ navigation }) {
           )}
         />
         <View style={styles.button}>
-          <AppButton
-            title="Pay"
-            color="black"
+          <Button
+            icon="exit-to-app"
+            mode="contained"
             onPress={() => navigation.navigate("Appointments")}
-          />
+          >
+            Done
+          </Button>
         </View>
       </View>
-    </ScreenVarient>
+    </ScreenVariant>
   );
 }
 

@@ -19,11 +19,11 @@ const userDetails = [
     label: "Name",
     icon: "account",
   },
-  { detail: "0714009020", label: "Mobile Number", icon: "account" },
-  { detail: "166666", label: "SLMC Number", icon: "account" },
-  { detail: "Psychologist", label: "Category", icon: "account" },
-  { detail: "Sinhala", label: "Languages", icon: "account" },
-  { detail: "Nawaloka Hospital", label: "Hospital", icon: "account" },
+  { detail: "0714009020", label: "Mobile Number", icon: "cellphone" },
+  { detail: "166666", label: "SLMC Number", icon: "card-account-details" },
+  { detail: "Psychologist", label: "Category", icon: "doctor" },
+  { detail: "Sinhala", label: "Languages", icon: "alphabetical" },
+  { detail: "Nawaloka Hospital", label: "Hospital", icon: "hospital-building" },
 ];
 
 function DoctorAccInfoEdit(props) {

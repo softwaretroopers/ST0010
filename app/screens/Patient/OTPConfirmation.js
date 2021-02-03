@@ -8,16 +8,16 @@ import {
   AppFormFieldVariant,
   SubmitButton,
 } from "../../components/forms";
-import Screen from "../../components/Screen";
 import colors from "../../configs/colors";
+import ScreenVariant from "../../components/ScreenVariant";
 
 const validationSchema = Yup.object().shape({
   oTP: Yup.string().required().min(6).max(6).label("OTP"),
 });
 
-function OTPConfirmation({ navigation , icon, ...otherProps }) {
+function OTPConfirmation({ navigation, icon, ...otherProps }) {
   return (
-    <Screen>
+    <ScreenVariant>
       <AppForm
         initialValues={{
           oTP: "",
@@ -33,18 +33,20 @@ function OTPConfirmation({ navigation , icon, ...otherProps }) {
             style={styles.iconContainer}
             name="cellphone-message"
           ></MaterialCommunityIcons>
-          <AppFormFieldVariant
-            name="oTP"
-            placeholder="XXXXXX"
-            keyboardType="number-pad"
-            maxLength={6}
-          />
+          <View style={{ marginHorizontal: "33.3%" }}>
+            <AppFormFieldVariant
+              name="oTP"
+              placeholder="XXXXXX"
+              keyboardType="number-pad"
+              maxLength={6}
+            />
+          </View>
         </View>
         <View style={styles.buttonContainer}>
           <SubmitButton title="Submit" color="patientPrimary" />
         </View>
       </AppForm>
-    </Screen>
+    </ScreenVariant>
   );
 }
 
@@ -52,17 +54,18 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: "bold",
     fontSize: 20,
-    marginBottom: "10%",
+    alignSelf: "center",
+    marginBottom: "5%",
   },
   container: {
-    marginTop: "20%",
-    justifyContent: "center",
-    alignItems: "center",
+    marginTop: "10%",
   },
   buttonContainer: {
     width: "60%",
     padding: 20,
+    alignSelf: "center",
   },
+  iconContainer: { alignSelf: "center", marginVertical: "2%" },
 });
 
 export default OTPConfirmation;

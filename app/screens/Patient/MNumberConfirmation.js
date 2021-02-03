@@ -9,6 +9,7 @@ import {
   SubmitButton,
 } from "../../components/forms";
 import Screen from "../../components/Screen";
+import ScreenVariant from "../../components/ScreenVariant";
 
 const validationSchema = Yup.object().shape({
   mNumber: Yup.string().required().min(10).max(10).label("Mobile Number"),
@@ -16,7 +17,7 @@ const validationSchema = Yup.object().shape({
 
 function MNumberConfirmation({ navigation, icon, ...otherProps }) {
   return (
-    <Screen>
+    <ScreenVariant>
       <AppForm
         initialValues={{
           mNumber: "",
@@ -38,7 +39,7 @@ function MNumberConfirmation({ navigation, icon, ...otherProps }) {
           <SubmitButton title="Send otp" color="patientPrimary" />
         </View>
       </AppForm>
-    </Screen>
+    </ScreenVariant>
   );
 }
 
@@ -47,15 +48,16 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
     marginBottom: "10%",
+    alignSelf: "center",
   },
   container: {
     marginTop: "10%",
-    justifyContent: "center",
-    alignItems: "center",
+    marginHorizontal: "5%",
   },
   buttonContainer: {
     width: "80%",
     padding: 20,
+    alignSelf: "center",
   },
 });
 

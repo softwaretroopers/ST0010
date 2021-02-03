@@ -1,33 +1,76 @@
-import React from "react";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
-import { Button } from "react-native-paper";
+import React, { useState } from "react";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  FlatList,
+  Text,
+} from "react-native";
+import { Appbar, TextInput } from "react-native-paper";
 
-import AppText from "../../components/AppText";
 import ScreenVariant from "../../components/ScreenVariant";
 import ListItem from "../../components/ListItem";
 import colors from "../../configs/colors";
+import RenderIf from "../../components/RenderIf";
+
+const userDetails = [
+  {
+    detail: "ABC Company",
+    label: "Company Name",
+    icon: "office-building",
+  },
+  { detail: "0714009020", label: "Mobile Number", icon: "cellphone" },
+  { detail: "support@softwaretroopers.com", label: "Email", icon: "email" },
+];
 
 function CooperationProfileEdit(props) {
+  const [visibility, setVisibility] = useState(true);
+
   return (
     <ScreenVariant style={styles.screen}>
+      <Appbar style={{ backgroundColor: colors.cooperationPrimary }}>
+        <Appbar.BackAction onPress={() => props.navigation.goBack()} />
+        <Appbar.Content title="Edit Information" />
+        {RenderIf(
+          visibility,
+          <Appbar.Action
+            icon="square-edit-outline"
+            onPress={() => {
+              setVisibility(!visibility);
+            }}
+          />
+        )}
+        {RenderIf(
+          !visibility,
+          <Appbar.Action
+            icon="content-save"
+            onPress={() => {
+              setVisibility(!visibility);
+            }}
+          />
+        )}
+      </Appbar>
       <View style={styles.containerTop}>
         <ListItem image={require("../../assets/logo.png")} />
       </View>
       <TouchableOpacity style={styles.ContainerButton}>
-        <AppText style={{ fontSize: 14, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 14, fontWeight: "bold" }}>
           Change Profile Picture
-        </AppText>
+        </Text>
       </TouchableOpacity>
-      <View style={styles.containers}></View>
-
-      <View style={styles.fixToText}>
-        <Button
-          color={colors.cooperationPrimary}
-          icon="content-save"
-          mode="contained"
-        >
-          Update
-        </Button>
+      <View style={styles.containers}>
+        <FlatList
+          data={userDetails}
+          keyExtractor={(listing) => listing.label}
+          renderItem={({ item }) => (
+            <TextInput
+              label={item.label}
+              disabled={visibility}
+              value={item.detail}
+              left={<TextInput.Icon name={item.icon} />}
+            />
+          )}
+        />
       </View>
     </ScreenVariant>
   );
@@ -46,7 +89,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 20,
     backgroundColor: colors.white,
     padding: "5%",
-    shadowColor: colors.cooperationPrimary,
+    shadowColor: colors.patientPrimary,
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 1,
     shadowRadius: 10,
