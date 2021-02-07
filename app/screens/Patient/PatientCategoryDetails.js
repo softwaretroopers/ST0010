@@ -161,11 +161,7 @@ function PatientCategoryDetails({ navigation }) {
   return (
     <ScreenVariant>
       <AppSearchBar />
-      <View
-        style={
-          styles.containerTop /*Remove the styling of this after fixing bottom tabs*/
-        }
-      >
+      <View style={styles.containerTop}>
         <FlatList
           data={FlatListData}
           renderItem={({ item }) => (
@@ -234,7 +230,7 @@ const styles = StyleSheet.create({
   },
   containerTop: {
     marginTop: "1%",
-    marginBottom: 73, //#TODO Remove this after fixing bottom tabs
+    paddingBottom: "17.5%",
   },
 });
 

@@ -1,11 +1,14 @@
 import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, View, Text } from "react-native";
 
 import Card from "../../components/Card";
-import ScreenVarient from "../../components/ScreenVarient";
+import Posts from "../../components/Posts";
+import RenderIf from "../../components/RenderIf";
+import ScreenVariant from "../../components/ScreenVariant";
 
 const listings = [
   {
+    type: true,
     id: 1,
     title: "Doctor Channeling",
     des:
@@ -14,6 +17,7 @@ const listings = [
     nav: "HomeStackScreen",
   },
   {
+    type: true,
     id: 2,
     title: "Anytime Doctor",
     des:
@@ -22,6 +26,7 @@ const listings = [
     nav: "AnyTimeStackScreen",
   },
   {
+    type: true,
     id: 3,
     title: "Report Reading",
     des:
@@ -29,31 +34,42 @@ const listings = [
     image: require("../../assets/Councillor.png"),
     nav: "ReportStackScreen",
   },
+  {
+    type: false,
+    id: 4,
+    title: "New Vaccine for COVID-19",
+    image: require("../../assets/news.jpg"),
+    date: "2 days ago",
+  },
 ];
+
 function PatientHome({ navigation }) {
   return (
-    <ScreenVarient>
-      <View style={styles.screen}>
-        <FlatList
-          data={listings}
-          keyExtractor={(listing) => listing.id.toString()}
-          renderItem={({ item }) => (
-            <Card
-              onPress={() => navigation.navigate(item.nav)}
-              title={item.title}
-              des={item.des}
-              image={item.image}
-            />
-          )}
-        />
-      </View>
-    </ScreenVarient>
+    <ScreenVariant>
+      <FlatList
+        data={listings}
+        keyExtractor={(listing) => listing.id.toString()}
+        renderItem={({ item }) => (
+          <View>
+            {RenderIf(
+              item.type,
+              <Card
+                onPress={() => navigation.navigate(item.nav)}
+                title={item.title}
+                des={item.des}
+                image={item.image}
+              />
+            )}
+            {RenderIf(
+              !item.type,
+              <>
+                <Posts title={item.title} date={item.date} image={item.image} />
+              </>
+            )}
+          </View>
+        )}
+      />
+    </ScreenVariant>
   );
 }
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    paddingTop: 20,
-  },
-});
 export default PatientHome;

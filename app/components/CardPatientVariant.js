@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Modal } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import {
-  Avatar,
-  Divider,
-  Card,
-  Title,
-  Paragraph,
-  Caption,
-} from "react-native-paper";
+import { Avatar, Card, Title, Paragraph, Caption } from "react-native-paper";
 
 import colors from "../configs/colors";
 import Icon from "./Icon";
@@ -73,15 +66,16 @@ function CardPatientVariant({
         <View>
           <Card
             style={{
+              elevation: 5,
               margin: 10,
               paddingHorizontal: "18%",
-              backgroundColor: colors.light,
+              backgroundColor: colors.white,
             }}
           >
             <Card.Content
               style={{ justifyContent: "center", alignItems: "center" }}
             >
-              <Avatar.Image style={{ marging: 10 }} source={image} />
+              <Avatar.Image size={100} style={{ marging: 10 }} source={image} />
               <Title>{title}</Title>
               <Caption>{profession}</Caption>
               <View flexDirection="row" style={{ marginTop: "2%" }}>

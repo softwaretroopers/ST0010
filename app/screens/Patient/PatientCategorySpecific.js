@@ -1,8 +1,10 @@
 import React from "react";
-import { View, FlatList, StyleSheet } from "react-native";
+import { View, FlatList, StyleSheet, ScrollView } from "react-native";
+import AppSearchBar from "../../components/AppSearchBar";
 
 import CardPatientVariant from "../../components/CardPatientVariant";
-import Screen from "../../components/Screen";
+import ScreenVariant from "../../components/ScreenVariant";
+import colors from "../../configs/colors";
 
 const FlatListData = [
   {
@@ -53,8 +55,11 @@ const FlatListData = [
 
 function PatientCategorySpecific(props) {
   return (
-    <Screen>
-      <View style={styles.topDetails}>
+    <ScreenVariant>
+      <View>
+        <AppSearchBar></AppSearchBar>
+      </View>
+      <View style={{ paddingBottom: "17.5%" }}>
         <FlatList
           data={FlatListData}
           renderItem={({ item }) => (
@@ -72,7 +77,7 @@ function PatientCategorySpecific(props) {
           keyExtractor={(item, index) => String(index)}
         />
       </View>
-    </Screen>
+    </ScreenVariant>
   );
 }
 

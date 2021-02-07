@@ -82,7 +82,7 @@ function CardReport({
             <Card.Content
               style={{ justifyContent: "center", alignItems: "center" }}
             >
-              <Avatar.Image style={{ marging: 10 }} source={image} />
+              <Avatar.Image size={100} style={{ marging: 10 }} source={image} />
               <Title>{title}</Title>
               <Caption>{profession}</Caption>
               <View flexDirection="row" style={{ marginTop: "2%" }}>

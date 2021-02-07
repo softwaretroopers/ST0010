@@ -35,9 +35,8 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: 35,
     backgroundColor: colors.white,
-    marginBottom: "8%",
-    marginLeft: 20,
-    marginRight: 20,
+    marginVertical: "5%",
+    marginHorizontal: "5%",
     padding: "5%",
     overflow: "hidden",
 

@@ -12,7 +12,6 @@ import {
 } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import AppText from "./AppText";
 import colors from "../configs/colors";
 import Icon from "./Icon";
 import ProfileCardVariant2 from "./ProfileCardVariant2";
@@ -84,7 +83,7 @@ function CardAnyTime({
             <View
               style={{
                 flexDirection: "row",
-                padding: 20,
+                padding: "10%",
               }}
             >
               <TouchableOpacity
@@ -103,14 +102,7 @@ function CardAnyTime({
                     marginRight: 5,
                   }}
                 />
-                <AppText
-                  style={{
-                    fontWeight: "bold",
-                    color: colors.black,
-                  }}
-                >
-                  Audio Call
-                </AppText>
+                <Title>Audio Call</Title>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.callButton}
@@ -128,14 +120,7 @@ function CardAnyTime({
                     marginRight: 5,
                   }}
                 />
-                <AppText
-                  style={{
-                    color: colors.black,
-                    fontWeight: "bold",
-                  }}
-                >
-                  Video Call
-                </AppText>
+                <Title>Video Call</Title>
               </TouchableOpacity>
             </View>
             <TouchableOpacity
@@ -170,7 +155,7 @@ function CardAnyTime({
             <Card.Content
               style={{ justifyContent: "center", alignItems: "center" }}
             >
-              <Avatar.Image style={{ marging: 10 }} source={image} />
+              <Avatar.Image size={100} style={{ marging: 10 }} source={image} />
               <Title>{title}</Title>
               <Caption>{profession}</Caption>
               <View flexDirection="row" style={{ marginTop: "2%" }}>
@@ -305,11 +290,8 @@ const styles = StyleSheet.create({
   secondModalView: {
     marginTop: 10,
     backgroundColor: colors.patientPrimary,
-    borderColor: colors.medium,
-    borderWidth: 1,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
-    padding: 35,
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
