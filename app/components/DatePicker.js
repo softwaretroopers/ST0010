@@ -1,12 +1,33 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import moment from "moment";
+import { Formik } from "formik";
+import { Chip } from "react-native-paper";
 
 import AppText from "./AppText";
 import colors from "../configs/colors";
 
-const DatePickerModal = () => {
+export default function DatePicker() {
+  return (
+    <Formik
+      initialValues={{ myDate: moment().format("YYYY-MM-DD") }}
+      onSubmit={(values) => console.log(values)}
+    >
+      {({ handleSubmit, values, setFieldValue }) => (
+        <MyForm
+          values={values}
+          setFieldValue={setFieldValue}
+          handleSubmit={handleSubmit}
+        />
+      )}
+    </Formik>
+  );
+}
+
+export const MyForm = (props) => {
+  const { handleSubmit, values, setFieldValue } = props;
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
 
   const showDatePicker = () => {
@@ -18,9 +39,10 @@ const DatePickerModal = () => {
   };
 
   const handleConfirm = (date) => {
-    console.log(date);
+    setFieldValue("myDate", moment(date).format("YYYY-MM-DD"));
     hideDatePicker();
   };
+
   return (
     <View>
       <TouchableOpacity onPress={showDatePicker}>
@@ -45,7 +67,15 @@ const DatePickerModal = () => {
         mode="date"
         onConfirm={handleConfirm}
         onCancel={hideDatePicker}
+        date={moment(values.myDate).toDate()}
       />
+      <Chip
+        style={{ alignSelf: "center", marginTop: "2%", padding: "1%" }}
+        icon="calendar-check"
+        onPress={handleSubmit}
+      >
+        {moment(values.myDate).format("YYYY-MM-DD")}
+      </Chip>
     </View>
   );
 };
@@ -62,5 +92,3 @@ const styles = StyleSheet.create({
     marginTop: "5%",
   },
 });
-
-export default DatePickerModal;

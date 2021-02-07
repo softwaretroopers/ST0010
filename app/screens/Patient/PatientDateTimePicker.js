@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, ScrollView, FlatList } from "react-native";
-import { Chip } from "react-native-paper";
+import { Chip, Divider } from "react-native-paper";
 
 import DatePicker from "../../components/DatePicker";
 import Screen from "../../components/Screen";
@@ -67,6 +67,7 @@ function PatientDateTimePicker(props) {
     <Screen>
       <View>
         <DatePicker></DatePicker>
+        <Divider />
         <View
           style={{ margin: 10, alignItems: "center", flexDirection: "row" }}
         >

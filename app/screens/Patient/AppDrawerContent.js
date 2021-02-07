@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Share } from "react-native";
 import { DrawerItem, DrawerContentScrollView } from "@react-navigation/drawer";
-import { Avatar, Title, Caption, Drawer } from "react-native-paper";
+import { Avatar, Title, Caption, Drawer, Divider } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const messageDetails =
@@ -29,7 +29,9 @@ function AppDrawerContent(props) {
               </View>
             </View>
           </View>
+
           <Drawer.Section style={styles.drawerSection}>
+            <Divider />
             <DrawerItem
               label="Home"
               onPress={() => {
