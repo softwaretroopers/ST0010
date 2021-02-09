@@ -1,6 +1,6 @@
 import React from "react";
-import { FlatList, View, Text } from "react-native";
-import Carousel from "react-native-snap-carousel";
+import { FlatList } from "react-native";
+import { Divider, Headline } from "react-native-paper";
 
 import Card from "../../components/Card";
 import Posts from "../../components/Posts";
@@ -81,18 +81,12 @@ function PatientHome({ navigation }) {
             )}
             {RenderIf(
               !item.type,
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Carousel
-                  layout={"default"}
+              <>
+                <Divider />
+                <Headline style={{ alignSelf: "center" }}>NewsFeed</Headline>
+                <FlatList
                   data={posts}
-                  sliderWidth={500}
-                  itemWidth={325}
+                  keyExtractor={(post) => post.id.toString()}
                   renderItem={({ item }) => (
                     <Posts
                       title={item.title}
@@ -101,7 +95,7 @@ function PatientHome({ navigation }) {
                     />
                   )}
                 />
-              </View>
+              </>
             )}
           </>
         )}
