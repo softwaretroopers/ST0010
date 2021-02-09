@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList, View, Text } from "react-native";
+import Carousel from "react-native-snap-carousel";
 
 import Card from "../../components/Card";
 import Posts from "../../components/Posts";
@@ -37,9 +38,27 @@ const listings = [
   {
     type: false,
     id: 4,
-    title: "New Vaccine for COVID-19",
-    image: require("../../assets/news.jpg"),
+  },
+];
+
+const posts = [
+  {
+    id: 1,
+    title: "UK coronavirus variant spreading 'rapidly' through US, study finds",
+    image: require("../../assets/news1.jpg"),
+    date: "Yesterday",
+  },
+  {
+    id: 2,
+    title: "South Africa halts AstraZeneca vaccine rollout over new variant",
+    image: require("../../assets/news2.jpg"),
     date: "2 days ago",
+  },
+  {
+    id: 3,
+    title: "Two tests for all UK arrivals during quarantine",
+    image: require("../../assets/news3.jpg"),
+    date: "1 week ago",
   },
 ];
 
@@ -50,7 +69,7 @@ function PatientHome({ navigation }) {
         data={listings}
         keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
-          <View>
+          <>
             {RenderIf(
               item.type,
               <Card
@@ -62,11 +81,29 @@ function PatientHome({ navigation }) {
             )}
             {RenderIf(
               !item.type,
-              <>
-                <Posts title={item.title} date={item.date} image={item.image} />
-              </>
+              <View
+                style={{
+                  flex: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Carousel
+                  layout={"default"}
+                  data={posts}
+                  sliderWidth={500}
+                  itemWidth={325}
+                  renderItem={({ item }) => (
+                    <Posts
+                      title={item.title}
+                      date={item.date}
+                      image={item.image}
+                    />
+                  )}
+                />
+              </View>
             )}
-          </View>
+          </>
         )}
       />
     </ScreenVariant>
