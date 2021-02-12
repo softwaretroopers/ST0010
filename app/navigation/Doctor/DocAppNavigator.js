@@ -30,6 +30,7 @@ const DocAppNavigator = () => (
       name="Appointment"
       component={DoctorAppointment}
       options={{
+        tabBarBadge: 2,
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons
             name="calendar-today"

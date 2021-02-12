@@ -1,9 +1,9 @@
 {
   "expo": {
     "name": "Ayushaadhi",
-    "slug": "ST0010",
+    "slug": "ST0010-Ayushaadhi",
     "owner": "softwaretroopers",
-    "version": "1.0.0",
+    "version": "Test-1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "splash": {
@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.softwaretroopers.ayushaadhi"

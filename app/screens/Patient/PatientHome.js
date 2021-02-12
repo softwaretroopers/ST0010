@@ -1,11 +1,12 @@
 import React from "react";
-import { FlatList } from "react-native";
-import { Divider, Headline } from "react-native-paper";
+import { FlatList, View } from "react-native";
+import { Headline } from "react-native-paper";
 
 import Card from "../../components/Card";
 import Posts from "../../components/Posts";
 import RenderIf from "../../components/RenderIf";
 import ScreenVariant from "../../components/ScreenVariant";
+import colors from "../../configs/colors";
 
 const listings = [
   {
@@ -82,8 +83,20 @@ function PatientHome({ navigation }) {
             {RenderIf(
               !item.type,
               <>
-                <Divider />
-                <Headline style={{ alignSelf: "center" }}>NewsFeed</Headline>
+                <View
+                  style={{ backgroundColor: colors.white, marginBottom: "2%" }}
+                >
+                  <Headline
+                    style={{
+                      alignSelf: "center",
+                      fontWeight: "bold",
+                      color: colors.patientPrimary,
+                    }}
+                  >
+                    NewsFeed
+                  </Headline>
+                </View>
+
                 <FlatList
                   data={posts}
                   keyExtractor={(post) => post.id.toString()}

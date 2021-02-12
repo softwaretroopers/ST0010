@@ -8,7 +8,6 @@ import PatientAccInfo from "../../screens/Patient/PatientAccInfo";
 import PatientPrescriptions from "../../screens/Patient/PatientPrescriptions";
 import PatientTopNavigator from "./PatientTopNavigator";
 import colors from "../../configs/colors";
-import PatientAccInfoEdit from "../../screens/Patient/PatientAccInfoEdit";
 import PatientHome from "../../screens/Patient/PatientHome";
 
 const HomeStack = createStackNavigator();
@@ -60,6 +59,7 @@ const AppNavigator = () => (
       name="Appointments"
       component={AppointmentsStackScreen}
       options={{
+        tabBarBadge: 2,
         tabBarIcon: () => (
           <MaterialCommunityIcons
             name="calendar-clock"
