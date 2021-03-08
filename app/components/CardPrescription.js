@@ -14,16 +14,7 @@ function CardPrescription({ docImage, reportImage, date, docName }) {
         <Card.Title title={docName} subtitle={date} left={LeftContent} />
         <Card.Cover source={reportImage} />
         <Card.Actions>
-          <Button
-            style={{
-              backgroundColor: colors.patientPrimary,
-              marginHorizontal: "2%",
-            }}
-            icon="open-in-new"
-            mode="contained"
-          >
-            Open
-          </Button>
+          <Button icon="open-in-new">Open</Button>
         </Card.Actions>
       </Card>
     </View>
