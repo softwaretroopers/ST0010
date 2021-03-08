@@ -1,6 +1,6 @@
 import React from "react";
-import { FlatList, View } from "react-native";
-import { Headline } from "react-native-paper";
+import { FlatList, View, StyleSheet } from "react-native";
+import { Headline, FAB } from "react-native-paper";
 
 import Card from "../../components/Card";
 import Posts from "../../components/Posts";
@@ -113,7 +113,19 @@ function PatientHome({ navigation }) {
           </>
         )}
       />
+      <FAB style={styles.fab} icon="chat" />
     </ScreenVariant>
   );
 }
+
+const styles = StyleSheet.create({
+  fab: {
+    position: "absolute",
+    margin: 16,
+    right: 0,
+    bottom: 0,
+    backgroundColor: colors.patientPrimary,
+  },
+});
+
 export default PatientHome;

@@ -8,16 +8,6 @@ function Posts({ title, image, date }) {
     <Card style={{ borderRadius: 20, margin: 10 }}>
       <Card.Title title={title} subtitle={date} />
       <Card.Cover source={image} />
-
-      <Card.Actions>
-        <Button
-          style={{ backgroundColor: colors.patientPrimary }}
-          icon="eye"
-          mode="contained"
-        >
-          View
-        </Button>
-      </Card.Actions>
     </Card>
   );
 }

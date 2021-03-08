@@ -19,16 +19,6 @@ function CardPrescription({ docImage, reportImage, date, docName }) {
               backgroundColor: colors.patientPrimary,
               marginHorizontal: "2%",
             }}
-            icon="chat"
-            mode="contained"
-          >
-            Chat
-          </Button>
-          <Button
-            style={{
-              backgroundColor: colors.patientPrimary,
-              marginHorizontal: "2%",
-            }}
             icon="open-in-new"
             mode="contained"
           >
