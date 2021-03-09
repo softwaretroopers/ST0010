@@ -11,8 +11,8 @@ const FlatListData = [
     title: "Dr.Anonymous 1",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165103",
+    hospital: "Durdans Hospital",
     price: "Rs.250",
   },
   {
@@ -21,8 +21,8 @@ const FlatListData = [
     title: "Dr.Anonymous 2",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165103",
+    hospital: "Durdans Hospital",
     price: "Rs.350",
   },
   {
@@ -31,8 +31,8 @@ const FlatListData = [
     title: "Dr.Anonymous 3",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165103",
+    hospital: "Durdans Hospital",
     price: "Rs.450",
   },
   {
@@ -41,8 +41,8 @@ const FlatListData = [
     title: "Dr.Anonymous 4",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165103",
+    hospital: "Durdans Hospital",
     price: "Rs.150",
   },
 ];
@@ -59,8 +59,8 @@ function ReportReading(props) {
               image={item.image}
               language={item.language}
               profession={item.profession}
-              education={item.education}
-              university={item.university}
+              slmc={item.slmc}
+              hospital={item.hospital}
               price={item.price}
             />
           )}
@@ -70,5 +70,4 @@ function ReportReading(props) {
     </Screen>
   );
 }
-
 export default ReportReading;

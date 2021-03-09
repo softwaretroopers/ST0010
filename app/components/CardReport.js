@@ -8,19 +8,20 @@ import {
   Paragraph,
   Caption,
   Button,
+  IconButton,
 } from "react-native-paper";
 
 import colors from "../configs/colors";
 import Icon from "./Icon";
-import ProfileCardVariant from "./ProfileCardVariant";
+import ProfileCardVariant3 from "./ProfileCardVariant3";
 
 function CardReport({
   title,
   image,
   language,
   profession,
-  education,
-  university,
+  slmc,
+  hospital,
   price,
 }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -29,23 +30,24 @@ function CardReport({
     <>
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
         <View style={styles.screen}>
-          <ProfileCardVariant
+          <ProfileCardVariant3
             image={image}
             Iconclose={
-              <TouchableOpacity
+              <IconButton
+                icon="close-circle"
+                color={colors.patientPrimary}
+                size={30}
                 onPress={() => {
                   setModalVisible(!modalVisible);
                 }}
-              >
-                <Icon name="cross" backgroundColor={colors.black}></Icon>
-              </TouchableOpacity>
+              />
             }
             name={title}
             profession={profession}
-            price={price}
-            education={education}
-            university={university}
+            slmc={slmc}
+            hospital={hospital}
             language={language}
+            price={price}
             IconButton={
               <Button
                 style={{

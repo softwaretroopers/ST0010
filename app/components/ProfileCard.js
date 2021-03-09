@@ -37,7 +37,7 @@ function profileCard({
                   <Icon
                     IconFamily={Fontisto}
                     name={"doctor"}
-                    size={25}
+                    size={35}
                     color="white"
                   />
                 }

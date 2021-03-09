@@ -3,7 +3,7 @@ import { View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 
 import colors from "../../configs/colors";
 import AppText from "../../components/AppText";
-import CardPatient from "../../components/CardPatient";
+import CardChanneling from "../../components/CardChanneling";
 import ScreenVariant from "../../components/ScreenVariant";
 import AppSearchBar from "../../components/AppSearchBar";
 
@@ -19,8 +19,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165100",
+        hospital: "Nawaloka Hospital",
       },
       {
         id: 2,
@@ -30,8 +30,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165101",
+        hospital: "Lessons Hospital",
       },
       {
         id: 3,
@@ -41,8 +41,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165102",
+        hospital: "Melta Hospital",
       },
       {
         id: 4,
@@ -52,8 +52,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165103",
+        hospital: "Durdans Hospital",
       },
     ],
   },
@@ -68,8 +68,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165100",
+        hospital: "Nawaloka Hospital",
       },
       {
         id: 2,
@@ -79,8 +79,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165101",
+        hospital: "Lessons Hospital",
       },
       {
         id: 3,
@@ -90,8 +90,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165102",
+        hospital: "Melta Hospital",
       },
       {
         id: 4,
@@ -101,8 +101,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165103",
+        hospital: "Durdans Hospital",
       },
     ],
   },
@@ -117,8 +117,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165100",
+        hospital: "Nawaloka Hospital",
       },
       {
         id: 2,
@@ -128,8 +128,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165101",
+        hospital: "Lessons Hospital",
       },
       {
         id: 3,
@@ -139,8 +139,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165102",
+        hospital: "Melta Hospital",
       },
       {
         id: 4,
@@ -150,8 +150,8 @@ const FlatListData = [
         priceVideo: "1500",
         language: "Sinhala",
         profession: "Doctor",
-        education: "Bsc",
-        university: "Colombo",
+        slmc: "165103",
+        hospital: "Durdans Hospital",
       },
     ],
   },
@@ -176,15 +176,15 @@ function PatientCategoryDetails({ navigation }) {
                   }}
                   data={item.doctors}
                   renderItem={({ item }) => (
-                    <CardPatient
+                    <CardChanneling
                       title={item.title}
                       image={item.image}
-                      priceAudio={"LKR" + item.priceAudio}
-                      priceVideo={"LKR" + item.priceVideo}
+                      priceAudio={"Rs." + item.priceAudio}
+                      priceVideo={"Rs." + item.priceVideo}
                       language={item.language}
                       profession={item.profession}
-                      education={item.education}
-                      university={item.university}
+                      slmc={item.slmc}
+                      hospital={item.hospital}
                     />
                   )}
                   keyExtractor={(item, index) => String(index)}

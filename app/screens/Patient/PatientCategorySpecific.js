@@ -15,8 +15,8 @@ const FlatListData = [
     priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165100",
+    hospital: "Nawaloka Hospital",
   },
   {
     id: 2,
@@ -26,8 +26,8 @@ const FlatListData = [
     priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165100",
+    hospital: "Nawaloka Hospital",
   },
   {
     id: 3,
@@ -37,8 +37,8 @@ const FlatListData = [
     priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165100",
+    hospital: "Nawaloka Hospital",
   },
   {
     id: 4,
@@ -48,8 +48,8 @@ const FlatListData = [
     priceVideo: "1500",
     language: "Sinhala",
     profession: "Psychologist",
-    education: "Bsc",
-    university: "Colombo",
+    slmc: "165100",
+    hospital: "Nawaloka Hospital",
   },
 ];
 
@@ -70,8 +70,8 @@ function PatientCategorySpecific(props) {
               priceVideo={"LKR" + item.priceVideo}
               language={item.language}
               profession={item.profession}
-              education={item.education}
-              university={item.university}
+              slmc={item.slmc}
+              hospital={item.hospital}
             />
           )}
           keyExtractor={(item, index) => String(index)}

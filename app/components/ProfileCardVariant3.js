@@ -5,15 +5,13 @@ import { Avatar, Chip, Text } from "react-native-paper";
 import colors from "../configs/colors";
 import ProfileCardListItem from "./ProfileCardListItem";
 
-function ProfileCardVariant({
+function ProfileCardVariant3({
   image,
   name,
   profession,
   slmc,
   hospital,
   language,
-  Callprice,
-  Videoprice,
   price,
   IconButton,
   Iconclose,
@@ -62,22 +60,12 @@ function ProfileCardVariant({
               />
               <View style={styles.Calltype}>
                 <ProfileCardListItem
-                  title={Callprice}
+                  title={price}
                   IconComponent={
                     <Avatar.Icon
                       style={styles.avatarIcon}
                       size={25}
-                      icon="microphone"
-                    />
-                  }
-                />
-                <ProfileCardListItem
-                  title={Videoprice}
-                  IconComponent={
-                    <Avatar.Icon
-                      style={styles.avatarIcon}
-                      size={25}
-                      icon="video"
+                      icon="cash"
                     />
                   }
                 />
@@ -140,4 +128,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProfileCardVariant;
+export default ProfileCardVariant3;

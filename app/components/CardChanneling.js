@@ -1,22 +1,24 @@
 import React, { useState } from "react";
-import { View, StyleSheet, TouchableOpacity, Modal } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import {
-  Avatar,
-  Card,
-  Title,
-  Paragraph,
-  Caption,
-  Button,
-  IconButton,
-} from "react-native-paper";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-
+  View,
+  StyleSheet,
+  ImageBackground,
+  TouchableOpacity,
+  Modal,
+} from "react-native";
+import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { Button, IconButton } from "react-native-paper";
+import { Avatar, Card, Title, Paragraph, Caption } from "react-native-paper";
 import colors from "../configs/colors";
+import AppText from "./AppText";
 import Icon from "./Icon";
+import ProfileCardListItem from "./ProfileCardListItem";
+import AppButton from "../components/AppButton";
+import ProfileCard from "../components/ProfileCard";
 import ProfileCardVariant from "./ProfileCardVariant";
 
-function CardPatientVariant({
+function CardPatient({
   title,
   priceAudio,
   priceVideo,
@@ -131,38 +133,47 @@ function CardPatientVariant({
           </View>
         </View>
       </Modal>
-
       <TouchableOpacity
         onPress={() => {
           setModalVisible(true);
         }}
       >
-        <View>
-          <Card
-            style={{
-              margin: 10,
-              paddingHorizontal: "18%",
-              backgroundColor: colors.white,
-            }}
-          >
-            <Card.Content
-              style={{ justifyContent: "center", alignItems: "center" }}
-            >
-              <Avatar.Image size={100} style={{ marging: 10 }} source={image} />
-              <Title>{title}</Title>
-              <Caption>{profession}</Caption>
-              <View flexDirection="row" style={{ marginTop: "2%" }}>
-                <View flexDirection="row" style={{ marginRight: "3%" }}>
-                  <Avatar.Icon size={20} icon="microphone" />
-                  <Paragraph style={{ marginLeft: 3 }}>{priceAudio}</Paragraph>
-                </View>
-                <View flexDirection="row" style={{ marginLeft: "3%" }}>
-                  <Avatar.Icon size={20} icon="video" />
-                  <Paragraph style={{ marginLeft: 3 }}>{priceVideo}</Paragraph>
-                </View>
+        <View style={styles.card}>
+          <ImageBackground style={styles.image} source={image}>
+            <View style={styles.detailsContainer}>
+              <View style={styles.priceContainer}>
+                <AppText style={styles.title}>{title}</AppText>
+                <ProfileCardListItem
+                  style={styles.pricesText}
+                  title={
+                    <AppText style={styles.textPrice}>{priceAudio}</AppText>
+                  }
+                  IconComponent={
+                    <Icon
+                      IconFamily={MaterialIcons}
+                      name={"keyboard-voice"}
+                      size={15}
+                      color="white"
+                    />
+                  }
+                />
+                <ProfileCardListItem
+                  style={styles.pricesText}
+                  title={
+                    <AppText style={styles.textPrice}>{priceVideo}</AppText>
+                  }
+                  IconComponent={
+                    <Icon
+                      IconFamily={MaterialIcons}
+                      name={"videocam"}
+                      size={15}
+                      color="white"
+                    />
+                  }
+                />
               </View>
-            </Card.Content>
-          </Card>
+            </View>
+          </ImageBackground>
         </View>
       </TouchableOpacity>
     </>
@@ -187,6 +198,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
+
   title: {
     color: colors.black,
     fontSize: 14,
@@ -218,36 +230,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: 22,
   },
-  button: {
-    borderRadius: 15,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    width: "100%",
-    marginVertical: 10,
-  },
-  text: {
-    paddingHorizontal: "10%",
-    color: colors.white,
-    textTransform: "uppercase",
-    fontWeight: "bold",
-    fontSize: 20,
-    alignSelf: "center",
-    marginVertical: 8,
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderColor: colors.medium,
-    borderWidth: 1,
-    borderRadius: 15,
-    padding: 35,
+  secondModalView: {
+    marginTop: 10,
+    backgroundColor: colors.patientPrimary,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
@@ -257,12 +244,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
-    fontSize: 20,
   },
   modalText: {
     textAlign: "center",
@@ -304,4 +285,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CardPatientVariant;
+export default CardPatient;
