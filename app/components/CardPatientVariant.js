@@ -14,6 +14,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../configs/colors";
 import Icon from "./Icon";
+import ProfileCard from "./ProfileCard";
+import AppButton from "../components/AppButton";
 import ProfileCardVariant from "./ProfileCardVariant";
 
 function CardPatientVariant({
@@ -28,7 +30,7 @@ function CardPatientVariant({
 }) {
   const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
-  const [secondModalVisible, setSecondModalVisible] = useState(false);
+
   return (
     <>
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
@@ -36,14 +38,13 @@ function CardPatientVariant({
           <ProfileCardVariant
             image={image}
             Iconclose={
-              <IconButton
-                icon="close-circle"
-                color={colors.patientPrimary}
-                size={30}
+              <TouchableOpacity
                 onPress={() => {
                   setModalVisible(!modalVisible);
                 }}
-              />
+              >
+                <Icon name="cross" backgroundColor={colors.black}></Icon>
+              </TouchableOpacity>
             }
             name={title}
             profession={profession}
@@ -53,82 +54,18 @@ function CardPatientVariant({
             Callprice={priceAudio}
             Videoprice={priceVideo}
             IconButton={
-              <Button
-                icon="check-circle"
-                mode="contained"
-                onPress={() => {
-                  setSecondModalVisible(true);
-                }}
-              >
-                Book Now
-              </Button>
+              <View style={styles.buttonContainer}>
+                <AppButton
+                  title="Book Now"
+                  color="black"
+                  onPress={() => {
+                    setModalVisible(!modalVisible);
+                    navigation.navigate("PatientDateTimePicker");
+                  }}
+                />
+              </View>
             }
           />
-        </View>
-      </Modal>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={secondModalVisible}
-      >
-        <View style={styles.bottomView}>
-          <View style={styles.secondModalView}>
-            <View
-              style={{
-                flexDirection: "row",
-                padding: "10%",
-              }}
-            >
-              <TouchableOpacity
-                style={styles.callButton}
-                onPress={() => {
-                  setModalVisible(!modalVisible);
-                  setSecondModalVisible(!secondModalVisible);
-                  navigation.navigate("PatientInvoice");
-                }}
-              >
-                <MaterialCommunityIcons
-                  name="microphone"
-                  size={26}
-                  style={{
-                    color: colors.black,
-                    marginRight: 5,
-                  }}
-                />
-                <Title>Audio Call</Title>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.callButton}
-                onPress={() => {
-                  setModalVisible(!modalVisible);
-                  setSecondModalVisible(!secondModalVisible);
-                  navigation.navigate("PatientInvoice");
-                }}
-              >
-                <MaterialCommunityIcons
-                  name="video"
-                  size={26}
-                  style={{
-                    color: colors.black,
-                    marginRight: 5,
-                  }}
-                />
-                <Title>Video Call</Title>
-              </TouchableOpacity>
-            </View>
-            <TouchableOpacity
-              style={{
-                padding: 10,
-                alignSelf: "flex-end",
-                position: "absolute",
-              }}
-              onPress={() => {
-                setSecondModalVisible(!secondModalVisible);
-              }}
-            >
-              <Icon name="cross"></Icon>
-            </TouchableOpacity>
-          </View>
         </View>
       </Modal>
 
@@ -217,90 +154,6 @@ const styles = StyleSheet.create({
     alignContent: "center",
     flexDirection: "row",
     marginTop: 22,
-  },
-  button: {
-    borderRadius: 15,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    width: "100%",
-    marginVertical: 10,
-  },
-  text: {
-    paddingHorizontal: "10%",
-    color: colors.white,
-    textTransform: "uppercase",
-    fontWeight: "bold",
-    fontSize: 20,
-    alignSelf: "center",
-    marginVertical: 8,
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderColor: colors.medium,
-    borderWidth: 1,
-    borderRadius: 15,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
-    fontSize: 20,
-  },
-  modalText: {
-    textAlign: "center",
-    color: colors.white,
-    fontWeight: "bold",
-    fontSize: 20,
-  },
-  openButton: {
-    borderRadius: 10,
-    padding: 10,
-    marginTop: 10,
-  },
-  bottomView: {
-    flex: 1,
-    justifyContent: "flex-end",
-    alignItems: "stretch",
-  },
-  secondModalView: {
-    marginTop: 10,
-    backgroundColor: colors.patientPrimary,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  callButton: {
-    backgroundColor: colors.white,
-    padding: "8%",
-    margin: "10%",
-    borderRadius: 15,
-    alignItems: "center",
   },
 });
 
