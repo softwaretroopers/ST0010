@@ -6,6 +6,7 @@ import AppText from "../../components/AppText";
 import CardChanneling from "../../components/CardChanneling";
 import ScreenVariant from "../../components/ScreenVariant";
 import AppSearchBar from "../../components/AppSearchBar";
+import CardPatient from "../../components/CardPatient";
 
 const FlatListData = [
   {
@@ -176,7 +177,7 @@ function PatientCategoryDetails({ navigation }) {
                   }}
                   data={item.doctors}
                   renderItem={({ item }) => (
-                    <CardChanneling
+                    <CardPatient
                       title={item.title}
                       image={item.image}
                       priceAudio={"Rs." + item.priceAudio}

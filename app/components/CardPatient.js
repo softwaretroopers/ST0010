@@ -14,7 +14,7 @@ import AppText from "./AppText";
 import Icon from "./Icon";
 import ProfileCardListItem from "./ProfileCardListItem";
 import AppButton from "../components/AppButton";
-import ProfileCard from "../components/ProfileCard";
+import ProfileCardVariant from "../components/ProfileCardVariant";
 
 function CardPatient({
   title,
@@ -23,8 +23,8 @@ function CardPatient({
   image,
   language,
   profession,
-  education,
-  university,
+  slmc,
+  hospital,
 }) {
   const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
@@ -32,7 +32,7 @@ function CardPatient({
     <>
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
         <View style={styles.screen}>
-          <ProfileCard
+          <ProfileCardVariant
             image={image}
             Iconclose={
               <TouchableOpacity
@@ -45,8 +45,8 @@ function CardPatient({
             }
             name={title}
             profession={profession}
-            education={education}
-            university={university}
+            slmc={slmc}
+            hospital={hospital}
             language={language}
             Callprice={priceAudio}
             Videoprice={priceVideo}
