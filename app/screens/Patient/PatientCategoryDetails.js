@@ -3,7 +3,6 @@ import { View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 
 import colors from "../../configs/colors";
 import AppText from "../../components/AppText";
-import CardChanneling from "../../components/CardChanneling";
 import ScreenVariant from "../../components/ScreenVariant";
 import AppSearchBar from "../../components/AppSearchBar";
 import CardPatient from "../../components/CardPatient";
@@ -218,7 +217,7 @@ const styles = StyleSheet.create({
     marginBottom: "2%",
   },
   topDetails: {
-    backgroundColor: colors.patientPrimary,
+    backgroundColor: colors.themeDark,
     flexDirection: "row",
     padding: 10,
   },
@@ -227,7 +226,7 @@ const styles = StyleSheet.create({
   },
   viewText: {
     fontWeight: "bold",
-    color: colors.patientPrimary,
+    color: colors.themeDark,
   },
   containerTop: {
     marginTop: "1%",

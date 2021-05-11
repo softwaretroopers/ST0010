@@ -39,7 +39,7 @@ function CardAnyTime({
             Iconclose={
               <IconButton
                 icon="close-circle"
-                color={colors.patientPrimary}
+                color={colors.themeDark}
                 size={30}
                 onPress={() => {
                   setModalVisible(!modalVisible);
@@ -58,7 +58,7 @@ function CardAnyTime({
               <Button
                 disabled={!status}
                 style={{
-                  backgroundColor: colors.patientPrimary,
+                  backgroundColor: colors.themeDark,
                   padding: "2%",
                 }}
                 icon="check-circle"
@@ -217,13 +217,13 @@ const styles = StyleSheet.create({
     fontWeight: "200",
   },
   screen: {
+    backgroundColor: "rgba(100,100,100, 0.6)",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     padding: 18,
     alignContent: "center",
     flexDirection: "row",
-    marginTop: 22,
   },
   button: {
     borderRadius: 15,
@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
   },
   secondModalView: {
     marginTop: 10,
-    backgroundColor: colors.patientPrimary,
+    backgroundColor: colors.themeDark,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     alignItems: "center",

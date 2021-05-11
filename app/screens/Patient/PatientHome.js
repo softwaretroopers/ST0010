@@ -13,8 +13,7 @@ const listings = [
     type: true,
     id: 1,
     title: "Doctor Channeling",
-    des:
-      "Doctor consultation is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
+    des: "Doctor consultation is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
     image: require("../../assets/doctorChanneling.png"),
     nav: "HomeStackScreen",
   },
@@ -22,8 +21,7 @@ const listings = [
     type: true,
     id: 2,
     title: "Anytime Doctor",
-    des:
-      "24 hrs Doctor channeling is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
+    des: "24 hrs Doctor channeling is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
     image: require("../../assets/anyTimeDoctor.png"),
     nav: "AnyTimeStackScreen",
   },
@@ -31,8 +29,7 @@ const listings = [
     type: true,
     id: 3,
     title: "Report Reading",
-    des:
-      "Counsil is performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
+    des: "Counsil is performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
     image: require("../../assets/Councillor.png"),
     nav: "ReportStackScreen",
   },
@@ -90,7 +87,7 @@ function PatientHome({ navigation }) {
                     style={{
                       alignSelf: "center",
                       fontWeight: "bold",
-                      color: colors.patientPrimary,
+                      color: colors.themeDark,
                     }}
                   >
                     NewsFeed
@@ -124,7 +121,7 @@ const styles = StyleSheet.create({
     margin: 16,
     right: 0,
     bottom: 0,
-    backgroundColor: colors.patientPrimary,
+    backgroundColor: colors.themeDark,
   },
 });
 

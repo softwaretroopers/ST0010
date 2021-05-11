@@ -35,7 +35,7 @@ function CardReport({
             Iconclose={
               <IconButton
                 icon="close-circle"
-                color={colors.patientPrimary}
+                color={colors.themeDark}
                 size={30}
                 onPress={() => {
                   setModalVisible(!modalVisible);
@@ -51,7 +51,7 @@ function CardReport({
             IconButton={
               <Button
                 style={{
-                  backgroundColor: colors.patientPrimary,
+                  backgroundColor: colors.themeDark,
                   padding: "2%",
                 }}
                 icon="check-circle"
@@ -89,7 +89,7 @@ function CardReport({
               <Caption>{profession}</Caption>
               <View flexDirection="row" style={{ marginTop: "2%" }}>
                 <Avatar.Icon
-                  style={{ backgroundColor: colors.patientPrimary }}
+                  style={{ backgroundColor: colors.themeDark }}
                   size={20}
                   icon="chat"
                 />
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     padding: 18,
     alignContent: "center",
     flexDirection: "row",
-    marginTop: 22,
+    backgroundColor: "rgba(100,100,100, 0.6)",
   },
   button: {
     borderRadius: 15,
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
   },
   secondModalView: {
     marginTop: 10,
-    backgroundColor: colors.patientPrimary,
+    backgroundColor: colors.themeDark,
     borderColor: colors.medium,
     borderWidth: 1,
     borderTopLeftRadius: 15,

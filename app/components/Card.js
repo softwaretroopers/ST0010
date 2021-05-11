@@ -16,7 +16,7 @@ function Card({ title, des, image, onPress }) {
         <Image style={styles.image} source={image} />
         <Divider
           style={{
-            backgroundColor: colors.patientPrimary,
+            backgroundColor: colors.themeDark,
             width: 2,
             height: "100%",
             marginHorizontal: "2%",
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     padding: "5%",
     overflow: "hidden",
 
-    shadowColor: colors.patientPrimary,
+    shadowColor: colors.themeDark,
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 1,
     shadowRadius: 10,
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     marginBottom: "2%",
-    color: colors.patientPrimary,
+    color: colors.themeDark,
   },
 });
 

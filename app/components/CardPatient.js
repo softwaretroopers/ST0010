@@ -6,6 +6,15 @@ import {
   TouchableOpacity,
   Modal,
 } from "react-native";
+import {
+  Avatar,
+  Card,
+  Title,
+  Paragraph,
+  Caption,
+  Button,
+  IconButton,
+} from "react-native-paper";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
@@ -15,6 +24,7 @@ import Icon from "./Icon";
 import ProfileCardListItem from "./ProfileCardListItem";
 import AppButton from "../components/AppButton";
 import ProfileCardVariant from "../components/ProfileCardVariant";
+import { color } from "react-native-reanimated";
 
 function CardPatient({
   title,
@@ -35,13 +45,14 @@ function CardPatient({
           <ProfileCardVariant
             image={image}
             Iconclose={
-              <TouchableOpacity
+              <IconButton
+                icon="close-circle"
+                color={colors.themeDark}
+                size={30}
                 onPress={() => {
                   setModalVisible(!modalVisible);
                 }}
-              >
-                <Icon name="cross" backgroundColor={colors.black}></Icon>
-              </TouchableOpacity>
+              />
             }
             name={title}
             profession={profession}
@@ -51,16 +62,20 @@ function CardPatient({
             Callprice={priceAudio}
             Videoprice={priceVideo}
             IconButton={
-              <View style={styles.buttonContainer}>
-                <AppButton
-                  title="Book Now"
-                  color="black"
-                  onPress={() => {
-                    setModalVisible(!modalVisible);
-                    navigation.navigate("PatientDateTimePicker");
-                  }}
-                />
-              </View>
+              <Button
+                style={{
+                  backgroundColor: colors.themeDark,
+                  padding: "3%",
+                }}
+                icon="check-circle"
+                mode="contained"
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                  navigation.navigate("PatientDateTimePicker");
+                }}
+              >
+                Book Now
+              </Button>
             }
           />
         </View>
@@ -154,13 +169,13 @@ const styles = StyleSheet.create({
     fontWeight: "200",
   },
   screen: {
+    backgroundColor: "rgba(100,100,100, 0.6)",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     padding: 18,
     alignContent: "center",
     flexDirection: "row",
-    marginTop: 22,
   },
 });
 
