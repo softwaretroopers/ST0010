@@ -166,7 +166,23 @@ function PatientCategoryDetails({ navigation }) {
           data={FlatListData}
           renderItem={({ item }) => (
             <>
-              <AppText style={styles.heading}>{item.categories}</AppText>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  paddingVertical: "2%",
+                  backgroundColor: colors.themeMedium,
+                }}
+              >
+                <AppText style={styles.heading}>{item.categories}</AppText>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("PatientCategorySpecific");
+                  }}
+                >
+                  <AppText style={styles.heading}>View All</AppText>
+                </TouchableOpacity>
+              </View>
               <View style={styles.topDetails}>
                 <FlatList
                   horizontal={true}
@@ -190,14 +206,6 @@ function PatientCategoryDetails({ navigation }) {
                   keyExtractor={(item, index) => String(index)}
                 />
               </View>
-              <TouchableOpacity
-                style={styles.viewAll}
-                onPress={() => {
-                  navigation.navigate("PatientCategorySpecific");
-                }}
-              >
-                <AppText style={styles.viewText}>View All</AppText>
-              </TouchableOpacity>
             </>
           )}
           keyExtractor={(item, index) => String(index)}
@@ -212,25 +220,21 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 18,
     marginLeft: "5%",
-    marginBottom: "2%",
+    color: colors.white,
   },
   topDetails: {
     backgroundColor: colors.themeDark,
     flexDirection: "row",
     padding: 10,
   },
-  viewAll: {
-    alignItems: "flex-end",
-  },
   viewText: {
     fontWeight: "bold",
     color: colors.themeDark,
   },
   containerTop: {
-    marginTop: "1%",
-    paddingBottom: "17.5%",
+    paddingBottom: "16%",
   },
 });
 

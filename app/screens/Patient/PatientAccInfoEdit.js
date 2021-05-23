@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import {
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  FlatList,
-  Text,
-} from "react-native";
-import { Appbar, TextInput } from "react-native-paper";
+import { View, StyleSheet, FlatList } from "react-native";
+import { Appbar, TextInput, Button, Avatar } from "react-native-paper";
 
 import ScreenVariant from "../../components/ScreenVariant";
 import ListItem from "../../components/ListItem";
@@ -52,14 +46,23 @@ function PatientAccInfoEdit(props) {
           />
         )}
       </Appbar>
-      <View style={styles.containerTop}>
-        <ListItem image={require("../../assets/logo.png")} />
-      </View>
-      <TouchableOpacity style={styles.ContainerButton}>
-        <Text style={{ fontSize: 14, fontWeight: "bold" }}>
-          Change Profile Picture
-        </Text>
-      </TouchableOpacity>
+      <Avatar.Image
+        style={{ alignSelf: "center", margin: "3%" }}
+        size={100}
+        source={require("../../assets/profile.png")}
+      />
+      <Button
+        style={{
+          alignSelf: "center",
+          padding: "1%",
+          backgroundColor: colors.themeDark,
+          marginBottom: 5,
+        }}
+        icon="square-edit-outline"
+        mode="contained"
+      >
+        Change Profile Picture
+      </Button>
       <View style={styles.containers}>
         <FlatList
           data={userDetails}
@@ -69,7 +72,9 @@ function PatientAccInfoEdit(props) {
               label={item.label}
               disabled={visibility}
               value={item.detail}
-              left={<TextInput.Icon name={item.icon} />}
+              left={
+                <TextInput.Icon name={item.icon} color={colors.themeDark} />
+              }
             />
           )}
         />
@@ -99,7 +104,6 @@ const styles = StyleSheet.create({
   },
   containerTop: {
     alignItems: "center",
-    marginTop: 5,
   },
   fixToText: {
     flexDirection: "row",

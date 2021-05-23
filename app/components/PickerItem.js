@@ -11,7 +11,7 @@ function PickerItem({ item, onPress }) {
         style={{
           textAlign: "center",
           fontSize: 16,
-          color: colors.darkGrey,
+          color: colors.themeDark,
         }}
       >
         {item.label}
@@ -19,7 +19,7 @@ function PickerItem({ item, onPress }) {
       <MaterialCommunityIcons
         name={item.name}
         size={20}
-        color={colors.darkGrey}
+        color={colors.themeDark}
         style={{ marginLeft: 5 }}
       />
     </TouchableOpacity>

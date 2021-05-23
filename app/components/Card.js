@@ -1,17 +1,12 @@
 import React from "react";
 import { Divider } from "react-native-paper";
-import {
-  View,
-  StyleSheet,
-  Image,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { View, StyleSheet, Image, TouchableNativeFeedback } from "react-native";
 import colors from "../configs/colors";
 import AppText from "./AppText";
 
 function Card({ title, des, image, onPress }) {
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
+    <TouchableNativeFeedback onPress={onPress}>
       <View flexDirection="row" style={styles.card}>
         <Image style={styles.image} source={image} />
         <Divider
@@ -27,15 +22,15 @@ function Card({ title, des, image, onPress }) {
           <AppText style={styles.des}>{des}</AppText>
         </View>
       </View>
-    </TouchableWithoutFeedback>
+    </TouchableNativeFeedback>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    borderRadius: 35,
+    borderRadius: 10,
     backgroundColor: colors.white,
-    marginVertical: "5%",
+    marginVertical: "3%",
     marginHorizontal: "5%",
     padding: "5%",
     overflow: "hidden",
@@ -44,11 +39,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 1,
     shadowRadius: 10,
-    elevation: 10,
+    elevation: 5,
   },
   des: {
-    color: colors.medium,
-    fontSize: 16,
+    color: colors.themeDark,
+    fontSize: 15,
     marginRight: "28%",
     alignSelf: "center",
   },

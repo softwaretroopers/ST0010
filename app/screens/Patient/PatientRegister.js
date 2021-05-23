@@ -117,7 +117,7 @@ function PatientRegister({ navigation }) {
           />
         </ScrollView>
         <View style={styles.buttonContainer}>
-          <SubmitButton title="Sign up" color="patientPrimary" />
+          <SubmitButton title="Sign up" color="themeDark" />
         </View>
       </AppForm>
     </Screen>

@@ -20,7 +20,7 @@ function CardAppointments({
       <Image style={styles.image} source={image} />
       <Divider
         style={{
-          backgroundColor: colors.patientPrimary,
+          backgroundColor: colors.themeDark,
           width: 2,
           height: "80%",
           marginHorizontal: "2%",
@@ -37,31 +37,35 @@ function CardAppointments({
               borderRadius: 8,
               justifyContent: "center",
               alignItems: "center",
-              backgroundColor: colors.patientPrimary,
+              backgroundColor: colors.medium,
               marginLeft: "2%",
             }}
           >
-            <MaterialIcons size={8} color="white" name={type}></MaterialIcons>
+            <MaterialIcons
+              size={8}
+              color={colors.themeDark}
+              name={type}
+            ></MaterialIcons>
           </View>
         </View>
         <View style={styles.timeContainer}>
           <View
             style={{ marginRight: "10%", padding: "2%" }}
-            backgroundColor={colors.patientPrimary}
+            backgroundColor={colors.themeDark}
             borderRadius={5}
           >
             <AppText style={styles.date}>{date}</AppText>
           </View>
           <View
             style={{ marginLeft: "10%", padding: "2%" }}
-            backgroundColor={colors.patientPrimary}
+            backgroundColor={colors.themeDark}
             borderRadius={5}
           >
             <AppText style={styles.time}>{time}</AppText>
           </View>
         </View>
       </View>
-      <AntDesign name="rightcircle" size={24} color={colors.patientPrimary} />
+      <AntDesign name="rightcircle" size={24} color={colors.themeDark} />
     </View>
   );
 }
@@ -78,7 +82,7 @@ const styles = StyleSheet.create({
   Detailstextname: {
     fontSize: 20,
     fontWeight: "bold",
-    color: colors.medium,
+    color: colors.themeDark,
   },
   date: {
     fontSize: 12,
@@ -93,7 +97,7 @@ const styles = StyleSheet.create({
 
   category: {
     fontSize: 16,
-    color: colors.patientPrimary,
+    color: colors.medium,
     fontWeight: "bold",
   },
   image: {

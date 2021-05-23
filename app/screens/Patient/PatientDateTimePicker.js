@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, ScrollView, FlatList } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import { Chip, Divider } from "react-native-paper";
 
 import DatePicker from "../../components/DatePicker";

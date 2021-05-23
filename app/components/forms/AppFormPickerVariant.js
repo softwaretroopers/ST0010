@@ -28,7 +28,7 @@ function AppFormPickerVariant({
           <MaterialCommunityIcons
             name={placeholderIcon}
             size={20}
-            color={colors.black}
+            color={colors.themeDark}
             style={styles.icon}
           />
         )}
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   container: {
     borderStyle: "solid",
     borderBottomWidth: 1,
-    borderBottomColor: colors.medium,
+    borderBottomColor: colors.placeholder,
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: colors.lightGrey,
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   text: {
     marginLeft: "5%",
 
-    color: colors.medium,
+    color: colors.placeholder,
   },
   icon: {
     marginLeft: 12,

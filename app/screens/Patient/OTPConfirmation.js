@@ -29,7 +29,7 @@ function OTPConfirmation({ navigation, icon, ...otherProps }) {
           <Text style={styles.text}>Enter the code you recieved via SMS</Text>
           <MaterialCommunityIcons
             size={50}
-            color={colors.patientPrimary}
+            color={colors.themeDark}
             style={styles.iconContainer}
             name="cellphone-message"
           ></MaterialCommunityIcons>
@@ -43,7 +43,7 @@ function OTPConfirmation({ navigation, icon, ...otherProps }) {
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <SubmitButton title="Submit" color="patientPrimary" />
+          <SubmitButton title="Submit" color="themeDark" />
         </View>
       </AppForm>
     </ScreenVariant>
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     alignSelf: "center",
     marginBottom: "5%",
+    color: colors.themeDark,
   },
   container: {
     marginTop: "10%",

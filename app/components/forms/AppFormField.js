@@ -3,6 +3,7 @@ import { useFormikContext } from "formik";
 import { TextInput } from "react-native-paper";
 
 import AppErrorMessage from "./AppErrorMessage";
+import colors from "../../configs/colors";
 
 function AppFormField({ name, icon, placeholder, ...otherProps }) {
   const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
@@ -16,7 +17,7 @@ function AppFormField({ name, icon, placeholder, ...otherProps }) {
         {...otherProps}
         label={placeholder}
         placeholder={placeholder}
-        left={<TextInput.Icon name={icon} />}
+        left={<TextInput.Icon name={icon} color={colors.themeDark} />}
         style={{
           marginBottom: "2%",
         }}

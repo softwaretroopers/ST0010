@@ -59,7 +59,7 @@ function PatientCategorySpecific(props) {
       <View>
         <AppSearchBar></AppSearchBar>
       </View>
-      <View style={{ paddingBottom: "17.5%" }}>
+      <View style={{ paddingBottom: "16%" }}>
         <FlatList
           data={FlatListData}
           renderItem={({ item }) => (

@@ -87,7 +87,7 @@ function TimeSlot({
                 setModalVisible(!modalVisible);
               }}
             >
-              <Icon name="cross" backgroundColor={colors.black}></Icon>
+              <Icon name="cross" backgroundColor={colors.themeDark}></Icon>
             </TouchableOpacity>
           </View>
         </View>
@@ -117,14 +117,14 @@ function TimeSlot({
                   name="microphone"
                   size={26}
                   style={{
-                    color: colors.black,
+                    color: colors.themeDark,
                     marginRight: 5,
                   }}
                 />
                 <AppText
                   style={{
                     fontWeight: "bold",
-                    color: colors.black,
+                    color: colors.themeDark,
                   }}
                 >
                   Audio Call
@@ -142,13 +142,13 @@ function TimeSlot({
                   name="video"
                   size={26}
                   style={{
-                    color: colors.black,
+                    color: colors.themeDark,
                     marginRight: 5,
                   }}
                 />
                 <AppText
                   style={{
-                    color: colors.black,
+                    color: colors.themeDark,
                     fontWeight: "bold",
                   }}
                 >
@@ -166,7 +166,11 @@ function TimeSlot({
                 setSecondModalVisible(!secondModalVisible);
               }}
             >
-              <Icon name="cross"></Icon>
+              <Icon
+                name="cross"
+                backgroundColor={colors.white}
+                iconColor={colors.themeDark}
+              ></Icon>
             </TouchableOpacity>
           </View>
         </View>
@@ -215,9 +219,9 @@ const styles = StyleSheet.create({
   modalView: {
     margin: 20,
     backgroundColor: "white",
-    borderColor: colors.medium,
-    borderWidth: 1,
-    borderRadius: 15,
+    borderColor: colors.themeDark,
+    borderWidth: 2,
+    borderRadius: 10,
     padding: 35,
     alignItems: "center",
     shadowColor: "#000",
@@ -254,11 +258,9 @@ const styles = StyleSheet.create({
   },
   secondModalView: {
     marginTop: 10,
-    backgroundColor: colors.patientPrimary,
-    borderColor: colors.medium,
-    borderWidth: 1,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
+    backgroundColor: colors.themeDark,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
     padding: 35,
     alignItems: "center",
     shadowColor: "#000",

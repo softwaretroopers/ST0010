@@ -10,6 +10,7 @@ import {
 } from "../../components/forms";
 import Screen from "../../components/Screen";
 import ScreenVariant from "../../components/ScreenVariant";
+import colors from "../../configs/colors";
 
 const validationSchema = Yup.object().shape({
   mNumber: Yup.string().required().min(10).max(10).label("Mobile Number"),
@@ -36,7 +37,7 @@ function MNumberConfirmation({ navigation, icon, ...otherProps }) {
           />
         </View>
         <View style={styles.buttonContainer}>
-          <SubmitButton title="Send otp" color="patientPrimary" />
+          <SubmitButton title="Send otp" color="themeDark" />
         </View>
       </AppForm>
     </ScreenVariant>
@@ -49,6 +50,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: "10%",
     alignSelf: "center",
+    color: colors.themeDark,
   },
   container: {
     marginTop: "10%",

@@ -9,7 +9,6 @@ import {
   Caption,
 } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import * as Animatable from "react-native-animatable";
 
 import ReportCard from "../../components/ReportCard";
 import ScreenVarient from "../../components/ScreenVarient";
@@ -39,19 +38,18 @@ const reports = [
 function PatientAccInfo(props) {
   return (
     <ScreenVarient>
-      <Animatable.View
-        animation="bounceInDown"
-        duration={1500}
-        style={styles.accounttop}
-      >
+      <View style={styles.accounttop}>
         <FAB
           style={styles.fab}
           small
+          color={colors.themeDark}
           icon="pen"
           onPress={() => props.navigation.navigate("PatientAccInfoEdit")}
         />
-        <Avatar.Image size={100} source={require("../../assets/logo.png")} />
-        <Title style={{ color: colors.white }}>Software Troopers</Title>
+        <Avatar.Image size={100} source={require("../../assets/profile.png")} />
+        <Title style={{ color: colors.white, fontWeight: "bold" }}>
+          Software Troopers
+        </Title>
         <Subheading style={{ color: colors.white }}>071 400 9020</Subheading>
         <Caption style={{ color: colors.white }}>
           support@softwaretroopers.com
@@ -69,8 +67,20 @@ function PatientAccInfo(props) {
               marginHorizontal: "2%",
             }}
           >
-            <MaterialCommunityIcons name="calendar" size={16} color="black" />
-            <Text style={{ fontWeight: "bold", marginLeft: 5 }}>18</Text>
+            <MaterialCommunityIcons
+              name="calendar"
+              size={16}
+              color={colors.themeDark}
+            />
+            <Text
+              style={{
+                fontWeight: "bold",
+                marginLeft: 5,
+                color: colors.themeDark,
+              }}
+            >
+              18
+            </Text>
           </View>
           <View
             flexDirection="row"
@@ -86,17 +96,21 @@ function PatientAccInfo(props) {
             <MaterialCommunityIcons
               name="gender-male-female"
               size={16}
-              color="black"
+              color={colors.themeDark}
             />
-            <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Male</Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                marginLeft: 5,
+                color: colors.themeDark,
+              }}
+            >
+              Male
+            </Text>
           </View>
         </View>
-      </Animatable.View>
-      <Animatable.View
-        animation="bounceInDown"
-        duration={1500}
-        style={styles.accounttop}
-      >
+      </View>
+      <View animation="bounceInDown" duration={1500} style={styles.accounttop}>
         <Title style={{ color: colors.white, fontWeight: "bold" }}>
           Reports
         </Title>
@@ -112,15 +126,15 @@ function PatientAccInfo(props) {
             />
           )}
         />
-      </Animatable.View>
+      </View>
     </ScreenVarient>
   );
 }
 
 const styles = StyleSheet.create({
   accounttop: {
-    backgroundColor: colors.patientPrimary,
-    borderRadius: 20,
+    backgroundColor: colors.themeDark,
+    borderRadius: 10,
     margin: "2%",
     padding: "2%",
     alignItems: "center",

@@ -8,11 +8,7 @@ import colors from "../configs/colors";
 export default class ReportCard extends React.Component {
   render() {
     return (
-      <Animatable.View
-        animation="bounceInLeft"
-        duration={1500}
-        style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-      >
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <View
           style={{
             borderRadius: 10,
@@ -47,9 +43,9 @@ export default class ReportCard extends React.Component {
           >
             {this.props.subtitle}
           </Text>
-          <IconButton icon="open-in-new" color={colors.themeLight} size={20} />
+          <IconButton icon="open-in-new" color={colors.themeDark} size={20} />
         </View>
-      </Animatable.View>
+      </View>
     );
   }
 }

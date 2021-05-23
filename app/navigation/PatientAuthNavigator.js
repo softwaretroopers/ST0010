@@ -46,7 +46,7 @@ export const PatientAuthNavigator = () => (
   <PatientAuthStack.Navigator
     screenOptions={{
       headerStyle: { backgroundColor: colors.themeDark },
-      headerTintColor: colors.themeLight,
+      headerTintColor: colors.white,
       headerTitleStyle: {
         fontWeight: "bold",
       },
@@ -68,11 +68,12 @@ export const PatientAuthNavigator = () => (
     <PatientAuthStack.Screen
       name="MNumberConfirmation"
       component={MNumberConfirmation}
+      options={{ title: "Enter Your Mobile Number" }}
     />
     <PatientAuthStack.Screen
       name="OTPConfirmation"
       component={OTPConfirmation}
-      options={{ title: "OTP" }}
+      options={{ title: "OTP Confirmation" }}
     />
     <PatientAuthStack.Screen
       name="DrawerNavigator"
@@ -94,13 +95,14 @@ export const DrawerNavigator = () => (
 const DoctorChannelingNavigator = () => (
   <DoctorChannelingStack.Navigator>
     <DoctorChannelingStack.Screen
+      options={{ title: "Doctor Channeling" }}
       name="PatientCategoryDetails"
       component={PatientCategoryDetails}
     />
     <DoctorChannelingStack.Screen
       name="PatientCategorySpecific"
       component={PatientCategorySpecific}
-      options={{ headerShown: false }}
+      options={{ title: "All Doctors" }}
     />
     <DoctorChannelingStack.Screen
       name="PatientDateTimePicker"
@@ -125,7 +127,7 @@ const AnytimeDoctorNavigator = () => (
     <AnytimeDoctorStack.Screen
       name="AnyTimeDoctor"
       component={AnyTimeDoctor}
-      options={{ title: "Anytime Doctors" }}
+      options={{ title: "Anytime Doctor" }}
     />
     <AnytimeDoctorStack.Screen
       name="PatientInvoice"
@@ -142,7 +144,11 @@ const AnytimeDoctorNavigator = () => (
 
 const ReportReadingNavigator = () => (
   <ReportReadingStack.Navigator>
-    <ReportReadingStack.Screen name="ReportReading" component={ReportReading} />
+    <ReportReadingStack.Screen
+      options={{ title: "Report Reading" }}
+      name="ReportReading"
+      component={ReportReading}
+    />
     <ReportReadingStack.Screen
       name="PatientInvoice"
       component={PatientInvoice}
@@ -186,7 +192,7 @@ const MainNavigator = () => (
 
 const BottomTabNavigator = () => (
   <BottomTab.Navigator
-    activeColor={colors.themeLight}
+    activeColor={colors.white}
     screenOptions={{
       tabBarColor: colors.themeDark,
     }}
@@ -200,11 +206,7 @@ const BottomTabNavigator = () => (
       component={PatientHomeNavigator}
       options={{
         tabBarIcon: () => (
-          <MaterialCommunityIcons
-            name="home"
-            color={colors.themeLight}
-            size={24}
-          />
+          <MaterialCommunityIcons name="home" color={colors.white} size={24} />
         ),
       }}
     />
@@ -213,11 +215,7 @@ const BottomTabNavigator = () => (
       component={PrescriptionsNavigator}
       options={{
         tabBarIcon: () => (
-          <MaterialCommunityIcons
-            name="book"
-            color={colors.themeLight}
-            size={24}
-          />
+          <MaterialCommunityIcons name="book" color={colors.white} size={24} />
         ),
       }}
     />
@@ -225,11 +223,12 @@ const BottomTabNavigator = () => (
       name="Appointments"
       component={AppointmentsNavigator}
       options={{
+        tabBarBadgeStyle: { backgroundColor: colors.themeMedium },
         tabBarBadge: 2,
         tabBarIcon: () => (
           <MaterialCommunityIcons
             name="calendar-clock"
-            color={colors.themeLight}
+            color={colors.white}
             size={24}
           />
         ),
@@ -243,7 +242,7 @@ const BottomTabNavigator = () => (
         tabBarIcon: () => (
           <MaterialCommunityIcons
             name="account-box"
-            color={colors.themeLight}
+            color={colors.white}
             size={24}
           />
         ),
@@ -256,7 +255,7 @@ const PatientHomeNavigator = ({ navigation }) => (
   <PatientHomeStack.Navigator
     screenOptions={{
       headerStyle: { backgroundColor: colors.themeDark },
-      headerTintColor: colors.themeLight,
+      headerTintColor: colors.white,
       headerTitleStyle: {
         fontWeight: "bold",
       },
@@ -271,7 +270,7 @@ const PatientHomeNavigator = ({ navigation }) => (
           <MaterialCommunityIcons.Button
             name="menu"
             size={24}
-            color={colors.themeLight}
+            color={colors.white}
             backgroundColor={colors.themeDark}
             onPress={() => navigation.openDrawer()}
           />
@@ -285,7 +284,7 @@ const PrescriptionsNavigator = ({ navigation }) => (
   <PrescriptionsStack.Navigator
     screenOptions={{
       headerStyle: { backgroundColor: colors.themeDark },
-      headerTintColor: colors.themeLight,
+      headerTintColor: colors.white,
       headerTitleStyle: {
         fontWeight: "bold",
       },
@@ -300,7 +299,7 @@ const PrescriptionsNavigator = ({ navigation }) => (
           <MaterialCommunityIcons.Button
             name="menu"
             size={24}
-            color={colors.themeLight}
+            color={colors.white}
             backgroundColor={colors.themeDark}
             onPress={() => navigation.openDrawer()}
           />
@@ -314,7 +313,7 @@ const AppointmentsNavigator = ({ navigation }) => (
   <AppointmentsStack.Navigator
     screenOptions={{
       headerStyle: { backgroundColor: colors.themeDark },
-      headerTintColor: colors.themeLight,
+      headerTintColor: colors.white,
       headerTitleStyle: {
         fontWeight: "bold",
       },
@@ -329,7 +328,7 @@ const AppointmentsNavigator = ({ navigation }) => (
           <MaterialCommunityIcons.Button
             name="menu"
             size={24}
-            color={colors.themeLight}
+            color={colors.white}
             backgroundColor={colors.themeDark}
             onPress={() => navigation.openDrawer()}
           />
@@ -343,7 +342,7 @@ const AccountNavigator = ({ navigation }) => (
   <AccountStack.Navigator
     screenOptions={{
       headerStyle: { backgroundColor: colors.themeDark },
-      headerTintColor: colors.themeLight,
+      headerTintColor: colors.white,
       headerTitleStyle: {
         fontWeight: "bold",
       },
@@ -358,7 +357,7 @@ const AccountNavigator = ({ navigation }) => (
           <MaterialCommunityIcons.Button
             name="menu"
             size={24}
-            color={colors.themeLight}
+            color={colors.white}
             backgroundColor={colors.themeDark}
             onPress={() => navigation.openDrawer()}
           />
@@ -372,8 +371,13 @@ const TopTabNavigator = () => (
   <ScreenVariant>
     <TopTab.Navigator
       tabBarOptions={{
-        activeTintColor: "#009687",
+        inactiveTintColor: colors.medium,
+        activeTintColor: colors.themeDark,
         labelStyle: { fontSize: 12 },
+        indicatorStyle: {
+          borderBottomColor: colors.themeDark,
+          borderBottomWidth: 2,
+        },
       }}
     >
       <TopTab.Screen

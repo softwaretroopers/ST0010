@@ -9,8 +9,6 @@ import {
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./AppText";
-import AppButtonVariant from "../components/AppButtonVariant";
-import Screen from "./Screen";
 import PickerItem from "./PickerItem";
 import colors from "../configs/colors";
 
@@ -34,7 +32,7 @@ function AppPicker({
             <MaterialCommunityIcons
               name={icon}
               size={20}
-              color={colors.darkGrey}
+              color={colors.themeDark}
               style={styles.icon}
             />
           )}
@@ -47,7 +45,7 @@ function AppPicker({
           <MaterialCommunityIcons
             name="chevron-down"
             size={20}
-            color={colors.darkGrey}
+            color={colors.themeDark}
           />
         </View>
       </TouchableWithoutFeedback>
@@ -98,12 +96,12 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   placeholder: {
-    color: colors.darkGrey,
+    color: colors.themeDark,
     flex: 1,
   },
   text: {
     flex: 1,
-    color: colors.medium,
+    color: colors.themeDark,
     textAlign: "center",
   },
   list: {

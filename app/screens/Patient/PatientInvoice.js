@@ -22,7 +22,7 @@ const DocProfile = [
 function PatientInvoice({ navigation }) {
   return (
     <ScreenVariant>
-      <View style={styles.screenTop}>
+      <View>
         <FlatList
           data={DocProfile}
           keyExtractor={(listing) => listing.id.toString()}
@@ -77,56 +77,54 @@ function PatientInvoice({ navigation }) {
             </View>
           )}
         />
-        <View style={styles.button}>
-          <Button
-            icon="exit-to-app"
-            mode="contained"
-            onPress={() => navigation.navigate("PatientInvoiceBill")}
-          >
-            Pay
-          </Button>
-        </View>
+        <Button
+          style={{
+            width: "30%",
+            alignSelf: "center",
+            padding: "1%",
+            backgroundColor: colors.themeDark,
+          }}
+          icon="exit-to-app"
+          mode="contained"
+          onPress={() => navigation.navigate("PatientInvoiceBill")}
+        >
+          Pay
+        </Button>
       </View>
     </ScreenVariant>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
-    padding: 5,
-    width: "30%",
-    height: "8%",
-    alignSelf: "center",
-  },
   BottomText: {
     fontWeight: "bold",
     marginBottom: 12,
+    color: colors.themeDark,
   },
   BottomItem: {
     marginBottom: 12,
+    color: colors.themeDark,
   },
   containerBottom: {
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 20,
-    borderBottomWidth: 2,
-    borderColor: colors.lightGrey,
   },
   containerMiddle: {
     borderWidth: 2,
     borderRadius: 10,
-    borderColor: colors.patientPrimary,
+    borderColor: colors.themeDark,
     flexDirection: "row",
     marginHorizontal: 10,
     padding: 15,
-    backgroundColor: colors.whitesmoke,
+    backgroundColor: colors.white,
     justifyContent: "space-around",
   },
   containerMiddleText: {
     justifyContent: "center",
   },
   heading: {
-    backgroundColor: colors.patientPrimary,
+    backgroundColor: colors.themeDark,
     alignItems: "center",
   },
   headText: {
@@ -136,7 +134,7 @@ const styles = StyleSheet.create({
   },
   text: {
     margin: "2%",
-    backgroundColor: colors.patientPrimary,
+    backgroundColor: colors.themeDark,
     color: colors.white,
   },
   image: {

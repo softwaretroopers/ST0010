@@ -1,9 +1,8 @@
 import React from "react";
-import { View, StyleSheet, FlatList } from "react-native";
-import { Appbar, Button } from "react-native-paper";
+import { View, StyleSheet, FlatList, StatusBar } from "react-native";
+import { Headline, Button } from "react-native-paper";
 
 import AppText from "../../components/AppText";
-import ScreenVariant from "../../components/ScreenVariant";
 import colors from "../../configs/colors";
 
 const DocProfile = [
@@ -21,10 +20,19 @@ const DocProfile = [
 
 function PatientInvoiceBill({ navigation }) {
   return (
-    <ScreenVariant>
-      <Appbar>
-        <Appbar.Content title="Invoice" />
-      </Appbar>
+    <View>
+      <StatusBar backgroundColor={colors.themeDark} barStyle="light-content" />
+      <View style={{ backgroundColor: colors.themeDark, padding: "2%" }}>
+        <Headline
+          style={{
+            color: colors.white,
+            fontWeight: "bold",
+            alignSelf: "center",
+          }}
+        >
+          Invoice
+        </Headline>
+      </View>
       <View style={styles.screenTop}>
         <FlatList
           data={DocProfile}
@@ -64,7 +72,8 @@ function PatientInvoiceBill({ navigation }) {
         />
         <View style={styles.button}>
           <Button
-            icon="exit-to-app"
+            style={{ backgroundColor: colors.themeDark, padding: "5%" }}
+            icon="check-circle"
             mode="contained"
             onPress={() => navigation.navigate("Appointments")}
           >
@@ -72,7 +81,7 @@ function PatientInvoiceBill({ navigation }) {
           </Button>
         </View>
       </View>
-    </ScreenVariant>
+    </View>
   );
 }
 
@@ -88,19 +97,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     borderBottomWidth: 3,
-    borderColor: colors.lightGrey,
+    borderColor: colors.medium,
   },
   containerMiddle: {
     padding: 15,
     borderBottomWidth: 3,
-    borderColor: colors.lightGrey,
+    borderColor: colors.medium,
   },
   containerTop: {
     marginBottom: 10,
-  },
-  heading: {
-    backgroundColor: colors.patientPrimary,
-    alignItems: "center",
   },
   headText: {
     fontSize: 25,
@@ -108,13 +113,13 @@ const styles = StyleSheet.create({
     color: colors.white,
   },
   textHeading: {
-    color: colors.black,
+    color: colors.themeDark,
     fontWeight: "bold",
     fontSize: 20,
   },
   textBottom: {
     fontWeight: "bold",
-    color: colors.black,
+    color: colors.themeDark,
   },
   screenTop: {
     padding: 15,

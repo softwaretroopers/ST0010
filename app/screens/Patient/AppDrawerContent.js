@@ -3,6 +3,7 @@ import { View, StyleSheet, Share } from "react-native";
 import { DrawerItem, DrawerContentScrollView } from "@react-navigation/drawer";
 import { Avatar, Title, Caption, Drawer, Divider } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import colors from "../../configs/colors";
 
 const messageDetails =
   "Hey, \nAyushaadhi is a Mobile Application helps you to channel doctors online in Sri Lanka at your convenience.\nGet it for free at https://play.google.com/store/apps/details?id=com.softwaretroopers.ayushaadhi&hl=en&gl=US";
@@ -21,11 +22,11 @@ function AppDrawerContent(props) {
           <View style={styles.userInfoSection}>
             <View style={{ flexDirection: "row", marginTop: 15 }}>
               <Avatar.Image
-                source={require("../../assets/logo.png")}
+                source={require("../../assets/profile.png")}
               ></Avatar.Image>
               <View style={{ marginLeft: 15, flexDirection: "column" }}>
-                <Title style={styles.title}>Mr.Anonymous</Title>
-                <Caption style={styles.caption}>0717827878</Caption>
+                <Title style={styles.title}>Software Troopers</Title>
+                <Caption style={styles.caption}>071 400 9020</Caption>
               </View>
             </View>
           </View>
@@ -33,15 +34,22 @@ function AppDrawerContent(props) {
           <Drawer.Section style={styles.drawerSection}>
             <Divider />
             <DrawerItem
+              labelStyle={{ color: colors.themeDark }}
+              style={{ color: colors.themeDark }}
               label="Home"
               onPress={() => {
                 props.navigation.navigate("Home", { screen: "Home" });
               }}
               icon={({ color, size }) => (
-                <MaterialCommunityIcons name="home" color={color} size={size} />
+                <MaterialCommunityIcons
+                  name="home"
+                  color={colors.themeDark}
+                  size={size}
+                />
               )}
             />
             <DrawerItem
+              labelStyle={{ color: colors.themeDark }}
               label="Wallet"
               onPress={() => {
                 props.navigation.navigate("Home");
@@ -49,12 +57,13 @@ function AppDrawerContent(props) {
               icon={({ color, size }) => (
                 <MaterialCommunityIcons
                   name="wallet"
-                  color={color}
+                  color={colors.themeDark}
                   size={size}
                 />
               )}
             />
             <DrawerItem
+              labelStyle={{ color: colors.themeDark }}
               label="About Us"
               onPress={() => {
                 props.navigation.navigate("Home");
@@ -62,20 +71,7 @@ function AppDrawerContent(props) {
               icon={({ color, size }) => (
                 <MaterialCommunityIcons
                   name="information"
-                  color={color}
-                  size={size}
-                />
-              )}
-            />
-            <DrawerItem
-              label="Help"
-              onPress={() => {
-                props.navigation.navigate("Home");
-              }}
-              icon={({ color, size }) => (
-                <MaterialCommunityIcons
-                  name="help-circle"
-                  color={color}
+                  color={colors.themeDark}
                   size={size}
                 />
               )}
@@ -85,21 +81,27 @@ function AppDrawerContent(props) {
       </DrawerContentScrollView>
       <Drawer.Section style={styles.bottomDrawerSection}>
         <DrawerItem
+          labelStyle={{ color: colors.themeDark }}
           label="Invite Friends"
           onPress={shareMessage}
           icon={({ color, size }) => (
             <MaterialCommunityIcons
               name="share-variant"
-              color={color}
+              color={colors.themeDark}
               size={size}
             />
           )}
         />
         <DrawerItem
+          labelStyle={{ color: colors.themeDark }}
           label="Logout"
           onPress={() => props.navigation.popToTop()}
           icon={({ color, size }) => (
-            <MaterialCommunityIcons name="logout" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="logout"
+              color={colors.themeDark}
+              size={size}
+            />
           )}
         />
       </Drawer.Section>
@@ -118,10 +120,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 3,
     fontWeight: "bold",
+    color: colors.themeDark,
   },
   caption: {
     fontSize: 14,
     lineHeight: 14,
+    color: colors.themeDark,
   },
   row: {
     marginTop: 20,

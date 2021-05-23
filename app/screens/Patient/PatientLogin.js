@@ -44,6 +44,7 @@ function PatientLogin({ navigation }) {
             <Menu.Item
               onPress={() => navigation.navigate("DocAuthNavigation")}
               title="Doctor"
+              titleStyle={{ color: colors.themeDark }}
             />
             <Menu.Item
               onPress={() => navigation.navigate("CooperationNavigation")}
@@ -67,7 +68,7 @@ function PatientLogin({ navigation }) {
             <MaterialIcons
               name="person"
               size={50}
-              color={colors.patientPrimary}
+              color={colors.themeDark}
               style={{ marginTop: "30%" }}
             />
             <View style={styles.inputContainer}>
@@ -93,7 +94,7 @@ function PatientLogin({ navigation }) {
               />
             </View>
             <View style={styles.buttonContainer}>
-              <SubmitButton title="login" color="patientPrimary" />
+              <SubmitButton title="login" color="themeDark" />
               <TouchableOpacity
                 onPress={() => navigation.navigate("PatientRegister")}
               >
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   registerButton: {
-    color: colors.patientPrimary,
+    color: colors.themeDark,
     fontSize: 16,
     marginTop: "5%",
   },

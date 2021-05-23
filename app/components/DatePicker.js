@@ -50,14 +50,14 @@ export const MyForm = (props) => {
           <MaterialCommunityIcons
             name="calendar"
             size={30}
-            color={colors.black}
+            color={colors.themeDark}
             style={{ marginRight: "2%" }}
           />
-          <AppText style={{ color: colors.black }}>Select the Date</AppText>
+          <AppText style={{ color: colors.themeDark }}>Select the Date</AppText>
           <MaterialCommunityIcons
             name="chevron-down-circle"
             size={30}
-            color={colors.black}
+            color={colors.themeDark}
             style={{ marginLeft: "2%" }}
           />
         </View>
@@ -73,6 +73,7 @@ export const MyForm = (props) => {
         style={{ alignSelf: "center", marginTop: "2%", padding: "1%" }}
         icon="calendar-check"
         onPress={handleSubmit}
+        selectedColor={colors.themeDark}
       >
         {moment(values.myDate).format("YYYY-MM-DD")}
       </Chip>
@@ -85,10 +86,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.lightGrey,
-    borderRadius: 15,
+    borderRadius: 10,
     paddingVertical: "6%",
     paddingHorizontal: "5%",
-    marginTop: "5%",
+    marginVertical: "5%",
+    elevation: 5,
+    backgroundColor: colors.white,
   },
 });

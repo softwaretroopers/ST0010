@@ -1,6 +1,6 @@
 import React from "react";
-import { FlatList, View, StyleSheet } from "react-native";
-import { Headline, FAB } from "react-native-paper";
+import { FlatList, StyleSheet } from "react-native";
+import { Headline, FAB, Divider } from "react-native-paper";
 
 import Card from "../../components/Card";
 import Posts from "../../components/Posts";
@@ -15,7 +15,7 @@ const listings = [
     title: "Doctor Channeling",
     des: "Doctor consultation is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
     image: require("../../assets/doctorChanneling.png"),
-    nav: "HomeStackScreen",
+    nav: "DoctorChannelingNavigator",
   },
   {
     type: true,
@@ -23,7 +23,7 @@ const listings = [
     title: "Anytime Doctor",
     des: "24 hrs Doctor channeling is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
     image: require("../../assets/anyTimeDoctor.png"),
-    nav: "AnyTimeStackScreen",
+    nav: "AnytimeDoctorNavigator",
   },
   {
     type: true,
@@ -31,7 +31,7 @@ const listings = [
     title: "Report Reading",
     des: "Counsil is performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle",
     image: require("../../assets/Councillor.png"),
-    nav: "ReportStackScreen",
+    nav: "ReportReadingNavigator",
   },
   {
     type: false,
@@ -80,19 +80,15 @@ function PatientHome({ navigation }) {
             {RenderIf(
               !item.type,
               <>
-                <View
-                  style={{ backgroundColor: colors.white, marginBottom: "2%" }}
+                <Headline
+                  style={{
+                    alignSelf: "center",
+                    fontWeight: "bold",
+                    color: colors.themeDark,
+                  }}
                 >
-                  <Headline
-                    style={{
-                      alignSelf: "center",
-                      fontWeight: "bold",
-                      color: colors.themeDark,
-                    }}
-                  >
-                    NewsFeed
-                  </Headline>
-                </View>
+                  NewsFeed
+                </Headline>
 
                 <FlatList
                   data={posts}
@@ -110,7 +106,7 @@ function PatientHome({ navigation }) {
           </>
         )}
       />
-      <FAB style={styles.fab} icon="chat" />
+      <FAB style={styles.fab} icon="message-reply-text" />
     </ScreenVariant>
   );
 }
