@@ -1,15 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import {
-  FAB,
-  Text,
-  Avatar,
-  Title,
-  Subheading,
-  Caption,
-} from "react-native-paper";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import * as Animatable from "react-native-animatable";
+import { FAB, Avatar, Title, Subheading, Caption } from "react-native-paper";
 
 import ScreenVariant from "../../components/ScreenVariant";
 import colors from "../../configs/colors";
@@ -17,31 +8,29 @@ import colors from "../../configs/colors";
 function CooperationProfile({ navigation }) {
   return (
     <ScreenVariant>
-      <Animatable.View
-        animation="bounceInDown"
-        duration={1500}
-        style={styles.accounttop}
-      >
+      <View style={styles.accounttop}>
         <FAB
           style={styles.fab}
           small
           icon="pen"
           onPress={() => navigation.navigate("CooperationProfileEdit")}
         />
-        <Avatar.Image size={100} source={require("../../assets/logo.png")} />
-        <Title style={{ color: colors.white }}>ABC Company</Title>
+        <Avatar.Image size={100} source={require("../../assets/profile.png")} />
+        <Title style={{ color: colors.white, fontWeight: "bold" }}>
+          ABC Company
+        </Title>
         <Subheading style={{ color: colors.white }}>071 400 9020</Subheading>
         <Caption style={{ color: colors.white }}>
           support@softwaretroopers.com
         </Caption>
-      </Animatable.View>
+      </View>
     </ScreenVariant>
   );
 }
 
 const styles = StyleSheet.create({
   accounttop: {
-    backgroundColor: colors.cooperationPrimary,
+    backgroundColor: colors.themeDark,
     borderRadius: 20,
     margin: "2%",
     padding: "2%",

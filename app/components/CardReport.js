@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, TouchableOpacity, Modal } from "react-native";
+import { View, StyleSheet, TouchableNativeFeedback, Modal } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import {
   Avatar,
@@ -68,17 +68,16 @@ function CardReport({
         </View>
       </Modal>
 
-      <TouchableOpacity
+      <TouchableNativeFeedback
         onPress={() => {
           setModalVisible(true);
         }}
       >
-        <View>
+        <View style={{ backgroundColor: colors.white, padding: "2%" }}>
           <Card
             style={{
-              margin: 10,
-              paddingHorizontal: "18%",
-              backgroundColor: colors.whitesmoke,
+              backgroundColor: colors.white,
+              elevation: 5,
             }}
           >
             <Card.Content
@@ -91,14 +90,14 @@ function CardReport({
                 <Avatar.Icon
                   style={{ backgroundColor: colors.themeDark }}
                   size={20}
-                  icon="chat"
+                  icon="message-reply"
                 />
                 <Paragraph style={{ marginLeft: 3 }}>{price}</Paragraph>
               </View>
             </Card.Content>
           </Card>
         </View>
-      </TouchableOpacity>
+      </TouchableNativeFeedback>
     </>
   );
 }

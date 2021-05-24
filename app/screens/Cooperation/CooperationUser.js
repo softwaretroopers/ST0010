@@ -39,19 +39,18 @@ const reports = [
 function CooperationUser({ navigation }) {
   return (
     <ScreenVariant>
-      <Animatable.View
-        animation="bounceInDown"
-        duration={1500}
-        style={styles.accounttop}
-      >
+      <View style={styles.accounttop}>
         <FAB
+          color={colors.themeDark}
           style={styles.fab}
           small
           icon="pen"
           onPress={() => navigation.navigate("CooperationUserEdit")}
         />
-        <Avatar.Image size={100} source={require("../../assets/logo.png")} />
-        <Title style={{ color: colors.white }}>Software Troopers</Title>
+        <Avatar.Image size={100} source={require("../../assets/profile.png")} />
+        <Title style={{ color: colors.white, fontWeight: "bold" }}>
+          Software Troopers
+        </Title>
         <Subheading style={{ color: colors.white }}>20s07001</Subheading>
         <Subheading style={{ color: colors.white }}>071 400 9020</Subheading>
         <Caption style={{ color: colors.white }}>
@@ -70,8 +69,20 @@ function CooperationUser({ navigation }) {
               marginHorizontal: "2%",
             }}
           >
-            <MaterialCommunityIcons name="calendar" size={16} color="black" />
-            <Text style={{ fontWeight: "bold", marginLeft: 5 }}>18</Text>
+            <MaterialCommunityIcons
+              name="calendar"
+              size={16}
+              color={colors.themeDark}
+            />
+            <Text
+              style={{
+                fontWeight: "bold",
+                marginLeft: 5,
+                color: colors.themeDark,
+              }}
+            >
+              18
+            </Text>
           </View>
           <View
             flexDirection="row"
@@ -87,9 +98,17 @@ function CooperationUser({ navigation }) {
             <MaterialCommunityIcons
               name="gender-male-female"
               size={16}
-              color="black"
+              color={colors.themeDark}
             />
-            <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Male</Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                marginLeft: 5,
+                color: colors.themeDark,
+              }}
+            >
+              Male
+            </Text>
           </View>
         </View>
         <Title style={{ color: colors.white }}>Reports</Title>
@@ -105,14 +124,14 @@ function CooperationUser({ navigation }) {
             />
           )}
         />
-      </Animatable.View>
+      </View>
     </ScreenVariant>
   );
 }
 
 const styles = StyleSheet.create({
   accounttop: {
-    backgroundColor: colors.cooperationPrimary,
+    backgroundColor: colors.themeDark,
     borderRadius: 20,
     margin: "2%",
     padding: "2%",

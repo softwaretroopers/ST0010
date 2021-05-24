@@ -171,7 +171,7 @@ function PatientCategoryDetails({ navigation }) {
                   flexDirection: "row",
                   justifyContent: "space-between",
                   paddingVertical: "2%",
-                  backgroundColor: colors.themeMedium,
+                  backgroundColor: colors.white,
                 }}
               >
                 <AppText style={styles.heading}>{item.categories}</AppText>
@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 18,
     marginLeft: "5%",
-    color: colors.white,
+    color: colors.themeDark,
   },
   topDetails: {
     backgroundColor: colors.themeDark,

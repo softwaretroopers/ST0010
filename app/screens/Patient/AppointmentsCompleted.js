@@ -55,7 +55,7 @@ function AppointmentsCompleted(props) {
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: colors.lightGrey,
+    backgroundColor: colors.white,
     flex: 1,
   },
 });

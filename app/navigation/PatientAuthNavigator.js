@@ -223,8 +223,6 @@ const BottomTabNavigator = () => (
       name="Appointments"
       component={AppointmentsNavigator}
       options={{
-        tabBarBadgeStyle: { backgroundColor: colors.themeMedium },
-        tabBarBadge: 2,
         tabBarIcon: () => (
           <MaterialCommunityIcons
             name="calendar-clock"

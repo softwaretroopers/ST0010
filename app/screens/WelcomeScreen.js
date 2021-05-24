@@ -8,8 +8,7 @@ import {
   StatusBar,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
-import { LinearGradient } from "expo-linear-gradient";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { Button } from "react-native-paper";
 import colors from "../configs/colors";
 
 const WelcomeScreen = ({ navigation }) => {
@@ -43,22 +42,27 @@ const WelcomeScreen = ({ navigation }) => {
         >
           Stay connected with everyone!
         </Text>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("PatientAuthNavigation")}
-        >
-          <Text style={styles.text}>Sign in with account</Text>
-        </TouchableOpacity>
+
         <Animatable.View animation="pulse" style={styles.button}>
-          <TouchableOpacity
+          <Button
+            style={{
+              width: "90%",
+              alignSelf: "center",
+              padding: "3%",
+              backgroundColor: colors.themeDark,
+            }}
+            icon="arrow-right-drop-circle"
+            mode="contained"
             onPress={() => navigation.navigate("DrawerNavigation")}
           >
-            <LinearGradient
-              colors={[colors.themeMedium, colors.themeLight]}
-              style={styles.signIn}
-            >
-              <Text style={styles.textSign}>Get Started</Text>
-              <MaterialIcons name="navigate-next" color="#fff" size={20} />
-            </LinearGradient>
+            Get Started
+          </Button>
+
+          <TouchableOpacity
+            style={{ alignSelf: "center", marginTop: "3%" }}
+            onPress={() => navigation.navigate("PatientAuthNavigation")}
+          >
+            <Text style={styles.text}>Sign in with account</Text>
           </TouchableOpacity>
         </Animatable.View>
       </Animatable.View>
@@ -96,13 +100,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: "bold",
+    textAlign: "center",
   },
   text: {
-    color: colors.themeLight,
+    color: colors.themeDark,
     marginTop: 5,
   },
   button: {
-    marginTop: 30,
+    marginTop: "13%",
   },
   signIn: {
     justifyContent: "center",

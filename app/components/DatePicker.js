@@ -70,7 +70,7 @@ export const MyForm = (props) => {
         date={moment(values.myDate).toDate()}
       />
       <Chip
-        style={{ alignSelf: "center", marginTop: "2%", padding: "1%" }}
+        style={{ alignSelf: "center", marginBottom: "3%", padding: "1%" }}
         icon="calendar-check"
         onPress={handleSubmit}
         selectedColor={colors.themeDark}
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: "6%",
     paddingHorizontal: "5%",
-    marginVertical: "5%",
+    marginVertical: "3%",
     elevation: 5,
     backgroundColor: colors.white,
   },

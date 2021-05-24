@@ -52,6 +52,7 @@ function ReportReading(props) {
     <Screen>
       <View>
         <FlatList
+          numColumns={2}
           data={FlatListData}
           renderItem={({ item }) => (
             <CardReport

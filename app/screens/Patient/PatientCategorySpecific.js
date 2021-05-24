@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList, StyleSheet, ScrollView } from "react-native";
+import { View, FlatList, StyleSheet } from "react-native";
 import AppSearchBar from "../../components/AppSearchBar";
 
 import CardPatientVariant from "../../components/CardPatientVariant";
@@ -56,11 +56,12 @@ const FlatListData = [
 function PatientCategorySpecific(props) {
   return (
     <ScreenVariant>
+      <View></View>
       <View>
-        <AppSearchBar></AppSearchBar>
-      </View>
-      <View style={{ paddingBottom: "16%" }}>
         <FlatList
+          contentContainerStyle={{ alignItems: "center" }}
+          numColumns={2}
+          ListHeaderComponent={() => <AppSearchBar />}
           data={FlatListData}
           renderItem={({ item }) => (
             <CardPatientVariant

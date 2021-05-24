@@ -72,12 +72,13 @@ function CardAppointments({
 const styles = StyleSheet.create({
   card: {
     marginHorizontal: "2%",
-    marginTop: "2%",
+    marginVertical: "2%",
     backgroundColor: colors.white,
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 15,
     padding: "2%",
+    elevation: 5,
   },
   Detailstextname: {
     fontSize: 20,

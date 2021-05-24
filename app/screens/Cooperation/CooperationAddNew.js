@@ -33,7 +33,7 @@ function CooperationAddNew(props) {
           <AppFormField
             autoCapitalize="none"
             autoCorrect={false}
-            icon="account-card-details"
+            icon="card-account-details"
             placeholder="Employee ID"
             keyboardType="default"
             name="empID"
@@ -47,15 +47,11 @@ function CooperationAddNew(props) {
             name="empNIC"
           />
           <View style={styles.uploadContainer}>
-            <Button
-              color={colors.cooperationPrimary}
-              icon="file-plus"
-              mode="outlined"
-            >
+            <Button color={colors.themeDark} icon="file-plus" mode="outlined">
               Add Reports
             </Button>
           </View>
-          <SubmitButton title="Done" color="cooperationPrimary" />
+          <SubmitButton title="Done" color="themeDark" icon="check-circle" />
         </View>
       </AppForm>
     </ScreenVariant>

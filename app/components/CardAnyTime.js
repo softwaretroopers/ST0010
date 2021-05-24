@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, TouchableOpacity, Modal } from "react-native";
+import { View, StyleSheet, TouchableNativeFeedback, Modal } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import {
   Avatar,
@@ -86,7 +86,7 @@ function CardAnyTime({
                 padding: "10%",
               }}
             >
-              <TouchableOpacity
+              <TouchableNativeFeedback
                 style={styles.callButton}
                 onPress={() => {
                   setModalVisible(!modalVisible);
@@ -98,13 +98,19 @@ function CardAnyTime({
                   name="microphone"
                   size={26}
                   style={{
-                    color: colors.black,
+                    color: colors.themeDark,
                     marginRight: 5,
                   }}
                 />
-                <Title>Audio Call</Title>
-              </TouchableOpacity>
-              <TouchableOpacity
+                <Title
+                  style={{
+                    color: colors.themeDark,
+                  }}
+                >
+                  Audio Call
+                </Title>
+              </TouchableNativeFeedback>
+              <TouchableNativeFeedback
                 style={styles.callButton}
                 onPress={() => {
                   setModalVisible(!modalVisible);
@@ -116,14 +122,20 @@ function CardAnyTime({
                   name="video"
                   size={26}
                   style={{
-                    color: colors.black,
+                    color: colors.themeDark,
                     marginRight: 5,
                   }}
                 />
-                <Title>Video Call</Title>
-              </TouchableOpacity>
+                <Title
+                  style={{
+                    color: colors.themeDark,
+                  }}
+                >
+                  Video Call
+                </Title>
+              </TouchableNativeFeedback>
             </View>
-            <TouchableOpacity
+            <TouchableNativeFeedback
               style={{
                 padding: 10,
                 alignSelf: "flex-end",
@@ -133,45 +145,56 @@ function CardAnyTime({
                 setSecondModalVisible(!secondModalVisible);
               }}
             >
-              <Icon name="cross"></Icon>
-            </TouchableOpacity>
+              <Icon
+                name="cross"
+                backgroundColor={colors.white}
+                iconColor={colors.themeDark}
+              ></Icon>
+            </TouchableNativeFeedback>
           </View>
         </View>
       </Modal>
 
-      <TouchableOpacity
+      <TouchableNativeFeedback
         onPress={() => {
           setModalVisible(true);
         }}
       >
-        <View>
+        <View style={{ backgroundColor: colors.white, padding: "2%" }}>
           <Card
             style={{
-              margin: 10,
-              paddingHorizontal: "18%",
-              backgroundColor: colors.whitesmoke,
+              backgroundColor: colors.white,
+              elevation: 5,
             }}
           >
             <Card.Content
               style={{ justifyContent: "center", alignItems: "center" }}
             >
-              <Avatar.Image size={100} style={{ marging: 10 }} source={image} />
+              <Avatar.Image size={100} style={{ margin: 10 }} source={image} />
               <Title>{title}</Title>
               <Caption>{profession}</Caption>
               <View flexDirection="row" style={{ marginTop: "2%" }}>
                 <View flexDirection="row" style={{ marginRight: "3%" }}>
-                  <Avatar.Icon size={20} icon="microphone" />
+                  <Avatar.Icon
+                    size={20}
+                    icon="microphone"
+                    style={{ backgroundColor: colors.themeDark }}
+                  />
                   <Paragraph style={{ marginLeft: 3 }}>{priceAudio}</Paragraph>
                 </View>
                 <View flexDirection="row" style={{ marginLeft: "3%" }}>
-                  <Avatar.Icon size={20} icon="video" />
+                  <Avatar.Icon
+                    size={20}
+                    icon="video"
+                    style={{ backgroundColor: colors.themeDark }}
+                  />
                   <Paragraph style={{ marginLeft: 3 }}>{priceVideo}</Paragraph>
                 </View>
               </View>
             </Card.Content>
           </Card>
         </View>
-      </TouchableOpacity>
+      </TouchableNativeFeedback>
     </>
   );
 }

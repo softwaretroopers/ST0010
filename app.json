@@ -1,9 +1,9 @@
 {
   "expo": {
     "name": "Ayushaadhi",
-    "slug": "ST0010-Ayushaadhi",
+    "slug": "Ayushaadhi",
     "owner": "softwaretroopers",
-    "version": "Test-1.1.0",
+    "version": "Test-2.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "splash": {

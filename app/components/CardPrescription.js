@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import { Avatar, Button, Card } from "react-native-paper";
+import { Avatar, Button, Card, Divider } from "react-native-paper";
 
 import colors from "../configs/colors";
 
@@ -26,6 +26,7 @@ function CardPrescription({ docImage, reportImage, date, docName }) {
           left={LeftContent}
           right={RightContent}
         />
+        <Divider />
         <Card.Cover source={reportImage} />
       </Card>
     </View>

@@ -4,6 +4,7 @@ import { FAB } from "react-native-paper";
 
 import Screen from "../../components/Screen";
 import TimeSlotVariant from "../../components/TimeSlotVariant";
+import colors from "../../configs/colors";
 
 const timeSlots = [
   {
@@ -32,8 +33,8 @@ function DoctorTimePicker({ navigation }) {
       </View>
       <FAB
         style={styles.fab}
-        icon="alarm-plus"
-        onPress={() => navigation.navigate("Appointment")}
+        icon="check"
+        onPress={() => navigation.navigate("Home")}
       />
     </Screen>
   );
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
     margin: 16,
     right: 0,
     bottom: 0,
+    backgroundColor: colors.themeDark,
   },
 });
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { Button, Text } from "react-native-paper";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
 import colors from "../configs/colors";
-import AppText from "./AppText";
 import Icon from "./Icon";
 
 function DateCard({
@@ -19,40 +19,48 @@ function DateCard({
   return (
     <View style={styles.card}>
       <View style={styles.titleContainer}>
-        <AppText style={{ fontSize: 18, fontWeight: "bold", marginRight: 7 }}>
+        <Text
+          style={{
+            fontSize: 18,
+            fontWeight: "bold",
+            marginRight: 7,
+            color: colors.themeDark,
+          }}
+        >
           {day}
-        </AppText>
-        <AppText style={{ fontSize: 14 }}>({date})</AppText>
+        </Text>
+        <Text style={{ fontSize: 14, color: colors.themeDark }}>({date})</Text>
       </View>
       <View>
         <View style={styles.timeSlotContainer}>
-          <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>{firstTimeSlot}</AppText>
-          </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>{secondTimeSlot}</AppText>
-          </TouchableWithoutFeedback>
+          <View style={styles.timeSlot}>
+            <Text style={styles.timeSlotText}>{firstTimeSlot}</Text>
+          </View>
+          <View style={styles.timeSlot}>
+            <Text style={styles.timeSlotText}>{secondTimeSlot}</Text>
+          </View>
         </View>
         <View style={styles.timeSlotContainer}>
-          <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>{thirdTimeSlot}</AppText>
-          </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback style={styles.timeSlot}>
-            <AppText style={styles.timeSlotText}>{fourthTimeSlot}</AppText>
-          </TouchableWithoutFeedback>
+          <View style={styles.timeSlot}>
+            <Text style={styles.timeSlotText}>{thirdTimeSlot}</Text>
+          </View>
+          <View style={styles.timeSlot}>
+            <Text style={styles.timeSlotText}>{fourthTimeSlot}</Text>
+          </View>
         </View>
         <View style={styles.viewAllContainer}>
-          <TouchableOpacity
+          <Button
+            color={colors.white}
+            style={{
+              alignSelf: "center",
+              padding: "2%",
+              backgroundColor: colors.themeDark,
+            }}
+            icon="eye"
             onPress={() => navigation.navigate("DoctorTimePicker")}
           >
-            <Icon
-              name="chevron-right"
-              backgroundColor={colors.doctorPrimary}
-            ></Icon>
-            <AppText style={{ fontSize: 12, fontWeight: "bold" }}>
-              View All
-            </AppText>
-          </TouchableOpacity>
+            View All
+          </Button>
         </View>
       </View>
     </View>
@@ -63,20 +71,18 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: 15,
     backgroundColor: colors.white,
-    width: "98%",
+    width: "80%",
     marginBottom: "5%",
-    padding: "5%",
-    shadowColor: colors.black,
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 1,
-    shadowRadius: 10,
+    paddingVertical: "5%",
     elevation: 5,
+    alignSelf: "center",
+    alignItems: "center",
   },
   container: {
     flexDirection: "row",
   },
   timeSlot: {
-    backgroundColor: colors.yes,
+    backgroundColor: colors.themeDark,
     borderRadius: 10,
     padding: 10,
     margin: 10,

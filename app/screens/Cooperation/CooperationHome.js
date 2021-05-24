@@ -70,7 +70,7 @@ function CooperationHome({ navigation }) {
               }}
             >
               <Avatar.Image
-                source={require("../../assets/logo.png")}
+                source={require("../../assets/profile.png")}
                 size={50}
               />
               <View style={{ marginLeft: 15, flexDirection: "column" }}>
@@ -79,7 +79,7 @@ function CooperationHome({ navigation }) {
               </View>
               <Button
                 style={{ marginLeft: "10%" }}
-                color={colors.cooperationPrimary}
+                color={colors.themeDark}
                 icon="eye"
                 onPress={() => navigation.navigate("CooperationUser")}
               >
@@ -106,10 +106,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 3,
     fontWeight: "bold",
+    color: colors.themeDark,
   },
   caption: {
     fontSize: 14,
     lineHeight: 14,
+    color: colors.themeDark,
   },
   row: {
     marginTop: 20,
@@ -126,20 +128,21 @@ const styles = StyleSheet.create({
     marginRight: 3,
   },
   userInfoSection: {
-    backgroundColor: colors.lightgray,
+    backgroundColor: colors.white,
     paddingVertical: "3%",
     paddingHorizontal: "5%",
     borderRadius: 10,
     width: "80%",
     alignSelf: "center",
     margin: "1%",
+    elevation: 5,
   },
   fab: {
     position: "absolute",
     margin: 16,
     right: 0,
     bottom: 0,
-    backgroundColor: colors.cooperationPrimary,
+    backgroundColor: colors.themeDark,
   },
 });
 

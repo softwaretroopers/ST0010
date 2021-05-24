@@ -3,15 +3,15 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import CooperationLogin from "../../screens/Cooperation/CooperationLogin";
-import CooperationHome from "../../screens/Cooperation/CooperationHome";
-import CooperationUser from "../../screens/Cooperation/CooperationUser";
-import CooperationUserEdit from "../../screens/Cooperation/CooperationUserEdit";
-import CooperationAddNew from "../../screens/Cooperation/CooperationAddNew";
-import CooperationProfile from "../../screens/Cooperation/CooperationProfile";
-import CooperationProfileEdit from "../../screens/Cooperation/CooperationProfileEdit";
-import CoAppDrawerContent from "../../screens/Cooperation/CoAppDrawerContent";
-import colors from "../../configs/colors";
+import CooperationLogin from "../screens/Cooperation/CooperationLogin";
+import CooperationHome from "../screens/Cooperation/CooperationHome";
+import CooperationUser from "../screens/Cooperation/CooperationUser";
+import CooperationUserEdit from "../screens/Cooperation/CooperationUserEdit";
+import CooperationAddNew from "../screens/Cooperation/CooperationAddNew";
+import CooperationProfile from "../screens/Cooperation/CooperationProfile";
+import CooperationProfileEdit from "../screens/Cooperation/CooperationProfileEdit";
+import CoAppDrawerContent from "../screens/Cooperation/CoAppDrawerContent";
+import colors from "../configs/colors";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -20,7 +20,7 @@ const CooperationNavigation = () => (
   <Stack.Navigator
     screenOptions={{
       headerStyle: { backgroundColor: colors.themeDark },
-      headerTintColor: colors.themeLight,
+      headerTintColor: colors.white,
       headerTitleStyle: {
         fontWeight: "bold",
       },
@@ -55,7 +55,7 @@ const CoAppNavigation = ({ navigation }) => (
   <Stack.Navigator
     screenOptions={{
       headerStyle: { backgroundColor: colors.themeDark },
-      headerTintColor: colors.themeLight,
+      headerTintColor: colors.white,
       headerTitleStyle: {
         fontWeight: "bold",
       },
@@ -70,7 +70,7 @@ const CoAppNavigation = ({ navigation }) => (
           <MaterialCommunityIcons.Button
             name="menu"
             size={24}
-            color={colors.themeLight}
+            color={colors.white}
             backgroundColor={colors.themeDark}
             onPress={() => navigation.openDrawer()}
           />
@@ -108,7 +108,7 @@ const CoProfile = () => (
   <Stack.Navigator
     screenOptions={{
       headerStyle: { backgroundColor: colors.themeDark },
-      headerTintColor: colors.themeLight,
+      headerTintColor: colors.white,
       headerTitleStyle: {
         fontWeight: "bold",
       },

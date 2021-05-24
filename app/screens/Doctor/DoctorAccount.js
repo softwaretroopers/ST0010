@@ -5,7 +5,6 @@ import {
   Avatar,
   Title,
   Subheading,
-  Caption,
   Text,
   Button,
 } from "react-native-paper";
@@ -19,87 +18,132 @@ function DoctorAccount({ navigation, ...otherProps }) {
   return (
     <ScreenVarient>
       <View style={styles.screen}>
-        <Animatable.View
-          animation="bounceInDown"
-          duration={1500}
-          style={styles.accounttop}
-        >
+        <View style={styles.accounttop}>
           <FAB
             onPress={() => navigation.navigate("DoctorAccInfoEdit")}
             style={styles.fab}
             small
             icon="pen"
+            color={colors.themeDark}
           />
-          <Avatar.Image size={100} source={require("../../assets/doc.png")} />
-          <Title style={{ color: colors.white }}>Dr. Anonymous</Title>
+          <Avatar.Image
+            size={100}
+            source={require("../../assets/profile.png")}
+          />
+          <Title style={{ color: colors.white, fontWeight: "bold" }}>
+            Dr. Anonymous
+          </Title>
 
           <Subheading style={{ color: colors.white, marginHorizontal: "2%" }}>
             071 400 9020
           </Subheading>
           <View flexDirection="row">
             <View flexDirection="row" style={styles.details}>
-              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>
+              <Text
+                style={{
+                  marginLeft: 5,
+                  color: colors.themeDark,
+                }}
+              >
                 Psychologist
               </Text>
             </View>
             <View flexDirection="row" style={styles.details}>
-              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Sinhala</Text>
+              <Text
+                style={{
+                  marginLeft: 5,
+                  color: colors.themeDark,
+                }}
+              >
+                Sinhala
+              </Text>
             </View>
           </View>
           <View flexDirection="row">
             <View flexDirection="row" style={styles.details}>
-              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Nawaloka Hospital</Text>
+              <Text
+                style={{
+                  marginLeft: 5,
+                  color: colors.themeDark,
+                }}
+              >
+                Nawaloka Hospital
+              </Text>
             </View>
             <View flexDirection="row" style={styles.details}>
-              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>
+              <Text
+                style={{
+                  marginLeft: 5,
+                  color: colors.themeDark,
+                }}
+              >
                 SLMC Number
               </Text>
             </View>
           </View>
-        </Animatable.View>
-        <Animatable.View
-          animation="bounceInDown"
-          duration={1500}
-          style={styles.accounttop}
-        >
-          <Title style={{ color: colors.white }}>Prices</Title>
+          <Button
+            style={{ marginVertical: "5%", alignSelf: "center" }}
+            color={colors.white}
+            mode="contained"
+            icon="logout"
+            onPress={() => navigation.popToTop()}
+          >
+            Log Out
+          </Button>
+        </View>
+        <View style={styles.accounttop}>
+          <Title style={{ color: colors.white, fontWeight: "bold" }}>
+            Prices
+          </Title>
           <View flexDirection="row" style={{ margin: "2%" }}>
             <View flexDirection="row" style={styles.price}>
               <MaterialCommunityIcons
                 name="microphone"
                 size={16}
-                color="black"
+                color={colors.themeDark}
               />
-              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Rs.1000</Text>
+              <Text
+                style={{
+                  marginLeft: 5,
+                  color: colors.themeDark,
+                }}
+              >
+                Rs.1000
+              </Text>
             </View>
             <View flexDirection="row" style={styles.price}>
-              <MaterialCommunityIcons name="video" size={16} color="black" />
-              <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Rs.1200</Text>
+              <MaterialCommunityIcons
+                name="video"
+                size={16}
+                color={colors.themeDark}
+              />
+              <Text
+                style={{
+                  marginLeft: 5,
+                  color: colors.themeDark,
+                }}
+              >
+                Rs.1200
+              </Text>
             </View>
           </View>
-          <Button color={colors.white} icon="square-edit-outline">
+          <Button
+            style={{ marginVertical: "5%" }}
+            color={colors.white}
+            icon="square-edit-outline"
+            mode="contained"
+          >
             Change
           </Button>
-        </Animatable.View>
+        </View>
       </View>
-      <Animatable.View animation="bounceInDown" duration={1500}>
-        <Button
-          style={{ width: "50%", alignSelf: "center" }}
-          color={colors.black}
-          mode="outlined"
-          icon="logout"
-          onPress={() => navigation.popToTop()}
-        >
-          Log Out
-        </Button>
-      </Animatable.View>
     </ScreenVarient>
   );
 }
 
 const styles = StyleSheet.create({
   accounttop: {
-    backgroundColor: colors.doctorPrimary,
+    backgroundColor: colors.themeDark,
     borderRadius: 20,
     margin: "2%",
     padding: "2%",

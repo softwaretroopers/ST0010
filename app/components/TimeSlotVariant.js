@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { Checkbox } from "react-native-paper";
 
 import colors from "../configs/colors";
@@ -8,9 +8,9 @@ function TimeSlotVariant({ slot }) {
   const [checked, setChecked] = useState(false);
   return (
     <View style={styles.centeredView}>
-      <TouchableOpacity
+      <View
         style={{
-          backgroundColor: colors.doctorPrimary,
+          backgroundColor: colors.themeDark,
           borderRadius: 15,
           padding: 10,
           margin: 5,
@@ -22,12 +22,14 @@ function TimeSlotVariant({ slot }) {
       >
         <Text style={styles.textStyle}>{slot}</Text>
         <Checkbox
+          uncheckedColor={colors.warn}
+          color={colors.yes}
           status={checked ? "checked" : "unchecked"}
           onPress={() => {
             setChecked(!checked);
           }}
         />
-      </TouchableOpacity>
+      </View>
     </View>
   );
 }

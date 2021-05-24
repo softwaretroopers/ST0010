@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, TouchableOpacity, Modal } from "react-native";
+import { View, StyleSheet, TouchableNativeFeedback, Modal } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import {
   Avatar,
@@ -10,12 +10,8 @@ import {
   Button,
   IconButton,
 } from "react-native-paper";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../configs/colors";
-import Icon from "./Icon";
-import ProfileCard from "./ProfileCard";
-import AppButton from "../components/AppButton";
 import ProfileCardVariant from "./ProfileCardVariant";
 
 function CardPatientVariant({
@@ -38,13 +34,14 @@ function CardPatientVariant({
           <ProfileCardVariant
             image={image}
             Iconclose={
-              <TouchableOpacity
+              <IconButton
+                icon="close-circle"
+                color={colors.themeDark}
+                size={30}
                 onPress={() => {
                   setModalVisible(!modalVisible);
                 }}
-              >
-                <Icon name="cross" backgroundColor={colors.black}></Icon>
-              </TouchableOpacity>
+              />
             }
             name={title}
             profession={profession}
@@ -54,54 +51,65 @@ function CardPatientVariant({
             Callprice={priceAudio}
             Videoprice={priceVideo}
             IconButton={
-              <View style={styles.buttonContainer}>
-                <AppButton
-                  title="Book Now"
-                  color="black"
-                  onPress={() => {
-                    setModalVisible(!modalVisible);
-                    navigation.navigate("PatientDateTimePicker");
-                  }}
-                />
-              </View>
+              <Button
+                style={{
+                  backgroundColor: colors.themeDark,
+                  padding: "3%",
+                }}
+                icon="check-circle"
+                mode="contained"
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                  navigation.navigate("PatientDateTimePicker");
+                }}
+              >
+                Book Now
+              </Button>
             }
           />
         </View>
       </Modal>
 
-      <TouchableOpacity
+      <TouchableNativeFeedback
         onPress={() => {
           setModalVisible(true);
         }}
       >
-        <View>
+        <View style={{ backgroundColor: colors.white, padding: "2%" }}>
           <Card
             style={{
-              margin: 10,
-              paddingHorizontal: "18%",
               backgroundColor: colors.white,
+              elevation: 5,
             }}
           >
             <Card.Content
               style={{ justifyContent: "center", alignItems: "center" }}
             >
-              <Avatar.Image size={100} style={{ marging: 10 }} source={image} />
+              <Avatar.Image size={100} style={{ margin: 10 }} source={image} />
               <Title>{title}</Title>
               <Caption>{profession}</Caption>
               <View flexDirection="row" style={{ marginTop: "2%" }}>
                 <View flexDirection="row" style={{ marginRight: "3%" }}>
-                  <Avatar.Icon size={20} icon="microphone" />
+                  <Avatar.Icon
+                    size={20}
+                    icon="microphone"
+                    style={{ backgroundColor: colors.themeDark }}
+                  />
                   <Paragraph style={{ marginLeft: 3 }}>{priceAudio}</Paragraph>
                 </View>
                 <View flexDirection="row" style={{ marginLeft: "3%" }}>
-                  <Avatar.Icon size={20} icon="video" />
+                  <Avatar.Icon
+                    size={20}
+                    icon="video"
+                    style={{ backgroundColor: colors.themeDark }}
+                  />
                   <Paragraph style={{ marginLeft: 3 }}>{priceVideo}</Paragraph>
                 </View>
               </View>
             </Card.Content>
           </Card>
         </View>
-      </TouchableOpacity>
+      </TouchableNativeFeedback>
     </>
   );
 }
@@ -125,7 +133,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   title: {
-    color: colors.black,
+    color: colors.themeDark,
     fontSize: 14,
     fontWeight: "bold",
     marginLeft: 5,
@@ -142,18 +150,18 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   textPrice: {
-    color: colors.black,
+    color: colors.themeDark,
     fontSize: 12,
     fontWeight: "200",
   },
   screen: {
+    backgroundColor: "rgba(100,100,100, 0.6)",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     padding: 18,
     alignContent: "center",
     flexDirection: "row",
-    marginTop: 22,
   },
 });
 

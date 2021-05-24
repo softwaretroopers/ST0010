@@ -3,7 +3,6 @@ import { View, StyleSheet, FlatList } from "react-native";
 import { Appbar, TextInput, Button, Avatar } from "react-native-paper";
 
 import ScreenVariant from "../../components/ScreenVariant";
-import ListItem from "../../components/ListItem";
 import colors from "../../configs/colors";
 import RenderIf from "../../components/RenderIf";
 

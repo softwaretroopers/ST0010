@@ -1,78 +1,68 @@
-import React from 'react';
-import { View , StyleSheet, TouchableOpacity } from 'react-native';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { Button, Text } from "react-native-paper";
+import colors from "../configs/colors";
 
-import colors from '../configs/colors';
-import AppText from './AppText';
-
-function DoctorListItem({title,date,time,calltype,iconType,button,btnName}) {
-    return (
-        <View style={styles.DoctorListItem}>
-            <View style={styles.containerRight}>
-                <AppText style={styles.text} >{title}</AppText>
-                <View style={styles.calltype}>
-                    {iconType}
-                    <AppText style={styles.icontext} >
-                    {calltype}
-                    </AppText>
-                </View>
-            </View>
-
-            <View style={styles.containerRight}>
-                <AppText style={styles.text} >{date}</AppText>
-                <AppText style={styles.text} >{time}</AppText>
-                {button && <TouchableOpacity style={styles.chatbtn}>
-                    {button}
-                    <AppText style={styles.btntext} >
-                    {btnName}
-                    </AppText>
-                </TouchableOpacity>}
-            </View>
+function DoctorListItem({ title, date, time, calltype, iconType }) {
+  return (
+    <View style={styles.DoctorListItem}>
+      <View style={styles.containerRight}>
+        <Text style={styles.text}>{title}</Text>
+        <View style={styles.calltype}>
+          {iconType}
+          <Text style={styles.icontext}>{calltype}</Text>
         </View>
-    );
+      </View>
+      <View style={styles.containerRight}>
+        <Text style={styles.text}>{date}</Text>
+        <Text style={styles.text}>{time}</Text>
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    btntext:{
-        fontWeight:'bold',
-        color:colors.white,
-        marginLeft:5,
-    },
-    chatbtn:{
-        flexDirection:"row",
-        alignItems:"center",
-        backgroundColor:colors.black,
-        borderRadius:15,
-        marginTop:"-25%"
-    },
-    DoctorListItem:{
-        backgroundColor:colors.white,
-        flexDirection:"row",
-        justifyContent:"space-between",
-        width:"100%",
-        padding:25,
-        marginBottom:2,
-        
-        shadowColor:colors.doctorPrimary,
-        shadowOffset:{width:0,height:10},
-        shadowOpacity:1,
-        shadowRadius:10,  
-        elevation:10,
-    },
-    text:{
-        fontSize:15,
-        color:colors.doctorPrimary,
-        fontWeight:'bold'
-    },
-    icontext:{
-        fontSize:15,
-        color:colors.doctorPrimary,
-        marginLeft:5,
-        fontWeight:'bold'
-    },
-    calltype:{
-        flexDirection:"row",
-        alignItems:"center"
-    }
-})
+  btntext: {
+    fontWeight: "bold",
+    color: colors.white,
+    marginLeft: 5,
+  },
+  chatbtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: colors.black,
+    borderRadius: 15,
+    marginTop: "-25%",
+  },
+  DoctorListItem: {
+    backgroundColor: colors.white,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    padding: 25,
+    marginBottom: 2,
+
+    shadowColor: colors.themeDark,
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 1,
+    shadowRadius: 10,
+    elevation: 10,
+  },
+  text: {
+    fontSize: 15,
+    color: colors.themeDark,
+    fontWeight: "bold",
+  },
+  icontext: {
+    fontSize: 15,
+    color: colors.themeDark,
+    marginLeft: 5,
+    fontWeight: "bold",
+  },
+  calltype: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+});
 
 export default DoctorListItem;

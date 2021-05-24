@@ -43,7 +43,7 @@ function DoctorLogin({ navigation }) {
             <MaterialIcons
               name="person"
               size={50}
-              color={colors.doctorPrimary}
+              color={colors.themeDark}
               style={{ marginTop: "20%" }}
             />
             <View style={styles.inputContainer}>
@@ -69,7 +69,7 @@ function DoctorLogin({ navigation }) {
               />
             </View>
             <View style={styles.buttonContainer}>
-              <SubmitButton title="login" color="doctorPrimary" />
+              <SubmitButton title="login" color="themeDark" />
             </View>
           </ScrollView>
         </View>

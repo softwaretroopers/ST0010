@@ -27,7 +27,7 @@ export default class ReportCard extends React.Component {
             style={{
               fontWeight: "bold",
               fontSize: 16,
-              color: colors.black,
+              color: colors.themeDark,
               letterSpacing: -0.9,
             }}
           >

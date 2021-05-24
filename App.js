@@ -6,8 +6,8 @@ import {
   PatientAuthNavigator,
   DrawerNavigator,
 } from "./app/navigation/PatientAuthNavigator";
-import DocAuthNavigation from "./app/navigation/Doctor/DocAuthNavigation";
-import CooperationNavigation from "./app/navigation/Cooperation/CooperationNavigation";
+import DocAuthNavigation from "./app/navigation/DocAuthNavigation";
+import CooperationNavigation from "./app/navigation/CooperationNavigation";
 
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 

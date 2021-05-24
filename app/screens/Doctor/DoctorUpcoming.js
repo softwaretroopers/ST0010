@@ -46,14 +46,10 @@ function DoctorUpcoming(props) {
                   IconFamily={MaterialIcons}
                   name={item.icon.name}
                   size={25}
-                  backgroundColor={colors.doctorPrimary}
+                  backgroundColor={colors.themeDark}
                 />
               }
               date={item.date}
-              // button={
-              //          <Icon IconFamily={MaterialIcons} name="chat" size={25} backgroundColor={colors.doctorPrimary} />
-              // }
-              // btnName="chat"
             />
           )}
         />
@@ -64,7 +60,7 @@ function DoctorUpcoming(props) {
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: colors.lightGrey,
+    backgroundColor: colors.white,
     flex: 1,
   },
   HeaderText: {

@@ -106,7 +106,7 @@ function PatientHome({ navigation }) {
           </>
         )}
       />
-      <FAB style={styles.fab} icon="message-reply-text" />
+      <FAB style={styles.fab} icon="message-reply" />
     </ScreenVariant>
   );
 }

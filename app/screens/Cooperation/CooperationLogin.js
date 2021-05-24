@@ -43,7 +43,7 @@ function CooperationLogin({ navigation }) {
             <MaterialIcons
               name="person"
               size={50}
-              color={colors.cooperationPrimary}
+              color={colors.themeDark}
               style={{ marginTop: "20%" }}
             />
             <View style={styles.inputContainer}>
@@ -69,7 +69,7 @@ function CooperationLogin({ navigation }) {
               />
             </View>
             <View style={styles.buttonContainer}>
-              <SubmitButton title="login" color="cooperationPrimary" />
+              <SubmitButton title="login" color="themeDark" />
             </View>
           </ScrollView>
         </View>

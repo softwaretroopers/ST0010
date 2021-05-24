@@ -34,24 +34,26 @@ const dateCards = [
 
 function DoctorEditDate(props) {
   return (
-    <View style={{ flex: 1, alignItems: "center" }}>
-      <DatePicker></DatePicker>
-      <View style={{ marginBottom: 95 }}>
-        <FlatList
-          data={dateCards}
-          keyExtractor={(dateCard) => dateCard.date.toString()}
-          renderItem={({ item }) => (
-            <DateCard
-              date={item.date}
-              day={item.day}
-              firstTimeSlot={item.firstTimeSlot}
-              secondTimeSlot={item.secondTimeSlot}
-              thirdTimeSlot={item.thirdTimeSlot}
-              fourthTimeSlot={item.fourthTimeSlot}
-            />
-          )}
-        />
-      </View>
+    <View style={{ flex: 1 }}>
+      <FlatList
+        ListHeaderComponent={() => (
+          <View style={{ width: "80%", alignSelf: "center" }}>
+            <DatePicker />
+          </View>
+        )}
+        data={dateCards}
+        keyExtractor={(dateCard) => dateCard.date.toString()}
+        renderItem={({ item }) => (
+          <DateCard
+            date={item.date}
+            day={item.day}
+            firstTimeSlot={item.firstTimeSlot}
+            secondTimeSlot={item.secondTimeSlot}
+            thirdTimeSlot={item.thirdTimeSlot}
+            fourthTimeSlot={item.fourthTimeSlot}
+          />
+        )}
+      />
     </View>
   );
 }

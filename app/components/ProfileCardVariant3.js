@@ -84,11 +84,11 @@ const styles = StyleSheet.create({
   },
   container: {
     borderRadius: 20,
-    backgroundColor: colors.black,
+    backgroundColor: colors.themeDark,
     color: colors.white,
     overflow: "hidden",
 
-    shadowColor: colors.patientPrimary,
+    shadowColor: colors.themeDark,
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 1,
     shadowRadius: 10,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   IconClose: {
     marginLeft: "58%",
   },
-  avatarIcon: { backgroundColor: colors.patientPrimary },
+  avatarIcon: { backgroundColor: colors.themeDark },
   image: {
     resizeMode: "cover",
     justifyContent: "center",
